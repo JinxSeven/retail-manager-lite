@@ -365,7 +365,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>shop-cart.png</normaloff>shop-cart.png</iconset>
+        <normaloff>img/order_entry.png</normaloff>img/order_entry.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -402,7 +402,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>order.png</normaloff>order.png</iconset>
+        <normaloff>img/edit_order.png</normaloff>img/edit_order.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -439,7 +439,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>search.png</normaloff>search.png</iconset>
+        <normaloff>img/orders.png</normaloff>img/orders.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -476,7 +476,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>profile.png</normaloff>profile.png</iconset>
+        <normaloff>img/logout.png</normaloff>img/logout.png</iconset>
       </property>
       <property name="iconSize">
        <size>
