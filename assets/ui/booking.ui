@@ -136,7 +136,7 @@ QTabBar::tab:right:only-one {
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -588,7 +588,7 @@ color: white</string>
       </property>
       <property name="styleSheet">
        <string notr="true">color: white;
-font: 14pt &quot;Poppins&quot;;
+font: 12pt &quot;Poppins&quot;;
 border-radius: 10px;
 background-color:rgb(27, 26, 56);
 padding:10px;</string>
@@ -629,7 +629,7 @@ color: white</string>
       </property>
       <property name="styleSheet">
        <string notr="true">color: white;
-font: 14pt &quot;Poppins&quot;;
+font: 12pt &quot;Poppins&quot;;
 border-radius: 10px;
 background-color:rgb(27, 26, 56);
 padding:10px;</string>
@@ -670,7 +670,7 @@ color: white</string>
       </property>
       <property name="styleSheet">
        <string notr="true">color: white;
-font: 14pt &quot;Poppins&quot;;
+font: 12pt &quot;Poppins&quot;;
 border-radius: 10px;
 background-color:rgb(27, 26, 56);
 padding:10px;</string>
