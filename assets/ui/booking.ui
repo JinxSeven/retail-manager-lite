@@ -291,13 +291,22 @@ background-color: #4c6cbf;
       <property name="text">
        <string>Proceed</string>
       </property>
+      <property name="autoDefault">
+       <bool>true</bool>
+      </property>
+      <property name="default">
+       <bool>true</bool>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
      </widget>
      <widget class="QLabel" name="login_info">
       <property name="geometry">
        <rect>
-        <x>200</x>
-        <y>180</y>
-        <width>121</width>
+        <x>130</x>
+        <y>320</y>
+        <width>141</width>
         <height>21</height>
        </rect>
       </property>
@@ -343,7 +352,7 @@ border-radius: 10px;</string>
 border-radius: 10px;</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="order_entry">
+     <widget class="QPushButton" name="order_entry_1">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -359,7 +368,7 @@ border-radius: 10px;</string>
        <string>Order Entry</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#order_entry {
+       <string notr="true">QPushButton#order_entry_1 {
 background-color: #4c6cbf; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
@@ -367,7 +376,7 @@ padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#order_entry:hover {
+QPushButton#order_entry_1:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -395,7 +404,7 @@ background-color: #4c6cbf;
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="edit_orders">
+     <widget class="QPushButton" name="edit_orders_1">
       <property name="geometry">
        <rect>
         <x>250</x>
@@ -408,7 +417,7 @@ background-color: #4c6cbf;
        <string>Edit Orders</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#edit_orders {
+       <string notr="true">QPushButton#edit_orders_1 {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
@@ -416,7 +425,7 @@ padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#edit_orders:hover {
+QPushButton#edit_orders_1:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -435,7 +444,7 @@ background-color: #4c6cbf;
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="orders">
+     <widget class="QPushButton" name="orders_1">
       <property name="geometry">
        <rect>
         <x>420</x>
@@ -448,7 +457,7 @@ background-color: #4c6cbf;
        <string>Orders</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#orders {
+       <string notr="true">QPushButton#orders_1 {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
@@ -456,7 +465,7 @@ padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#orders:hover {
+QPushButton#orders_1:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -475,7 +484,7 @@ background-color: #4c6cbf;
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="logout">
+     <widget class="QPushButton" name="logout_1">
       <property name="geometry">
        <rect>
         <x>590</x>
@@ -488,7 +497,7 @@ background-color: #4c6cbf;
        <string>Logout</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#logout {
+       <string notr="true">QPushButton#logout_1 {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
@@ -496,7 +505,7 @@ padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#logout:hover {
+QPushButton#logout_1:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -724,7 +733,7 @@ background-color: #4c6cbf;
 }</string>
       </property>
       <property name="text">
-       <string>Add</string>
+       <string>+</string>
       </property>
      </widget>
      <widget class="QLabel" name="order_id">
@@ -1012,7 +1021,7 @@ color: white</string>
       </property>
       <property name="styleSheet">
        <string notr="true">color: white;
-font: 14pt &quot;Poppins&quot;;
+font: 12pt &quot;Poppins&quot;;
 border-radius: 10px;
 background-color:rgb(27, 26, 56);
 padding:10px;</string>
@@ -1035,7 +1044,7 @@ padding:10px;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">color: white;
-font: 14pt &quot;Poppins&quot;;
+font: 12pt &quot;Poppins&quot;;
 border-radius: 10px;
 background-color:rgb(27, 26, 56);
 padding:10px;</string>
@@ -1202,7 +1211,7 @@ background-color: #4c6cbf;
       </property>
       <property name="styleSheet">
        <string notr="true">color: white;
-font: 14pt &quot;Poppins&quot;;
+font: 12pt &quot;Poppins&quot;;
 border-radius: 10px;
 background-color:rgb(27, 26, 56);
 padding:10px;</string>

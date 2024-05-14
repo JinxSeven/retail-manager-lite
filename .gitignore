@@ -162,5 +162,5 @@ cython_debug/
 .idea
 
 # Folders to ignore
-#  virtual environment
+# virtual environment
 venv
