@@ -34,12 +34,12 @@ class MainApp(QMainWindow, ui):
         
     def login(self):
         usr_pwd = self.login_input.text()
-        if usr_pwd != "sagayam":
-            self.login_info.setText("Wrong Password!")
-        elif usr_pwd == "sagayam":
+        if usr_pwd == "sagayam":
             self.login_info.setText("")
             self.login_input.setText("")
             self.tabWidget.setCurrentIndex(1)
+        else:
+            self.login_info.setText("Wrong Password!")
         
     def logout(self):
         self.tabWidget.setCurrentIndex(0)
