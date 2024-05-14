@@ -136,7 +136,7 @@ QTabBar::tab:right:only-one {
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -386,7 +386,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../icons/order_entry.png</normaloff>../icons/order_entry.png</iconset>
+        <normaloff>../png/order_entry.png</normaloff>../png/order_entry.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -435,7 +435,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../icons/edit_order.png</normaloff>../icons/edit_order.png</iconset>
+        <normaloff>../png/edit_order.png</normaloff>../png/edit_order.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -475,7 +475,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../icons/orders.png</normaloff>../icons/orders.png</iconset>
+        <normaloff>../png/orders.png</normaloff>../png/orders.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -515,7 +515,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../icons/logout.png</normaloff>../icons/logout.png</iconset>
+        <normaloff>../png/logout.png</normaloff>../png/logout.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -817,7 +817,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../icons/logout.png</normaloff>../icons/logout.png</iconset>
+        <normaloff>../png/logout.png</normaloff>../png/logout.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -857,7 +857,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../icons/order_entry.png</normaloff>../icons/order_entry.png</iconset>
+        <normaloff>../png/order_entry.png</normaloff>../png/order_entry.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -925,7 +925,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../icons/orders.png</normaloff>../icons/orders.png</iconset>
+        <normaloff>../png/orders.png</normaloff>../png/orders.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -965,7 +965,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../icons/edit_order.png</normaloff>../icons/edit_order.png</iconset>
+        <normaloff>../png/edit_order.png</normaloff>../png/edit_order.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -1276,7 +1276,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../icons/logout.png</normaloff>../icons/logout.png</iconset>
+        <normaloff>../png/logout.png</normaloff>../png/logout.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -1319,7 +1319,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../icons/order_entry.png</normaloff>../icons/order_entry.png</iconset>
+        <normaloff>../png/order_entry.png</normaloff>../png/order_entry.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -1390,7 +1390,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../icons/orders.png</normaloff>../icons/orders.png</iconset>
+        <normaloff>../png/orders.png</normaloff>../png/orders.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -1430,7 +1430,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../icons/edit_order.png</normaloff>../icons/edit_order.png</iconset>
+        <normaloff>../png/edit_order.png</normaloff>../png/edit_order.png</iconset>
       </property>
       <property name="iconSize">
        <size>

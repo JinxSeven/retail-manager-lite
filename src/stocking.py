@@ -1,3 +1,4 @@
+import os
 import sys
 import _sqlite3
 from datetime import date
