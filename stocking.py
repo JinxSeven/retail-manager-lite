@@ -6,7 +6,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUiType
 
-ui, _ = loadUiType('assets/ui/booking.ui')
+ui, _ = loadUiType('assets/ui/stocking.ui')
 
 
 class MainApp(QMainWindow, ui):
