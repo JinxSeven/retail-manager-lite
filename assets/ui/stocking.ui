@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>908</width>
-    <height>593</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string>MainWindow</string>
-  </property>
-  <property name="toolTipDuration">
-   <number>-1</number>
-  </property>
-  <property name="styleSheet">
-   <string notr="true">background-color: #2E2E2E;</string>
-  </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="tabWidget">
+  <class>MainWindow</class>
+  <widget class="QMainWindow" name="MainWindow">
     <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>20</y>
-      <width>801</width>
-      <height>531</height>
-     </rect>
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>908</width>
+        <height>593</height>
+      </rect>
+    </property>
+    <property name="windowTitle">
+      <string>MainWindow</string>
+    </property>
+    <property name="toolTipDuration">
+      <number>-1</number>
     </property>
     <property name="styleSheet">
-     <string notr="true">/* Base styles */
+      <string notr="true">background-color: #2E2E2E;</string>
+    </property>
+    <widget class="QWidget" name="centralwidget">
+      <widget class="QTabWidget" name="tabWidget">
+        <property name="geometry">
+          <rect>
+            <x>50</x>
+            <y>20</y>
+            <width>801</width>
+            <height>531</height>
+          </rect>
+        </property>
+        <property name="styleSheet">
+          <string notr="true">/* Base styles */
 QTabWidget::pane {
   border: none;  /* Remove default border */
   background-color: #212121; /* Dark background */
