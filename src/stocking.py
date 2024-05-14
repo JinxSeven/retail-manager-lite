@@ -8,7 +8,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUiType
 
 ui, _ = loadUiType('assets/ui/stocking.ui')
-
+db_path = os.path.join('database/', 'stocking.db')
 
 class MainApp(QMainWindow, ui):
     def __init__(self):
@@ -32,6 +32,14 @@ class MainApp(QMainWindow, ui):
         self.orders_1.clicked.connect(self.showOrders)
         self.orders_2.clicked.connect(self.showOrders)
         self.orders_3.clicked.connect(self.showOrders)
+        
+    try:
+        db_chk = _sqlite3.connect(db_path)
+        db_chk.execute("CREATE TABLE IF NOT EXISTS orders(order_id INTEGER, cx_name TEXT, cx_phno TEXT, product_id INTEGRER, quants INTEGER, order_date TEXT)")
+        db_chk.commit()
+        print("Created database sucessfully :)\n")
+    except:
+        print(db_chk.Error)
         
     def login(self):
         usr_pwd = self.login_input.text()
