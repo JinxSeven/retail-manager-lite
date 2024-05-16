@@ -1,6 +1,6 @@
 import os
 import sys
-import _sqlite3
+import sqlite3
 from datetime import date
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
@@ -33,14 +33,16 @@ class MainApp(QMainWindow, ui):
         self.orders_2.clicked.connect(self.showOrders)
         self.orders_3.clicked.connect(self.showOrders)
         
-    try:
-        db_chk = _sqlite3.connect(db_path)
-        db_chk.execute("CREATE TABLE IF NOT EXISTS orders(order_id INTEGER, cx_name TEXT, cx_phno TEXT, product_id INTEGRER, quantity INTEGER, order_date TEXT, order_time TEXT)")
-        db_chk.commit()
-        print("Created database sucessfully :)\n")
-    except:
-        print(db_chk.Error)
+        try:
+            db_chk = sqlite3.connect(db_path)
+            db_chk.execute("CREATE TABLE IF NOT EXISTS order_data(order_id INTEGER, cx_name TEXT, cx_phno TEXT, product_id INTEGRER, quantity INTEGER, order_date TEXT, order_time TEXT)")
+            db_chk.commit()
+            print("Created database sucessfully :)\n")
+        except:
+            print(db_chk.Error)
         
+        self.genOrderId()
+
     def login(self):
         usr_pwd = self.login_input.text()
         if usr_pwd == "sagayam":
@@ -62,6 +64,25 @@ class MainApp(QMainWindow, ui):
     def showOrders(self):
         self.tabWidget.setCurrentIndex(3)
 
+    def genOrderId(self):
+        order_gen = 0
+        try:
+            oid_db = sqlite3.connect(db_path)
+            cursor = oid_db.execute("SELECT MAX(order_id) FROM orders")
+            result = cursor.fetchall()
+            if result:
+                for maxid in result:
+                    order_gen = maxid[0] + 1
+                self.order_id.setText(str(order_gen))
+        except:
+            order_gen = 1001
+            self.order_id.setText(str(order_gen))
+
+    def orderEntryLogic(self):
+        self.genOrderId()
+        oe_db = sqlite3.connect(db_path)
+        # order_id INTEGER, cx_name TEXT, cx_phno TEXT, product_id INTEGRER, quantity INTEGER, order_date TEXT, order_time TEXT
+        oe_db.execute("INSERT INTO orders ")
 
 def main():
     app = QApplication(sys.argv)
