@@ -33,6 +33,9 @@ class MainApp(QMainWindow, ui):
         self.orders_1.clicked.connect(self.showOrders)
         self.orders_2.clicked.connect(self.showOrders)
         self.orders_3.clicked.connect(self.showOrders)
+
+        self.oe_button_1.clicked.connect(self.orderPlus)
+        self.oe_button_2.clicked.connect(self.orderNext)
         
         try:
             db_chk = sqlite3.connect(db_path)
@@ -79,11 +82,37 @@ class MainApp(QMainWindow, ui):
             order_gen = 1001
             self.order_id.setText(str(order_gen))
 
-    def orderEntryLogic(self):
+    def orderNext(self):
         self.genOrderId()
-        oe_db = sqlite3.connect(db_path)
-        # order_id INTEGER, cx_name TEXT, cx_phno TEXT, product_id INTEGRER, quantity INTEGER, order_date TEXT, order_time TEXT
-        oe_db.execute("INSERT INTO order_data VALUES ("+ self.order_id.text() +", '"+ self.oe_input_1.text() +"', '"+ self.oe_input_3.text() +"', "+ self.oe_input_2.text() +", "+ self.oe_input_4.text() +", '"+ date.today() +"')")
+        try:
+            oe_db = sqlite3.connect(db_path)
+            # order_id INTEGER, cx_name TEXT, cx_phno TEXT, product_id INTEGRER, quantity INTEGER, order_date TEXT, order_time TEXT
+            oe_db.execute("INSERT INTO order_data VALUES ("+ self.order_id.text() +", '"+ self.oe_input_1.text() +"', '"+ self.oe_input_3.text() +"', "+ self.oe_input_2.text() +", "+ self.oe_input_4.text() +", '"+ str(date.today()) +"')")
+            oe_db.commit()
+        except:
+            print("Can't insert values into table")
+        
+        self.order_id.setText("")
+        self.oe_input_1.setText("")
+        self.oe_input_2.setText("")
+        self.oe_input_3.setText("")
+        self.oe_input_4.setText("")
+        self.genOrderId()
+
+    def orderPlus(self):
+        self.genOrderId()
+        try:
+            oe_db = sqlite3.connect(db_path)
+            # order_id INTEGER, cx_name TEXT, cx_phno TEXT, product_id INTEGRER, quantity INTEGER, order_date TEXT, order_time TEXT
+            oe_db.execute("INSERT INTO order_data VALUES ("+ self.order_id.text() +", '"+ self.oe_input_1.text() +"', '"+ self.oe_input_3.text() +"', "+ self.oe_input_2.text() +", "+ self.oe_input_4.text() +", '"+ str(date.today()) +"')")
+            oe_db.commit()
+        except:
+            print("Can't insert values into table")
+        
+        self.oe_input_2.setText("")
+        self.oe_input_4.setText("")
+        self.genOrderId()
+        
 
 def main():
     app = QApplication(sys.argv)
