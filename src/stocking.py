@@ -35,7 +35,7 @@ class MainApp(QMainWindow, ui):
         
     try:
         db_chk = _sqlite3.connect(db_path)
-        db_chk.execute("CREATE TABLE IF NOT EXISTS orders(order_id INTEGER, cx_name TEXT, cx_phno TEXT, product_id INTEGRER, quants INTEGER, order_date TEXT)")
+        db_chk.execute("CREATE TABLE IF NOT EXISTS orders(order_id INTEGER, cx_name TEXT, cx_phno TEXT, product_id INTEGRER, quantity INTEGER, order_date TEXT, order_time TEXT)")
         db_chk.commit()
         print("Created database sucessfully :)\n")
     except:
