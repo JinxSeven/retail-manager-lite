@@ -2,6 +2,7 @@ import os
 import sys
 import sqlite3
 from datetime import date
+from datetime import datetime
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
@@ -35,7 +36,7 @@ class MainApp(QMainWindow, ui):
         
         try:
             db_chk = sqlite3.connect(db_path)
-            db_chk.execute("CREATE TABLE IF NOT EXISTS order_data(order_id INTEGER, cx_name TEXT, cx_phno TEXT, product_id INTEGRER, quantity INTEGER, order_date TEXT, order_time TEXT)")
+            db_chk.execute("CREATE TABLE IF NOT EXISTS order_data(order_id INTEGER, cx_name TEXT, cx_phno TEXT, product_id INTEGRER, quantity INTEGER, order_date TEXT)")
             db_chk.commit()
             print("Created database sucessfully :)\n")
         except:
@@ -68,7 +69,7 @@ class MainApp(QMainWindow, ui):
         order_gen = 0
         try:
             oid_db = sqlite3.connect(db_path)
-            cursor = oid_db.execute("SELECT MAX(order_id) FROM orders")
+            cursor = oid_db.execute("SELECT MAX(order_id) FROM order_data")
             result = cursor.fetchall()
             if result:
                 for maxid in result:
@@ -82,7 +83,7 @@ class MainApp(QMainWindow, ui):
         self.genOrderId()
         oe_db = sqlite3.connect(db_path)
         # order_id INTEGER, cx_name TEXT, cx_phno TEXT, product_id INTEGRER, quantity INTEGER, order_date TEXT, order_time TEXT
-        oe_db.execute("INSERT INTO orders ")
+        oe_db.execute("INSERT INTO order_data VALUES ("+ self.order_id.text() +", '"+ self.oe_input_1.text() +"', '"+ self.oe_input_3.text() +"', "+ self.oe_input_2.text() +", "+ self.oe_input_4.text() +", '"+ date.today() +"')")
 
 def main():
     app = QApplication(sys.argv)
