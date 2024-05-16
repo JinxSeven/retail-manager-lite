@@ -87,7 +87,7 @@ class MainApp(QMainWindow, ui):
         try:
             oe_db = sqlite3.connect(db_path)
             # order_id INTEGER, cx_name TEXT, cx_phno TEXT, product_id INTEGRER, quantity INTEGER, order_date TEXT, order_time TEXT
-            oe_db.execute("INSERT INTO order_data VALUES ("+ self.order_id.text() +", '"+ self.oe_input_1.text() +"', '"+ self.oe_input_3.text() +"', "+ self.oe_input_2.text() +", "+ self.oe_input_4.text() +", '"+ str(date.today()) +"')")
+            oe_db.execute("INSERT INTO order_data VALUES ("+ self.order_id.text() +", '"+ self.oe_input_1.text() +"', '"+ self.oe_input_2.text() +"', "+ self.oe_input_3.text() +", "+ self.oe_input_4.text() +", '"+ str(date.today()) +"')")
             oe_db.commit()
         except:
             print("Can't insert values into table")
@@ -104,7 +104,7 @@ class MainApp(QMainWindow, ui):
         try:
             oe_db = sqlite3.connect(db_path)
             # order_id INTEGER, cx_name TEXT, cx_phno TEXT, product_id INTEGRER, quantity INTEGER, order_date TEXT, order_time TEXT
-            oe_db.execute("INSERT INTO order_data VALUES ("+ self.order_id.text() +", '"+ self.oe_input_1.text() +"', '"+ self.oe_input_3.text() +"', "+ self.oe_input_2.text() +", "+ self.oe_input_4.text() +", '"+ str(date.today()) +"')")
+            oe_db.execute("INSERT INTO order_data VALUES ("+ self.order_id.text() +", '"+ self.oe_input_1.text() +"', '"+ self.oe_input_2.text() +"', "+ self.oe_input_3.text() +", "+ self.oe_input_4.text() +", '"+ str(date.today()) +"')")
             oe_db.commit()
         except:
             print("Can't insert values into table")
