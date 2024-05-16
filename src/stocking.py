@@ -11,6 +11,12 @@ from PyQt5.uic import loadUiType
 ui, _ = loadUiType('assets/ui/stocking.ui')
 db_path = os.path.join('database/', 'stocking.db')
 
+class Color:
+    RED = '\033[91m'
+    GREEN = '\033[92m'
+    BLUE = '\033[94m'
+    RESET = '\033[0m'
+
 class MainApp(QMainWindow, ui):
     def __init__(self):
         QMainWindow.__init__(self)
@@ -41,11 +47,12 @@ class MainApp(QMainWindow, ui):
             db_chk = sqlite3.connect(db_path)
             db_chk.execute("CREATE TABLE IF NOT EXISTS order_data(order_id INTEGER, cx_name TEXT, cx_phno TEXT, product_id INTEGRER, quantity INTEGER, order_date TEXT)")
             db_chk.commit()
-            print("Created database sucessfully :)\n")
+            print(Color.GREEN + "Created database sucessfully" + Color.RESET)
         except:
             print(db_chk.Error)
         
         self.genOrderId()
+        self.editOidLoad()
 
     def login(self):
         usr_pwd = self.login_input.text()
@@ -87,10 +94,10 @@ class MainApp(QMainWindow, ui):
         try:
             oe_db = sqlite3.connect(db_path)
             # order_id INTEGER, cx_name TEXT, cx_phno TEXT, product_id INTEGRER, quantity INTEGER, order_date TEXT, order_time TEXT
-            oe_db.execute("INSERT INTO order_data VALUES ("+ self.order_id.text() +", '"+ self.oe_input_1.text() +"', '"+ self.oe_input_2.text() +"', "+ self.oe_input_3.text() +", "+ self.oe_input_4.text() +", '"+ str(date.today()) +"')")
+            oe_db.execute("INSERT INTO order_data VALUES ("+ self.order_id.text() +", '"+ self.oe_input_1.text() +"', '"+ self.oe_input_3.text() +"', "+ self.oe_input_2.text() +", "+ self.oe_input_4.text() +", '"+ str(date.today()) +"')")
             oe_db.commit()
         except:
-            print("Can't insert values into table")
+            print(Color.RED + "Can't insert values into table" + Color.RESET)
         
         self.order_id.setText("")
         self.oe_input_1.setText("")
@@ -98,22 +105,36 @@ class MainApp(QMainWindow, ui):
         self.oe_input_3.setText("")
         self.oe_input_4.setText("")
         self.genOrderId()
+        self.editOidLoad()
 
     def orderPlus(self):
         self.genOrderId()
         try:
             oe_db = sqlite3.connect(db_path)
             # order_id INTEGER, cx_name TEXT, cx_phno TEXT, product_id INTEGRER, quantity INTEGER, order_date TEXT, order_time TEXT
-            oe_db.execute("INSERT INTO order_data VALUES ("+ self.order_id.text() +", '"+ self.oe_input_1.text() +"', '"+ self.oe_input_2.text() +"', "+ self.oe_input_3.text() +", "+ self.oe_input_4.text() +", '"+ str(date.today()) +"')")
+            oe_db.execute("INSERT INTO order_data VALUES ("+ self.order_id.text() +", '"+ self.oe_input_1.text() +"', '"+ self.oe_input_3.text() +"', "+ self.oe_input_2.text() +", "+ self.oe_input_4.text() +", '"+ str(date.today()) +"')")
             oe_db.commit()
         except:
-            print("Can't insert values into table")
+            print(Color.RED + "Can't insert values into table" + Color.RESET)
         
         self.oe_input_2.setText("")
         self.oe_input_4.setText("")
         self.genOrderId()
-        
+        self.editOidLoad()
 
+    def editOidLoad(self):
+        try:
+            self.select_oid.clear()
+            updt_db = sqlite3.connect(db_path)
+            cursor = updt_db.execute("SELECT order_id FROM order_data")
+            result = cursor.fetchall()
+            if result:
+                for ids in result:
+                    self.select_oid.addItem(str(ids[0]))
+        except:
+            print(Color.RED + "Can't load values into combo box" + Color.RESET)
+            
+            
 def main():
     app = QApplication(sys.argv)
     window = MainApp()
