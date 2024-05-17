@@ -42,6 +42,8 @@ class MainApp(QMainWindow, ui):
 
         self.oe_button_1.clicked.connect(self.orderPlus)
         self.oe_button_2.clicked.connect(self.orderNext)
+
+        self.select_oid.currentIndexChanged.connect(self.editODetailsLoad)
         
         try:
             db_chk = sqlite3.connect(db_path)
@@ -125,8 +127,8 @@ class MainApp(QMainWindow, ui):
     def editOidLoad(self):
         try:
             self.select_oid.clear()
-            updt_db = sqlite3.connect(db_path)
-            cursor = updt_db.execute("SELECT order_id FROM order_data")
+            oid_db = sqlite3.connect(db_path)
+            cursor = oid_db.execute("SELECT order_id FROM order_data")
             result = cursor.fetchall()
             if result:
                 for ids in result:
@@ -134,7 +136,22 @@ class MainApp(QMainWindow, ui):
         except:
             print(Color.RED + "Can't load values into combo box" + Color.RESET)
             
-            
+    def editODetailsLoad(self):
+        try:
+            load_db = sqlite3.connect(db_path)
+            current_oid = str(self.select_oid.currentText())
+            cursor = load_db.execute("SELECT * FROM order_data WHERE order_id = "+ current_oid +"")
+            result = cursor.fetchall()
+            if result:
+                for details in result:
+                    self.eo_input_1.setText(details[1])
+                    self.eo_input_3.setText(details[2])
+                    self.eo_input_2.setText(str(details[3]))
+                    self.eo_input_4.setText(str(details[4]))
+        except:
+            print(Color.RED + "Can't load details into text boxes" + Color.RESET)
+
+
 def main():
     app = QApplication(sys.argv)
     window = MainApp()
