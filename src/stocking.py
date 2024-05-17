@@ -79,7 +79,24 @@ class MainApp(QMainWindow, ui):
         
     def showOrders(self):
         self.tabWidget.setCurrentIndex(3)
-
+        ord_lst = sqlite3.connect(db_path)
+        cursor = ord_lst.execute("SELECT * FROM order_data")
+        result = cursor.fetchall()
+        row, col = 0, 0
+        for row_num, row_data in enumerate(result):
+            row += 1
+            col = 0
+            for col_num, data in enumerate(row_data):
+                col += 1
+        self.orders_table.setColumnCount(col)
+        for row_num, row_data in enumerate(result):
+            self.orders_table.insertRow(row_num)
+            for col_num, data in enumerate(row_data):
+                self.orders_table.setItem(row_num, col_num, QTableWidgetItem(str(data)))
+        self.orders_table.setHorizontalHeaderLabels(['ID', 'Customer Name', 'Phone No', 'Product ID', 'Quantity', 'Date'])
+        self.orders_table.resizeColumnsToContents()
+        for column in range(self.orders_table.columnCount()):
+            self.orders_table.setColumnWidth(column, max(114, self.orders_table.columnWidth(column)))
     def genOrderId(self):
         order_gen = 0
         try:
