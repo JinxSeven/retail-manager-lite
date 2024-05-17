@@ -140,7 +140,7 @@ QTabBar::tab:right:only-one {
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -1235,7 +1235,9 @@ QComboBox#select_oid::drop-down {
 QComboBox QAbstractItemView {
   background-color: rgb(27, 26, 56);
   padding-top: 3px;
+  padding-bottom: 3px;
   padding-left: 12px;
+  padding-right:12px;
   color: red;
 }
 
