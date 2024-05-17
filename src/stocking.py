@@ -43,7 +43,10 @@ class MainApp(QMainWindow, ui):
         self.oe_button_1.clicked.connect(self.orderPlus)
         self.oe_button_2.clicked.connect(self.orderNext)
 
-        self.select_oid.currentIndexChanged.connect(self.editODetailsLoad)
+        self.select_oid.currentIndexChanged.connect(self.detailsLoad)
+
+        self.eo_button_1.clicked.connect(self.updateOrderDetails)
+        self.eo_button_2.clicked.connect(self.deleteOrderDetails)
         
         try:
             db_chk = sqlite3.connect(db_path)
@@ -54,7 +57,7 @@ class MainApp(QMainWindow, ui):
             print(db_chk.Error)
         
         self.genOrderId()
-        self.editOidLoad()
+        self.oidLoad()
 
     def login(self):
         usr_pwd = self.login_input.text()
@@ -107,7 +110,7 @@ class MainApp(QMainWindow, ui):
         self.oe_input_3.setText("")
         self.oe_input_4.setText("")
         self.genOrderId()
-        self.editOidLoad()
+        self.oidLoad()
 
     def orderPlus(self):
         self.genOrderId()
@@ -122,9 +125,9 @@ class MainApp(QMainWindow, ui):
         self.oe_input_2.setText("")
         self.oe_input_4.setText("")
         self.genOrderId()
-        self.editOidLoad()
+        self.oidLoad()
 
-    def editOidLoad(self):
+    def oidLoad(self):
         try:
             self.select_oid.clear()
             oid_db = sqlite3.connect(db_path)
@@ -136,7 +139,7 @@ class MainApp(QMainWindow, ui):
         except:
             print(Color.RED + "Can't load values into combo box" + Color.RESET)
             
-    def editODetailsLoad(self):
+    def detailsLoad(self):
         try:
             load_db = sqlite3.connect(db_path)
             current_oid = str(self.select_oid.currentText())
@@ -148,9 +151,32 @@ class MainApp(QMainWindow, ui):
                     self.eo_input_3.setText(details[2])
                     self.eo_input_2.setText(str(details[3]))
                     self.eo_input_4.setText(str(details[4]))
+            self.eo_display.setText("")
         except:
             print(Color.RED + "Can't load details into text boxes" + Color.RESET)
 
+    def updateOrderDetails(self):
+        try:
+            updt_db = sqlite3.connect(db_path)
+            current_oid = str(self.select_oid.currentText())
+            # order_id INTEGER, cx_name TEXT, cx_phno TEXT, product_id INTEGRER, quantity INTEGER, order_date TEXT, order_time TEXT
+            updt_db.execute("UPDATE order_data SET cx_name = '"+ self.eo_input_1.text() +"', cx_phno = '"+ self.eo_input_3.text() +"', product_id = "+ self.eo_input_2.text() +", quantity = "+ self.eo_input_4.text() +" WHERE order_id = "+ current_oid +"")
+            updt_db.commit()
+            self.eo_display.setText("Order updated Successfully.")
+        except:
+            print(Color.RED + "Can't update values into table" + Color.RESET)
+
+    def deleteOrderDetails(self):
+        try:
+            dlt_db = sqlite3.connect(db_path)
+            current_oid = str(self.select_oid.currentText())
+            dlt_db.execute("DELETE FROM order_data WHERE order_id = "+ current_oid +"")
+            dlt_db.commit()
+            self.eo_display_2.setText("Order Deleted Successfully.")
+            self.oidLoad()
+            self.genOrderId()
+        except:
+            print(Color.RED + "Can't delete values from table" + Color.RESET)
 
 def main():
     app = QApplication(sys.argv)
@@ -161,3 +187,11 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+            # oid_count = oid_db.execute("SELECT COUNT(order_id) FROM order_data")
+            # if oid_count == 0:
+            #     self.eo_input_1.setText("")
+            #     self.eo_input_3.setText("")
+            #     self.eo_input_2.setText("")
+            #     self.eo_input_4.setText("")
