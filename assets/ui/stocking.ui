@@ -1631,17 +1631,108 @@ QScrollBar:horizontal {
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">        QDateEdit#dateEdit {
-            border-radius: 10px;
-            background-color: rgb(27, 26, 56);
-            padding-left: 35px;
-            color: white;
-            font: 8pt &quot;Poppins&quot;;
-        }
-        QDateEdit#dateEdit::drop-down {
-            border: none; /* Remove border */
-        }
-		 QDateEdit#dateEdit::drop-down</string>
+       <string notr="true">/* Style for QDateEdit */
+QDateEdit#dateEdit {
+    border-radius: 10px;
+    background-color: rgb(27, 26, 56);
+    padding-left: 35px;
+    color: white;
+    font: 8pt &quot;Poppins&quot;;
+}
+
+/* Style for QDateEdit's drop-down button */
+QDateEdit::drop-down {
+	border: 10px;
+    width: 30px;
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    /* border-left: 1px solid white; Optional: add a border to separate the button */
+}
+
+QDateEdit::down-arrow {
+    image: url(:/icons/calendar_icon.png); /* Use your custom icon here */
+    width: 15px;
+    height: 15px;
+}
+
+/* Style for the calendar popup */
+QCalendarWidget {
+    background-color: rgb(27, 26, 56);
+    color: white;
+    border-radius: 10px;
+    font: 8pt &quot;Poppins&quot;;
+}
+
+QCalendarWidget QToolButton {
+    background-color: rgb(27, 26, 56);
+    color: white;
+    border: none;
+	padding-right: 15px;
+	padding-left: 15px;
+    border-radius: 5px;
+    font: 8pt &quot;Poppins&quot;;
+}
+
+QCalendarWidget QToolButton::hover {
+    background-color: rgb(40, 39, 74);
+}
+
+QCalendarWidget QMenu {
+    background-color: rgb(27, 26, 56);
+    color: white;
+    border: 1px solid white;
+}
+
+QCalendarWidget QSpinBox {
+    background-color: rgb(27, 26, 56);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+QCalendarWidget QSpinBox::up-button, QCalendarWidget QSpinBox::down-button {
+    background-color: rgb(27, 26, 56);
+    subcontrol-origin: border;
+    subcontrol-position: center;
+    width: 15px;
+}
+
+QCalendarWidget QSpinBox::up-arrow, QCalendarWidget QSpinBox::down-arrow {
+    image: none; /* Use custom icons if necessary */
+}
+
+QCalendarWidget QAbstractItemView:enabled {
+    color: white;
+    background-color: rgb(27, 26, 56);
+    selection-background-color: rgb(40, 39, 74);
+    selection-color: white;
+    border: none;
+}
+
+QCalendarWidget QAbstractItemView:disabled {
+    color: grey;
+}
+
+/* Optional: Style for disabled state */
+QDateEdit:disabled {
+    background-color: rgb(45, 44, 89);
+    color: grey;
+}
+
+QCalendarWidget QToolButton#qt_calendar_prevmonth {
+    width: 0px;
+    height: 0px;
+    border: none;
+    background: none;
+}
+
+QCalendarWidget QToolButton#qt_calendar_nextmonth {
+    width: 0px;
+    height: 0px;
+    border: none;
+    background: none;
+}
+</string>
       </property>
       <property name="displayFormat">
        <string>yyyy-MM-dd</string>
