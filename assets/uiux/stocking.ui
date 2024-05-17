@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../png/icon.png</normaloff>../png/icon.png</iconset>
+    <normaloff>../images/icon.png</normaloff>../images/icon.png</iconset>
   </property>
   <property name="toolTipDuration">
    <number>-1</number>
@@ -390,7 +390,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../png/order_entry.png</normaloff>../png/order_entry.png</iconset>
+        <normaloff>../images/order_entry.png</normaloff>../images/order_entry.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -439,7 +439,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../png/edit_order.png</normaloff>../png/edit_order.png</iconset>
+        <normaloff>../images/edit_order.png</normaloff>../images/edit_order.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -479,7 +479,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../png/orders.png</normaloff>../png/orders.png</iconset>
+        <normaloff>../images/orders.png</normaloff>../images/orders.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -519,7 +519,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../png/logout.png</normaloff>../png/logout.png</iconset>
+        <normaloff>../images/logout.png</normaloff>../images/logout.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -839,7 +839,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../png/logout.png</normaloff>../png/logout.png</iconset>
+        <normaloff>../images/logout.png</normaloff>../images/logout.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -879,7 +879,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../png/order_entry.png</normaloff>../png/order_entry.png</iconset>
+        <normaloff>../images/order_entry.png</normaloff>../images/order_entry.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -947,7 +947,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../png/orders.png</normaloff>../png/orders.png</iconset>
+        <normaloff>../images/orders.png</normaloff>../images/orders.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -987,7 +987,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../png/edit_order.png</normaloff>../png/edit_order.png</iconset>
+        <normaloff>../images/edit_order.png</normaloff>../images/edit_order.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -1399,7 +1399,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../png/logout.png</normaloff>../png/logout.png</iconset>
+        <normaloff>../images/logout.png</normaloff>../images/logout.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -1442,7 +1442,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../png/order_entry.png</normaloff>../png/order_entry.png</iconset>
+        <normaloff>../images/order_entry.png</normaloff>../images/order_entry.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -1513,7 +1513,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../png/orders.png</normaloff>../png/orders.png</iconset>
+        <normaloff>../images/orders.png</normaloff>../images/orders.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -1553,7 +1553,7 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../png/edit_order.png</normaloff>../png/edit_order.png</iconset>
+        <normaloff>../images/edit_order.png</normaloff>../images/edit_order.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -1593,12 +1593,19 @@ color: white</string>
        <cursorShape>SizeVerCursor</cursorShape>
       </property>
       <property name="styleSheet">
-       <string notr="true">QTableWidget {
-	border-radius:10px;
+       <string notr="true">/* QTableWidget Style */
+QTableWidget {
+    border-radius: 10px;
     gridline-color: #E0E0E0; /* Light grid lines */
-    color: #212121; /* Dark text color */
-    color: white;
-	font: 10pt &quot;Poppins&quot;;
+    color: white; /* Dark text color */
+    font: 10pt &quot;Poppins&quot;;
+    background-color: #292D3E;
+    border: 2px solid #292D3E; /* Border color same as background to enhance rounded effect */
+}
+
+/* QTableWidget Item Style */
+QTableWidget::item {
+    border: none; /* Ensure no extra border on items */
 }
 
 /* Header Style */
@@ -1608,20 +1615,32 @@ QHeaderView::section {
     border: none;
     border-bottom: 1px solid #E0E0E0;
     color: black;
-	font: 10pt &quot;Poppins&quot;;
+    font: 10pt &quot;Poppins&quot;;
 }
 
+/* Vertical Scrollbar */
 QScrollBar:vertical {
-  width: 0px; /* Hides the scrollbar track */
-  background: none; /* Optional: removes background color for better invisibility */
+    width: 0px; /* Hides the scrollbar track */
+    background: none; /* Optional: removes background color for better invisibility */
 }
 
-/* Hide horizontal scrollbar (optional) */
+/* Horizontal Scrollbar (optional) */
 QScrollBar:horizontal {
-  height: 0px; /* Hides the scrollbar track */
-  background: none; /* Optional: removes background color for better invisibility */
+    height: 0px; /* Hides the scrollbar track */
+    background: none; /* Optional: removes background color for better invisibility */
 }
 
+/* QTableWidget Viewport Style */
+QTableView::viewport {
+    border-radius: 10px;
+    background-color: #292D3E; /* Ensures viewport has same background */
+}
+
+/* Ensuring corners stay rounded by overlapping header and viewport */
+QTableView::corner {
+    background-color: #292D3E; /* Same as the QTableWidget background color */
+    border-radius: 10px 0 0 0; /* Top-left rounded corner */
+}
 </string>
       </property>
      </widget>

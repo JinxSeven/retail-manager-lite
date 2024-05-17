@@ -8,7 +8,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUiType
 
-ui, _ = loadUiType('assets/ui/stocking.ui')
+ui, _ = loadUiType('assets/uiux/stocking.ui')
 db_path = os.path.join('database/', 'stocking.db')
 
 class Color:
@@ -96,14 +96,20 @@ class MainApp(QMainWindow, ui):
                 self.orders_table.setItem(row_num, col_num, QTableWidgetItem(str(data)))
         self.orders_table.setHorizontalHeaderLabels(['ID', 'Customer Name', 'Phone No', 'Product ID', 'Quantity', 'Date'])
         # self.orders_table.resizeColumnsToContents()
+        # self.orders_table.verticalHeader().setVisible(False)
         # for column in range(self.orders_table.columnCount()):
         #     self.orders_table.setColumnWidth(column, max(114, self.orders_table.columnWidth(column)))
         self.orders_table.setColumnWidth(0, 65)
         self.orders_table.setColumnWidth(1, 220)
         self.orders_table.setColumnWidth(2, 130)
         self.orders_table.setColumnWidth(3, 100)
-        self.orders_table.setColumnWidth(4, 85)
+        self.orders_table.setColumnWidth(4, 80)
         self.orders_table.setColumnWidth(5, 95)
+        rsize = self.orders_table.rowCount()
+        if rsize > 9:
+            self.orders_table.setColumnWidth(5, 90)
+            if rsize > 19:
+                self.orders_table.setColumnWidth(0, 63)
         
     def genOrderId(self):
         order_gen = 0
