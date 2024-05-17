@@ -22,6 +22,7 @@ class MainApp(QMainWindow, ui):
         QMainWindow.__init__(self)
         self.setupUi(self)
         self.tabWidget.setCurrentIndex(0)
+        
         self.login_button.clicked.connect(self.login)
         
         self.logout_1.clicked.connect(self.logout)
@@ -94,9 +95,16 @@ class MainApp(QMainWindow, ui):
             for col_num, data in enumerate(row_data):
                 self.orders_table.setItem(row_num, col_num, QTableWidgetItem(str(data)))
         self.orders_table.setHorizontalHeaderLabels(['ID', 'Customer Name', 'Phone No', 'Product ID', 'Quantity', 'Date'])
-        self.orders_table.resizeColumnsToContents()
-        for column in range(self.orders_table.columnCount()):
-            self.orders_table.setColumnWidth(column, max(114, self.orders_table.columnWidth(column)))
+        # self.orders_table.resizeColumnsToContents()
+        # for column in range(self.orders_table.columnCount()):
+        #     self.orders_table.setColumnWidth(column, max(114, self.orders_table.columnWidth(column)))
+        self.orders_table.setColumnWidth(0, 65)
+        self.orders_table.setColumnWidth(1, 220)
+        self.orders_table.setColumnWidth(2, 130)
+        self.orders_table.setColumnWidth(3, 100)
+        self.orders_table.setColumnWidth(4, 85)
+        self.orders_table.setColumnWidth(5, 95)
+        
     def genOrderId(self):
         order_gen = 0
         try:
