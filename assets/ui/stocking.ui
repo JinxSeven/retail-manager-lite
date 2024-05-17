@@ -136,7 +136,7 @@ QTabBar::tab:right:only-one {
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -1233,7 +1233,20 @@ QComboBox QAbstractItemView {
   padding-top: 3px;
   padding-left: 12px;
   color: red;
-}</string>
+}
+
+/* Hide vertical scrollbar */
+QComboBox QScrollBar:vertical {
+  width: 0px; /* Hides the scrollbar track */
+  background: none; /* Optional: removes background color for better invisibility */
+}
+
+/* Hide horizontal scrollbar (optional) */
+QComboBox QScrollBar:horizontal {
+  height: 0px; /* Hides the scrollbar track */
+  background: none; /* Optional: removes background color for better invisibility */
+}
+</string>
       </property>
       <property name="editable">
        <bool>false</bool>
@@ -1242,7 +1255,7 @@ QComboBox QAbstractItemView {
        <string/>
       </property>
       <property name="maxVisibleItems">
-       <number>750</number>
+       <number>5</number>
       </property>
       <property name="frame">
        <bool>true</bool>
@@ -1294,7 +1307,7 @@ padding:10px;</string>
        <rect>
         <x>295</x>
         <y>420</y>
-        <width>211</width>
+        <width>221</width>
         <height>21</height>
        </rect>
       </property>
@@ -1633,7 +1646,7 @@ color: white</string>
      <x>0</x>
      <y>0</y>
      <width>908</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
