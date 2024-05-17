@@ -80,6 +80,7 @@ class MainApp(QMainWindow, ui):
         
     def showOrders(self):
         self.tabWidget.setCurrentIndex(3)
+        self.orders_table.clear()
         ord_lst = sqlite3.connect(db_path)
         cursor = ord_lst.execute("SELECT * FROM order_data")
         result = cursor.fetchall()
@@ -110,6 +111,9 @@ class MainApp(QMainWindow, ui):
             self.orders_table.setColumnWidth(5, 90)
             if rsize > 19:
                 self.orders_table.setColumnWidth(0, 63)
+        
+    def showOrdersByDate(self):
+        pass
         
     def genOrderId(self):
         order_gen = 0

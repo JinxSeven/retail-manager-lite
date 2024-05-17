@@ -140,7 +140,7 @@ QTabBar::tab:right:only-one {
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -283,6 +283,7 @@ color: white</string>
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
@@ -376,6 +377,7 @@ border-radius: 10px;</string>
 background-color: #4c6cbf; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
@@ -424,6 +426,7 @@ background-color: #4c6cbf;
        <string notr="true">QPushButton#edit_orders_1 {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
+outline: 0;
 color: white; /* Text color */
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
@@ -464,6 +467,7 @@ background-color: #4c6cbf;
        <string notr="true">QPushButton#orders_1 {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
+outline: 0;
 color: white; /* Text color */
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
@@ -504,6 +508,7 @@ background-color: #4c6cbf;
        <string notr="true">QPushButton#logout_1 {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
+outline: 0;
 color: white; /* Text color */
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
@@ -727,6 +732,7 @@ color: white</string>
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
@@ -772,6 +778,7 @@ color: red</string>
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
@@ -824,6 +831,7 @@ color: white</string>
        <string notr="true">QPushButton#logout_2 {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
+outline: 0;
 color: white; /* Text color */
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
@@ -865,6 +873,7 @@ background-color: #4c6cbf;
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
@@ -933,6 +942,7 @@ border-radius: 10px;</string>
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
@@ -972,6 +982,7 @@ background-color: #4c6cbf;
        <string notr="true">QPushButton#edit_orders_2 {
 background-color: #4c6cbf; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
+outline: 0;
 color: white; /* Text color */
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
@@ -1128,6 +1139,7 @@ color: white</string>
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
@@ -1155,6 +1167,7 @@ background-color: #4c6cbf;
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
@@ -1387,6 +1400,7 @@ color: red;</string>
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
@@ -1429,6 +1443,7 @@ background-color: #4c6cbf;
        <string notr="true">QPushButton#order_entry_3 {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
+outline: 0;
 color: white; /* Text color */
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
@@ -1501,6 +1516,7 @@ border-radius: 10px;</string>
 background-color: #4c6cbf; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
@@ -1540,6 +1556,7 @@ background-color: #4c6cbf;
        <string notr="true">QPushButton#edit_orders_3 {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
+outline: 0;
 color: white; /* Text color */
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
