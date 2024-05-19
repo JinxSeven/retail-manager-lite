@@ -140,7 +140,7 @@ QTabBar::tab:right:only-one {
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -750,7 +750,7 @@ background-color: #4c6cbf;
       <property name="geometry">
        <rect>
         <x>626</x>
-        <y>182</y>
+        <y>181</y>
         <width>61</width>
         <height>21</height>
        </rect>
