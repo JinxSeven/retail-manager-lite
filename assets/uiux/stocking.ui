@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>908</width>
+    <width>907</width>
     <height>593</height>
    </rect>
   </property>
@@ -140,7 +140,7 @@ QTabBar::tab:right:only-one {
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -1659,8 +1659,7 @@ QTableView::viewport {
 QTableView::corner {
     background-color: #292D3E; /* Same as the QTableWidget background color */
     border-radius: 10px 0 0 0; /* Top-left rounded corner */
-}
-</string>
+}</string>
       </property>
      </widget>
      <widget class="QDateEdit" name="dateEdit">
@@ -1783,6 +1782,34 @@ QCalendarWidget QToolButton#qt_calendar_nextmonth {
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QPushButton" name="show_all">
+      <property name="geometry">
+       <rect>
+        <x>519</x>
+        <y>160</y>
+        <width>91</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#show_all {
+background-color: #6788FF; /* Background color */
+font: 63 8pt &quot;Poppins SemiBold&quot;;
+color: white; /* Text color */
+outline: 0;
+padding: 10px 20px; /* Padding for the button */
+border: none; /* Remove default button border */
+border-radius: 10px; /* Add some border-radius for a rounded appearance */
+}
+QPushButton#show_all:hover {
+cursor: pointer; /* Change cursor to pointer on hover */
+background-color: #4c6cbf;
+}</string>
+      </property>
+      <property name="text">
+       <string>Show All</string>
+      </property>
+     </widget>
      <zorder>columnView_7</zorder>
      <zorder>columnView_8</zorder>
      <zorder>orders_3</zorder>
@@ -1792,6 +1819,7 @@ QCalendarWidget QToolButton#qt_calendar_nextmonth {
      <zorder>o_head</zorder>
      <zorder>orders_table</zorder>
      <zorder>dateEdit</zorder>
+     <zorder>show_all</zorder>
     </widget>
    </widget>
   </widget>
@@ -1800,8 +1828,8 @@ QCalendarWidget QToolButton#qt_calendar_nextmonth {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>908</width>
-     <height>21</height>
+     <width>907</width>
+     <height>22</height>
     </rect>
    </property>
   </widget>

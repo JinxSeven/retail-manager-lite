@@ -22,6 +22,11 @@ class MainApp(QMainWindow, ui):
         QMainWindow.__init__(self)
         self.setupUi(self)
         self.tabWidget.setCurrentIndex(0)
+
+        self.show_all.clicked.connect(self.showOrders)
+
+        for x in range(1, 4):
+            self.tabWidget.setTabEnabled(x, False)
         
         self.login_button.clicked.connect(self.login)
         
@@ -68,12 +73,17 @@ class MainApp(QMainWindow, ui):
         if usr_pwd == "sagayam":
             self.login_info.setText("")
             self.login_input.setText("")
+            for x in range(1, 4):
+                self.tabWidget.setTabEnabled(x, True)
             self.tabWidget.setCurrentIndex(1)
+
         else:
             self.login_info.setText("Wrong Password!")
         
     def logout(self):
         self.tabWidget.setCurrentIndex(0)
+        for x in range(1, 4):
+            self.tabWidget.setTabEnabled(x, False)
         
     def showOrderEntry(self):
         self.tabWidget.setCurrentIndex(1)
@@ -118,7 +128,7 @@ class MainApp(QMainWindow, ui):
     def showOrdersByDate(self):
         self.orders_table.clear()
         ord_lst = sqlite3.connect(db_path)
-        cursor = ord_lst.execute("SELECT * FROM order_data WHERE order_date = '"+ str(self.dateEdit.date()) +"'")
+        cursor = ord_lst.execute("SELECT * FROM order_data WHERE order_date = '"+ str((self.dateEdit.date()).toPyDate()) +"'")
         result = cursor.fetchall()
         row, col = 0, 0
         for row_num, row_data in enumerate(result):
