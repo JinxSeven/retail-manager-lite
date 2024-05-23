@@ -1785,10 +1785,10 @@ QCalendarWidget QToolButton#qt_calendar_nextmonth {
      <widget class="QPushButton" name="show_all">
       <property name="geometry">
        <rect>
-        <x>519</x>
+        <x>510</x>
         <y>160</y>
         <width>91</width>
-        <height>28</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1829,7 +1829,7 @@ background-color: #4c6cbf;
      <x>0</x>
      <y>0</y>
      <width>907</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
