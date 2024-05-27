@@ -268,11 +268,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-            # oid_count = oid_db.execute("SELECT COUNT(order_id) FROM order_data")
-            # if oid_count == 0:
-            #     self.eo_input_1.setText("")
-            #     self.eo_input_3.setText("")
-            #     self.eo_input_2.setText("")
-            #     self.eo_input_4.setText("")

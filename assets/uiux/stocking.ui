@@ -1676,7 +1676,7 @@ QTableView::corner {
 QDateEdit#dateEdit {
     border-radius: 10px;
     background-color: rgb(27, 26, 56);
-    padding-left: 35px;
+    padding-left: 32px;
     color: white;
     font: 8pt &quot;Poppins&quot;;
 }
@@ -1797,7 +1797,8 @@ background-color: #6788FF; /* Background color */
 font: 63 8pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
 outline: 0;
-padding: 10px 20px; /* Padding for the button */
+padding-top: 2px;
+ /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
