@@ -66,7 +66,7 @@ This project is a GUI application developed to generate and manage customer orde
    - Select an order to view, update, or delete.
    - Make the necessary changes and save them.
 
- 3. **📋 View Orders**:
+3. **📋 View Orders**:
    - Navigate to the "Orders" section.
    - Select a date to view orders place on that day.
    - Click show all to view all orders.
