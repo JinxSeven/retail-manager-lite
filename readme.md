@@ -47,7 +47,7 @@ This project is a GUI billing application developed to create and manage custome
    ```
 
 2. **📦 Install Dependencies:**
-   Ensure you have `python` and `pip` installed. Then, install the required Python packages:
+   Install the required Python packages:
    ```bash
    pip install -r requirements.txt
    ```
