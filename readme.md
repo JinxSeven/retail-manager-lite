@@ -1,5 +1,5 @@
 
-# 🛒 Supermarket Order Management System
+# 🛒 Retail Store Billing Application
 
 This project is a GUI billing application developed to create and manage customer orders and products in supermarkets. The application leverages Python for backend logic, SqLite for database management, and qT for the user interface.
 
