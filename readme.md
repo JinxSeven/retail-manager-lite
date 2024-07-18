@@ -41,18 +41,18 @@ This project is a GUI billing application developed to create and manage custome
 
 ## Getting Started
 
-1. **📥 Clone The Repository**
+1. **📥 Clone The Repository:**
    ```bash
    git clone https://github.com/JinxSeven/Cx_Orders.git
    ```
 
-2. **📦 Install Dependencies**
+2. **📦 Install Dependencies:**
    Ensure you have `python` and `pip` installed. Then, install the required Python packages:
    ```bash
    pip install -r requirements.txt
    ```
    
-3. **📝 Install Required Fonts**
+3. **📝 Install Required Fonts:**
    Install all fonts in assets folder for better experience
    ```bash
    cd assets/native_fonts
