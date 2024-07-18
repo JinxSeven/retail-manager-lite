@@ -1,25 +1,25 @@
 
 # 🛒 Supermarket Order Management System
 
-This project is a GUI application developed to generate and manage customer orders in supermarkets. The application leverages Python for backend logic, SQLite for database management, and Qt for the graphical user interface.
+This project is a GUI billing application developed to create and manage customer orders and products in supermarkets. The application leverages Python for backend logic, SqLite for database management, and qT for the user interface.
 
 ## Features
 
 - **📝 Customer Order Generation**: Create and manage customer orders with ease.
   
-- **🔄 Order Management**: View, update, and delete existing orders.
+- **🔄 Order & Product Management**: View, update, and delete existing orders and products.
   
 - **🖥️ User-Friendly Interface**: Intuitive and easy-to-use graphical interface built with qT.
   
-- **💾 Persistent Storage**: All orders are stored in an SQLite database, ensuring data persistence.
+- **💾 Persistent Storage**: All orders are stored in an SqLite database, ensuring data persistence.
 
 ## Technologies Used
 
 - **🐍 Python**: The primary programming language used for developing the application.
   
-- **🗃️ SQLite**: A lightweight, disk-based database to store order data.
+- **🗃️ SqLite**: A lightweight, disk-based database to store order data.
   
-- **🎨 Qt**: A free and open-source widget toolkit for creating graphical user interfaces.
+- **🎨 qT**: A free and open-source widget toolkit for creating graphical user interfaces.
 
 ## Screenshots
 
@@ -39,54 +39,24 @@ This project is a GUI application developed to generate and manage customer orde
 
 ![SAGAYAM_OL](https://github.com/JinxSeven/Cx_Orders/assets/164835921/e2a47392-afea-45ee-86ce-dfab419b8575)
 
-## Installation
+## Getting Started
 
-1. **📥 Clone the repository**
+1. **📥 Clone The Repository**
    ```bash
    git clone https://github.com/JinxSeven/Cx_Orders.git
-   //Open the cloned folder
    ```
 
-2. **📦 Install dependencies**
+2. **📦 Install Dependencies**
    Ensure you have `python` and `pip` installed. Then, install the required Python packages:
    ```bash
    pip install -r requirements.txt
    ```
    
-3. **📝 Install required fonts**
-   Install all `.ttf` files according your operating system
+3. **📝 Install Required Fonts**
+   Install all fonts in assets folder for better experience
    ```bash
-   cd assets/fonts_used
+   cd assets/native_fonts
    ```
-   
-5. **🚀 Run the application**
-   ```bash
-   cd src
-   python stocking.py
-   ```
-
-## Usage
-
-1. **🆕 Create Orders**:
-   - Open the application.
-     
-   - Navigate to the "Order Entry" section.
-     
-   - Fill in the required details and click "Submit" to create a new order.
-
-2. **📝 Managing Orders**:
-   - Navigate to the "Edit Orders" section.
-     
-   - Select an order to view, update, or delete.
-     
-   - Make the necessary changes and save them.
-
-3. **📋 View Orders**:
-   - Navigate to the "Orders" section.
-     
-   - Select a date to view orders place on that day.
-     
-   - Click show all to view all orders.
 
 ## Learning Acknowledgment
 
