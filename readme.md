@@ -51,7 +51,7 @@ This project is a GUI application developed to generate and manage customer orde
 3. **🚀 Run the application**
    ```bash
    cd src
-   python stocking.py
+   python cx_orders.py
    ```
 
 ## Usage
