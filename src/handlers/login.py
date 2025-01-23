@@ -1,5 +1,3 @@
-from PyQt5.QtWidgets import QMessageBox
-
 class LoginHandler:
     def __init__(self, ui):
         self.ui = ui
