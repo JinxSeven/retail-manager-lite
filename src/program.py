@@ -8,8 +8,7 @@ from handlers.orders import OrderHandler
 from handlers.products import ProductHandler
 from handlers.initializer import Initializer
 
-ui, _ = loadUiType('assets/uiux/sms.ui')
-popup, _ = loadUiType('assets/uiux/popup.ui')
+ui, _ = loadUiType('assets/uiux/rma.ui')
 
 class MainApp(QMainWindow, ui):
     def __init__(self):

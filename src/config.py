@@ -1,3 +1,3 @@
 import os
 
-DB_PATH = os.path.join('database/', 'sms.db')
+DB_PATH = os.path.join('database/', 'rma.db')
