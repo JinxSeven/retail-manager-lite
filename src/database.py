@@ -8,26 +8,15 @@ def initialize_db():
         conn.execute("""
             CREATE TABLE IF NOT EXISTS product_data (
                 product_id INTEGER PRIMARY KEY AUTOINCREMENT,
-                product_name TEXT NOT NULL,
+                product_name TEXT NOT NULL UNIQUE,
                 cost_price REAL NOT NULL,
                 selling_price REAL NOT NULL,
                 quantity INTEGER NOT NULL DEFAULT 0
             )
         """)
-        conn.execute("""
-            CREATE TABLE IF NOT EXISTS order_data (
-                order_id INTEGER PRIMARY KEY AUTOINCREMENT,
-                cx_name TEXT NOT NULL,
-                cx_phno TEXT,
-                product_id INTEGER,
-                quantity INTEGER NOT NULL,
-                order_date TEXT NOT NULL,
-                FOREIGN KEY (product_id) REFERENCES product_data(product_id)
-            )
-        """)
         conn.commit()
-        print(Color.GREEN + "Database Initialized Successfully!" + Color.RESET)
-    except Exception as e:
-        print(Color.RED + f"Error initializing database: {e}" + Color.RESET)
+        print(Color.GREEN + "Initialized database successfully!" + Color.GREEN)
+    except Exception as ex:
+        print(Color.RED + f"An error occurred while initializing database: {ex}" + Color.RED)
     finally:
         conn.close()

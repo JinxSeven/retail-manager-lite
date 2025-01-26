@@ -1,0 +1,25 @@
+* {
+    transition: all 0.3s;
+    background-color: #800402;
+}
+
+QDialog {
+    background-color: #333333; /* Dark background */
+}
+QLabel {
+    color: #EEEEEE;
+    font-family: 'Poppins'
+}
+QPushButton {
+    background-color: #555555; /* Slightly lighter button background */
+    border: 1px solid #777777; /* Darker border */
+    color: #EEEEEE;
+    padding: 5px;
+    border-radius: 3px;
+}
+QPushButton:hover {
+    background-color: #666666; /* Darker background on hover */
+}
+QPushButton:pressed {
+    background-color: #444444; /* Even darker on press */
+}

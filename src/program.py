@@ -6,8 +6,10 @@ from database import initialize_db
 from handlers.login import LoginHandler
 from handlers.orders import OrderHandler
 from handlers.products import ProductHandler
+from handlers.initializer import Initializer
 
 ui, _ = loadUiType('assets/uiux/sms.ui')
+popup, _ = loadUiType('assets/uiux/popup.ui')
 
 class MainApp(QMainWindow, ui):
     def __init__(self):
@@ -16,8 +18,9 @@ class MainApp(QMainWindow, ui):
         initialize_db()
 
         self.login_handler = LoginHandler(self)
-        self.order_handler = OrderHandler(self)
+        # self.order_handler = OrderHandler(self)
         self.product_handler = ProductHandler(self)
+        self.initializer_handler = Initializer(self)
 
 def main():
     app = QApplication(sys.argv)
