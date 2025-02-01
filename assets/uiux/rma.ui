@@ -145,7 +145,7 @@ QTabBar::tab:right:only-one {
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -247,7 +247,7 @@ color: white</string>
 font: 14pt &quot;Poppins&quot;;
 border-radius: 10px;
 background-color:rgb(27, 26, 56);
-padding:10px;</string>
+padding: 7px 12px;</string>
       </property>
       <property name="text">
        <string/>
@@ -684,7 +684,7 @@ background-color: #4c6cbf;
 }</string>
       </property>
       <property name="text">
-       <string>Clr</string>
+       <string>--</string>
       </property>
      </widget>
      <widget class="QLabel" name="order_id">
@@ -2040,7 +2040,7 @@ color: white</string>
 font: 12pt &quot;Poppins&quot;;
 border-radius: 10px;
 background-color:rgb(20, 31, 69);
-padding:10px;</string>
+padding: 7px 12px;</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="prodAddSellingPriceInp">
@@ -2057,7 +2057,7 @@ padding:10px;</string>
 font: 12pt &quot;Poppins&quot;;
 border-radius: 10px;
 background-color:rgb(20, 31, 69);
-padding:10px;</string>
+padding: 7px 12px;</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="prodAddCostPriceInp">
@@ -2074,7 +2074,7 @@ padding:10px;</string>
 font: 12pt &quot;Poppins&quot;;
 border-radius: 10px;
 background-color:rgb(20, 31, 69);
-padding:10px;</string>
+padding: 7px 12px;</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_13">
@@ -2181,7 +2181,7 @@ color: white</string>
 font: 12pt &quot;Poppins&quot;;
 border-radius: 10px;
 background-color:rgb(20, 31, 69);
-padding:10px;</string>
+padding: 7px 12px;</string>
        </property>
       </widget>
      </widget>
@@ -2271,7 +2271,7 @@ color: white</string>
 font: 12pt &quot;Poppins&quot;;
 border-radius: 10px;
 background-color:rgb(27, 26, 56);
-padding:10px;</string>
+padding: 7px 12px;</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="prodModSellingPriceInp">
@@ -2288,7 +2288,7 @@ padding:10px;</string>
 font: 12pt &quot;Poppins&quot;;
 border-radius: 10px;
 background-color:rgb(27, 26, 56);
-padding:10px;</string>
+padding: 7px 12px;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="prodModUpdateBtn">
@@ -2368,7 +2368,7 @@ background-color: #800402;
 font: 12pt &quot;Poppins&quot;;
 border-radius: 10px;
 background-color:rgb(27, 26, 56);
-padding:10px;</string>
+padding: 7px 12px;</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_11">
@@ -2403,9 +2403,7 @@ color: white</string>
   border-radius: 10px;
   background-color: rgb(27, 26, 56);
   font: 63 12pt &quot;Poppins SemiBold&quot;;
-  padding: 7px;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 7px 12px;
   color: white;
 }
 
@@ -2493,7 +2491,7 @@ color: #27e86f;</string>
       <property name="geometry">
        <rect>
         <x>280</x>
-        <y>417</y>
+        <y>420</y>
         <width>112</width>
         <height>41</height>
        </rect>
@@ -2503,7 +2501,10 @@ color: #27e86f;</string>
 font: 12pt &quot;Poppins&quot;;
 border-radius: 10px;
 background-color:rgb(27, 26, 56);
-padding:10px;</string>
+padding: 7px 12px;</string>
+      </property>
+      <property name="text">
+       <string/>
       </property>
       <property name="readOnly">
        <bool>true</bool>
