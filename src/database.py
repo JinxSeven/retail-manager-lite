@@ -7,7 +7,7 @@ def initialize_db():
         conn = sqlite3.connect(DB_PATH)
         conn.execute("""
             CREATE TABLE IF NOT EXISTS product_data (
-                product_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                product_id TEXT PRIMARY KEY,
                 product_name TEXT NOT NULL UNIQUE,
                 cost_price REAL NOT NULL,
                 selling_price REAL NOT NULL,

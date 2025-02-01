@@ -1,15 +1,21 @@
 import sqlite3
-from src.config import  DB_PATH
+import uuid
+
+from src.config import DB_PATH
 from PyQt5 import QtCore
 from src.utils.color import Color
-from PyQt5.QtWidgets import QTableWidgetItem, QMessageBox
-
+from src.utils.services import Services
 
 class ProductHandler:
     def __init__(self, ui):
         self.ui = ui
+        self.services = Services()
+        
+        self.services.load_combobox(self.ui.prodModNameSel, "SELECT product_name FROM product_data")
+        self.load_product_details()
         self.ui.prodAddBtn.clicked.connect(self.add_new_product)
-        # self.ui.select_proid_2.currentIndexChanged.connect(self.load_product_details)
+        self.ui.prodModDeleteBtn.clicked.connect(self.delete_product)
+        self.ui.prodModNameSel.currentIndexChanged.connect(self.load_product_details)
 
     def add_new_product(self):
         try:
@@ -17,29 +23,28 @@ class ProductHandler:
             cp = float(self.ui.prodAddCostPriceInp.text())
             sp = float(self.ui.prodAddSellingPriceInp.text())
             quantity = int(self.ui.prodAddQuantityInp.text())
+            id = str(uuid.uuid4())
         except ValueError:
             self.ui.prodModPosInfoLbl.clear()
-            self.ui.prodModNegInfoLbl.setAlignment(QtCore.Qt.AlignCenter)
-            self.ui.prodModNegInfoLbl.setText('Invalid Input')
+            self.services.display_info(self.ui.prodModNegInfoLbl, 'Invalid Input')
             return
-
+        
         try:
             conn = sqlite3.connect(DB_PATH)
             conn.execute(
-                "INSERT INTO product_data (product_name, cost_price, selling_price, quantity) VALUES (?, ?, ?, ?)",
-                (name, cp, sp, quantity)
+                "INSERT INTO product_data (product_id, product_name, cost_price, selling_price, quantity) VALUES (?, ?, ?, ?, ?)",
+                (id, name, cp, sp, quantity)
             )
             conn.commit()
             conn.close()
             
             self.ui.prodModNegInfoLbl.clear()
-            self.ui.prodModPosInfoLbl.setAlignment(QtCore.Qt.AlignCenter)
-            self.ui.prodModPosInfoLbl.setText('Product added successfully')
-            # self.load_product_ids()
+            self.services.display_info(self.ui.prodModPosInfoLbl, 'Product added successfully!')
+            self.services.load_combobox(self.ui.prodModNameSel, "SELECT product_name FROM product_data")
+            # self.load_product_details()
         except sqlite3.Error as ex:
             self.ui.prodModPosInfoLbl.clear()
-            self.ui.prodModNegInfoLbl.setAlignment(QtCore.Qt.AlignCenter)
-            self.ui.prodModNegInfoLbl.setText('Product might already exist ✖')
+            self.services.display_info(self.ui.prodModNegInfoLbl, 'Product might already exist!')
             print(Color.RED + f"An error occurred while adding product: {ex}" + Color.RED)
             return
         finally:
@@ -48,28 +53,36 @@ class ProductHandler:
             self.ui.prodAddSellingPriceInp.clear()
             self.ui.prodAddQuantityInp.clear()
 
-    # def load_product_ids(self):
-    #     try:
-    #         self.ui.select_proid_2.clear()
-    #         conn = sqlite3.connect(DB_PATH)
-    #         cursor = conn.execute("SELECT product_id FROM product_data")
-    #         products = cursor.fetchall()
-    #         for product in products:
-    #             self.ui.select_proid_2.addItem(str(product[0]))
-    #         conn.close()
-    #     except Exception as ex:
-    #         print(f"Error loading product IDs: {ex}")
-
-    # def load_product_details(self):
-    #     try:
-    #         conn = sqlite3.connect(DB_PATH)
-    #         product_id = self.ui.select_proid_2.currentText()
-    #         cursor = conn.execute("SELECT * FROM product_data WHERE product_id=?", (product_id,))
-    #         result = cursor.fetchone()
-    #         if result:
-    #             self.ui.prodModName.setText(result[1])
-    #             self.ui.prodModcp.setText(str(result[2]))
-    #             self.ui.prodModsp.setText(str(result[3]))
-    #         conn.close()
-    #     except Exception as ex:
-    #         print(f"Error loading product details: {ex}")
+    def delete_product(self):
+        name = self.ui.prodModNameSel.currentText()
+        id = self.ui.prodModIdInp.text()
+        proceed = self.services.alert_messagebox("Product Mod", f"Do you want to proceed deleting {name}?")
+        if not proceed:
+            return
+        try:
+            with sqlite3.connect(DB_PATH) as conn:
+                conn.execute("DELETE FROM product_data WHERE product_id=?", (id,))
+                conn.commit()
+                
+            self.ui.prodModPosInfoLbl.clear()
+            self.services.display_info(self.ui.prodModNegInfoLbl, 'Product deleted successfully!')
+            self.services.load_combobox(self.ui.prodModNameSel, "SELECT product_name FROM product_data")
+        except sqlite3.Error as ex:
+            print(Color.RED + f"An error occurred while deleting product: {ex}")
+            self.ui.prodModPosInfoLbl.clear()
+            self.services.display_info(self.ui.prodModNegInfoLbl, 'Could not delete product')
+            
+    def load_product_details(self):
+        try:
+            conn = sqlite3.connect(DB_PATH)
+            selected_name = self.ui.prodModNameSel.currentText()
+            cursor = conn.execute("SELECT * FROM product_data WHERE product_name=?", (selected_name,))
+            result = cursor.fetchone()
+            if result:
+                self.ui.prodModIdInp.setText(str(result[0]))
+                self.ui.prodModCostPriceInp.setText(str(result[2]))
+                self.ui.prodModSellingPriceInp.setText(str(result[3]))
+                self.ui.prodModQuantityInp.setText(str(result[4]))
+            conn.close()
+        except Exception as ex:
+            print(Color.RED + f"An error occurred while adding product: {ex}" + Color.RED)

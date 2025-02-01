@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>977</width>
+    <width>990</width>
     <height>728</height>
    </rect>
   </property>
@@ -16,7 +16,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Retail Management System</string>
+   <string>JinxSeven</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -313,9 +313,9 @@ background-color: #4c6cbf;
      <widget class="QLabel" name="loginInfoLbl">
       <property name="geometry">
        <rect>
-        <x>150</x>
+        <x>105</x>
         <y>394</y>
-        <width>161</width>
+        <width>241</width>
         <height>21</height>
        </rect>
       </property>
@@ -1117,12 +1117,12 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../images/logout.png</normaloff>../images/logout.png</iconset>
+        <normaloff>../images/logout.svg</normaloff>../images/logout.svg</iconset>
       </property>
       <property name="iconSize">
        <size>
-        <width>75</width>
-        <height>75</height>
+        <width>30</width>
+        <height>35</height>
        </size>
       </property>
      </widget>
@@ -1158,12 +1158,12 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../images/order_entry.png</normaloff>../images/order_entry.png</iconset>
+        <normaloff>../images/shopping.svg</normaloff>../images/shopping.svg</iconset>
       </property>
       <property name="iconSize">
        <size>
-        <width>75</width>
-        <height>75</height>
+        <width>35</width>
+        <height>35</height>
        </size>
       </property>
      </widget>
@@ -1230,12 +1230,12 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../images/orders.png</normaloff>../images/orders.png</iconset>
+        <normaloff>../images/receipt.svg</normaloff>../images/receipt.svg</iconset>
       </property>
       <property name="iconSize">
        <size>
-        <width>75</width>
-        <height>75</height>
+        <width>30</width>
+        <height>35</height>
        </size>
       </property>
      </widget>
@@ -1271,12 +1271,12 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../images/edit_order.png</normaloff>../images/edit_order.png</iconset>
+        <normaloff>../images/shelves.svg</normaloff>../images/shelves.svg</iconset>
       </property>
       <property name="iconSize">
        <size>
-        <width>75</width>
-        <height>75</height>
+        <width>35</width>
+        <height>35</height>
        </size>
       </property>
      </widget>
@@ -1661,12 +1661,12 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../images/add_prod.png</normaloff>../images/add_prod.png</iconset>
+        <normaloff>../images/clipboard-list.svg</normaloff>../images/clipboard-list.svg</iconset>
       </property>
       <property name="iconSize">
        <size>
-        <width>75</width>
-        <height>75</height>
+        <width>30</width>
+        <height>35</height>
        </size>
       </property>
      </widget>
@@ -1757,12 +1757,12 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../images/logout.png</normaloff>../images/logout.png</iconset>
+        <normaloff>../images/logout.svg</normaloff>../images/logout.svg</iconset>
       </property>
       <property name="iconSize">
        <size>
-        <width>75</width>
-        <height>75</height>
+        <width>30</width>
+        <height>35</height>
        </size>
       </property>
      </widget>
@@ -1883,12 +1883,12 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../images/orders.png</normaloff>../images/orders.png</iconset>
+        <normaloff>../images/receipt.svg</normaloff>../images/receipt.svg</iconset>
       </property>
       <property name="iconSize">
        <size>
-        <width>75</width>
-        <height>75</height>
+        <width>35</width>
+        <height>35</height>
        </size>
       </property>
      </widget>
@@ -2098,6 +2098,11 @@ border-radius: 10px; /* Add some border-radius for a rounded appearance */
 QPushButton#prodAddBtn:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
+}
+QPushButton#prodAddBtn:pressed,  /* Or QPushButton#prodAddBtn:active */
+QPushButton#prodAddBtn:checked { /* If using checkable buttons */
+    background-color: #335599; /* Example darker blue active color */
+    /* Add other styles as needed, e.g., border, text color */
 }</string>
        </property>
        <property name="text">
@@ -2308,7 +2313,7 @@ background-color: #800402;
        <rect>
         <x>50</x>
         <y>417</y>
-        <width>161</width>
+        <width>211</width>
         <height>41</height>
        </rect>
       </property>
@@ -2419,6 +2424,44 @@ color: #27e86f;</string>
       </property>
       <property name="text">
        <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="prodModIdInp">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>417</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+font: 12pt &quot;Poppins&quot;;
+border-radius: 10px;
+background-color:rgb(27, 26, 56);
+padding:10px;</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>283</x>
+        <y>386</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white</string>
+      </property>
+      <property name="text">
+       <string>Id</string>
       </property>
      </widget>
     </widget>
@@ -2913,7 +2956,7 @@ background-color: #4c6cbf;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>977</width>
+     <width>990</width>
      <height>21</height>
     </rect>
    </property>
