@@ -15,8 +15,7 @@ def initialize_db():
             )
         """)
         conn.commit()
+        conn.close()
         print(Color.GREEN + "Initialized database successfully!" + Color.GREEN)
     except Exception as ex:
         print(Color.RED + f"An error occurred while initializing database: {ex}" + Color.RED)
-    finally:
-        conn.close()

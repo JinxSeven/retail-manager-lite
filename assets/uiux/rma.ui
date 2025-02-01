@@ -6,13 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>990</width>
-    <height>728</height>
+    <width>999</width>
+    <height>736</height>
    </rect>
   </property>
   <property name="font">
    <font>
     <family>Poppins</family>
+    <pointsize>12</pointsize>
    </font>
   </property>
   <property name="windowTitle">
@@ -144,7 +145,7 @@ QTabBar::tab:right:only-one {
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -281,6 +282,9 @@ color: white</string>
         <width>241</width>
         <height>41</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton#loginBtn {
@@ -1734,6 +1738,9 @@ border-radius: 10px;</string>
         <height>61</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="toolTip">
        <string>Logout</string>
       </property>
@@ -1775,6 +1782,9 @@ background-color: #4c6cbf;
         <height>61</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="toolTip">
        <string>Logout</string>
       </property>
@@ -1815,6 +1825,9 @@ background-color: #4c6cbf;
         <width>111</width>
         <height>61</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="toolTip">
        <string>Order Entry</string>
@@ -1860,6 +1873,9 @@ background-color: #4c6cbf;
         <height>61</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="toolTip">
        <string>Orders</string>
       </property>
@@ -1901,6 +1917,9 @@ background-color: #4c6cbf;
         <height>61</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="toolTip">
        <string>Edit Orders</string>
       </property>
@@ -1941,6 +1960,15 @@ background-color: #4c6cbf;
         <width>411</width>
         <height>341</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">    border-radius: 10px;
@@ -1998,6 +2026,15 @@ color: white</string>
          <height>45</height>
         </rect>
        </property>
+       <property name="font">
+        <font>
+         <family>Poppins</family>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">color: white;
 font: 12pt &quot;Poppins&quot;;
@@ -2009,7 +2046,7 @@ padding:10px;</string>
       <widget class="QLineEdit" name="prodAddSellingPriceInp">
        <property name="geometry">
         <rect>
-         <x>221</x>
+         <x>219</x>
          <y>180</y>
          <width>171</width>
          <height>45</height>
@@ -2085,6 +2122,9 @@ color: white</string>
          <height>41</height>
         </rect>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
         <string notr="true">QPushButton#prodAddBtn {
 background-color: #6788FF; /* Background color */
@@ -2157,7 +2197,7 @@ padding:10px;</string>
       <property name="styleSheet">
        <string notr="true">background-color:rgba(255, 255, 255, 0);
 font: 63 30pt &quot;Poppins SemiBold&quot;;
-color: white</string>
+color: white;</string>
       </property>
       <property name="text">
        <string>Product Mod</string>
@@ -2256,9 +2296,12 @@ padding:10px;</string>
        <rect>
         <x>180</x>
         <y>480</y>
-        <width>211</width>
+        <width>210</width>
         <height>41</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton#prodModUpdateBtn {
@@ -2284,9 +2327,12 @@ background-color: #4c6cbf;
        <rect>
         <x>50</x>
         <y>480</y>
-        <width>111</width>
+        <width>112</width>
         <height>41</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton#prodModDeleteBtn {
@@ -2313,7 +2359,7 @@ background-color: #800402;
        <rect>
         <x>50</x>
         <y>417</y>
-        <width>211</width>
+        <width>210</width>
         <height>41</height>
        </rect>
       </property>
@@ -2357,9 +2403,10 @@ color: white</string>
   border-radius: 10px;
   background-color: rgb(27, 26, 56);
   font: 63 12pt &quot;Poppins SemiBold&quot;;
-  padding-top: 3px;
+  padding: 7px;
   padding-left: 12px;
-  color: red;
+  padding-right: 12px;
+  color: white;
 }
 
 QComboBox#prodModNameSel::drop-down {
@@ -2375,6 +2422,16 @@ QComboBox QAbstractItemView {
   color: red;
 }
 
+QComboBox QAbstractItemView::item {
+    background-color: rgb(27, 26, 56); /* Background of each item */
+    color: red; /* Text color for non-selected items */
+}
+
+QComboBox QAbstractItemView::item:selected {
+    background-color: rgb(50, 50, 100); /* Background of the selected item */
+    color: white; /* Text color for the selected item */
+}
+
 /* Hide vertical scrollbar */
 QComboBox QScrollBar:vertical {
   width: 0px; /* Hides the scrollbar track */
@@ -2386,6 +2443,12 @@ QComboBox QScrollBar:horizontal {
   height: 0px; /* Hides the scrollbar track */
   background: none; /* Optional: removes background color for better invisibility */
 }</string>
+      </property>
+      <property name="editable">
+       <bool>true</bool>
+      </property>
+      <property name="currentText">
+       <string/>
       </property>
      </widget>
      <widget class="QLabel" name="prodModNegInfoLbl">
@@ -2431,12 +2494,12 @@ color: #27e86f;</string>
        <rect>
         <x>280</x>
         <y>417</y>
-        <width>111</width>
+        <width>112</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;
+       <string notr="true">color: red;
 font: 12pt &quot;Poppins&quot;;
 border-radius: 10px;
 background-color:rgb(27, 26, 56);
@@ -2956,7 +3019,7 @@ background-color: #4c6cbf;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>990</width>
+     <width>999</width>
      <height>21</height>
     </rect>
    </property>
