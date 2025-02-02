@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>999</width>
-    <height>736</height>
+    <width>988</width>
+    <height>725</height>
    </rect>
   </property>
   <property name="font">
@@ -145,7 +145,7 @@ QTabBar::tab:right:only-one {
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -2028,7 +2028,7 @@ color: white</string>
        </property>
        <property name="font">
         <font>
-         <family>Poppins</family>
+         <family>Poppins SemiBold</family>
          <pointsize>12</pointsize>
          <weight>50</weight>
          <italic>false</italic>
@@ -2037,7 +2037,7 @@ color: white</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: white;
-font: 12pt &quot;Poppins&quot;;
+font: 12pt &quot;Poppins SemiBold&quot;;
 border-radius: 10px;
 background-color:rgb(20, 31, 69);
 padding: 7px 12px;</string>
@@ -2054,7 +2054,7 @@ padding: 7px 12px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: white;
-font: 12pt &quot;Poppins&quot;;
+font: 12pt &quot;Poppins SemiBold&quot;;
 border-radius: 10px;
 background-color:rgb(20, 31, 69);
 padding: 7px 12px;</string>
@@ -2071,7 +2071,7 @@ padding: 7px 12px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: white;
-font: 12pt &quot;Poppins&quot;;
+font: 12pt &quot;Poppins SemiBold&quot;;
 border-radius: 10px;
 background-color:rgb(20, 31, 69);
 padding: 7px 12px;</string>
@@ -2178,7 +2178,7 @@ color: white</string>
        </property>
        <property name="styleSheet">
         <string notr="true">color: white;
-font: 12pt &quot;Poppins&quot;;
+font: 12pt &quot;Poppins SemiBold&quot;;
 border-radius: 10px;
 background-color:rgb(20, 31, 69);
 padding: 7px 12px;</string>
@@ -2268,7 +2268,7 @@ color: white</string>
       </property>
       <property name="styleSheet">
        <string notr="true">color: white;
-font: 12pt &quot;Poppins&quot;;
+font: 12pt &quot;Poppins SemiBold&quot;;
 border-radius: 10px;
 background-color:rgb(27, 26, 56);
 padding: 7px 12px;</string>
@@ -2285,7 +2285,7 @@ padding: 7px 12px;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">color: white;
-font: 12pt &quot;Poppins&quot;;
+font: 12pt &quot;Poppins SemiBold&quot;;
 border-radius: 10px;
 background-color:rgb(27, 26, 56);
 padding: 7px 12px;</string>
@@ -2294,9 +2294,9 @@ padding: 7px 12px;</string>
      <widget class="QPushButton" name="prodModUpdateBtn">
       <property name="geometry">
        <rect>
-        <x>180</x>
+        <x>160</x>
         <y>480</y>
-        <width>210</width>
+        <width>121</width>
         <height>41</height>
        </rect>
       </property>
@@ -2327,7 +2327,7 @@ background-color: #4c6cbf;
        <rect>
         <x>50</x>
         <y>480</y>
-        <width>112</width>
+        <width>91</width>
         <height>41</height>
        </rect>
       </property>
@@ -2359,13 +2359,13 @@ background-color: #800402;
        <rect>
         <x>50</x>
         <y>417</y>
-        <width>210</width>
+        <width>161</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">color: white;
-font: 12pt &quot;Poppins&quot;;
+font: 12pt &quot;Poppins SemiBold&quot;;
 border-radius: 10px;
 background-color:rgb(27, 26, 56);
 padding: 7px 12px;</string>
@@ -2398,11 +2398,14 @@ color: white</string>
         <height>41</height>
        </rect>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::ClickFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true">QComboBox#prodModNameSel {
   border-radius: 10px;
   background-color: rgb(27, 26, 56);
-  font: 63 12pt &quot;Poppins SemiBold&quot;;
+  font: 12pt &quot;Poppins SemiBold&quot;;
   padding: 7px 12px;
   color: white;
 }
@@ -2412,22 +2415,13 @@ QComboBox#prodModNameSel::drop-down {
 }
 
 QComboBox QAbstractItemView {
-  background-color: rgb(27, 26, 56);
+  background-color: #292D3E;
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 12px;
   padding-right:12px;
-  color: red;
-}
-
-QComboBox QAbstractItemView::item {
-    background-color: rgb(27, 26, 56); /* Background of each item */
-    color: red; /* Text color for non-selected items */
-}
-
-QComboBox QAbstractItemView::item:selected {
-    background-color: rgb(50, 50, 100); /* Background of the selected item */
-    color: white; /* Text color for the selected item */
+  border-radius: 10px;
+  color: white;
 }
 
 /* Hide vertical scrollbar */
@@ -2490,15 +2484,15 @@ color: #27e86f;</string>
      <widget class="QLineEdit" name="prodModIdInp">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>420</y>
-        <width>112</width>
+        <x>230</x>
+        <y>417</y>
+        <width>161</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">color: red;
-font: 12pt &quot;Poppins&quot;;
+font: 12pt &quot;Poppins SemiBold&quot;;
 border-radius: 10px;
 background-color:rgb(27, 26, 56);
 padding: 7px 12px;</string>
@@ -2513,7 +2507,7 @@ padding: 7px 12px;</string>
      <widget class="QLabel" name="label_16">
       <property name="geometry">
        <rect>
-        <x>283</x>
+        <x>233</x>
         <y>386</y>
         <width>91</width>
         <height>20</height>
@@ -2526,6 +2520,38 @@ color: white</string>
       </property>
       <property name="text">
        <string>Id</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="prodModResetBtn">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>480</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#prodModResetBtn {
+background-color: #e6a900; /* Background color */
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white; /* Text color */
+outline: 0;
+padding: 10px 20px; /* Padding for the button */
+border: none; /* Remove default button border */
+border-radius: 10px; /* Add some border-radius for a rounded appearance */
+transition: all 0.3s;
+}
+QPushButton#prodModResetBtn:hover {
+cursor: pointer; /* Change cursor to pointer on hover */
+background-color: #b38400;
+}</string>
+      </property>
+      <property name="text">
+       <string>Reset</string>
       </property>
      </widget>
     </widget>
@@ -3020,7 +3046,7 @@ background-color: #4c6cbf;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>999</width>
+     <width>988</width>
      <height>21</height>
     </rect>
    </property>

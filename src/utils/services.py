@@ -5,7 +5,7 @@ from .color import Color
 from PyQt5 import QtCore
 
 class Services:
-    def alert_messagebox(self, title: str, message: str) -> bool:
+    def confirmation_messagebox(self, title: str, message: str) -> bool:
         msg = QMessageBox()
     
         msg.setWindowTitle(title)
