@@ -14,7 +14,7 @@ class LoginHandler:
         usr_pwd = self.ui.loginInp.text()
         if usr_pwd == "Login@123":
             self.initializer.enableTabs()
-            self.ui.tabWidget.setCurrentIndex(3)
+            self.ui.tabWidget.setCurrentIndex(1)
             self.ui.tabWidget.setTabEnabled(0, False)
         else:
             self.services.display_info(self.ui.loginInfoLbl, 'Incorrect Password')
