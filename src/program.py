@@ -17,7 +17,7 @@ class MainApp(QMainWindow, ui):
         initialize_db()
 
         self.login_handler = LoginHandler(self)
-        # self.order_handler = OrderHandler(self)
+        self.order_handler = OrderHandler(self)
         self.product_handler = ProductHandler(self)
         self.initializer_handler = Initializer(self)
 
