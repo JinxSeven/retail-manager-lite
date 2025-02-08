@@ -43,7 +43,7 @@ class ProductHandler:
             stock = int(self.ui.prodAddQuantityInp.text())
             id = str(uuid.uuid4())
         except ValueError:
-            self.services.display_info(self.ui.prodModInfoLbl, 'Input type mismatch, adding failed!', 'red')
+            self.services.display_info(self.ui.prodModInfoLbl, 'Input type mismatch!', 'red')
             return
         
         try:
@@ -74,7 +74,7 @@ class ProductHandler:
                 cursor = conn.execute("SELECT product_name FROM products WHERE product_id = ?", (id,))
                 name = cursor.fetchone()
         except sqlite3.Error as ex:
-            print(Color.RED + f"An error occurred while fetching data: {ex}")
+            print(Color.RED + f"An error occurred while fetching data: {ex}" + Color.RED)
         proceed = self.services.confirmation_messagebox("Product Mod", f"Do you want to proceed deleting {name[0]}?")
         if not proceed:
             return
@@ -87,7 +87,7 @@ class ProductHandler:
             self.services.display_info(self.ui.prodModInfoLbl, 'Product deleted successfully!', 'red')
             self.services.load_combobox(self.ui.prodModNameSel, "SELECT product_name FROM products")
         except sqlite3.Error as ex:
-            print(Color.RED + f"An error occurred while deleting product: {ex}")
+            print(Color.RED + f"An error occurred while deleting product: {ex}" + Color.RED)
             self.services.display_info(self.ui.prodModInfoLbl, 'Could not delete product', 'red')
     
     def update_product(self):
@@ -99,7 +99,7 @@ class ProductHandler:
             stock = int(self.ui.prodModQuantityInp.text())
         except ValueError:
             self.ui.prodModInfoLbl.clear()
-            self.services.display_info(self.ui.prodModInfoLbl, 'Input type mismatch, update failed!', 'red')
+            self.services.display_info(self.ui.prodModInfoLbl, 'Input type mismatch!', 'red')
             return
         
         try:
@@ -124,7 +124,7 @@ class ProductHandler:
             self.ui.prodModInfoLbl.clear()
             self.services.display_info(self.ui.prodModInfoLbl, 'Could not update product!', 'red')
         except Exception as ex:
-            print(Color.RED + f"An error occurred while updating product: {ex}")
+            print(Color.RED + f"An error occurred while updating product: {ex}" + Color.RED)
     
     def reset_changes(self):
         id = self.ui.prodModIdInp.text()
@@ -133,7 +133,7 @@ class ProductHandler:
                 cursor = conn.execute("SELECT * FROM products WHERE product_id = ?", (id,))
                 result = cursor.fetchone()
         except sqlite3.Error as ex:
-            print(Color.RED + f"An error occurred while fetching data: {ex}")
+            print(Color.RED + f"An error occurred while fetching data: {ex}" + Color.RESET)
         proceed = self.services.confirmation_messagebox("Product Mod", f"Do you want to reset temporary changes made towards {str(result[1])}?")
         if not proceed:
             return

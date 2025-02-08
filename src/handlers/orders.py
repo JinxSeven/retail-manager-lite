@@ -2,6 +2,7 @@ import sqlite3
 import secrets
 import datetime
 from src.config import DB_PATH
+from src.utils.color import Color
 from src.utils.services import Services
 from PyQt5.QtWidgets import QTableWidgetItem
 
@@ -18,14 +19,33 @@ class OrderHandler:
     def generate_order_id(self):
         self.ui.orderIdLbl.setText(str(secrets.token_hex(8)))
 
-    # def add_order(self):
-    #     try:
-    #         order_id = self.ui.orderIdLbl.text()
-    #         product_name = self.ui.prodOrdNameSel.currentText()
-    #         cx_phone_number = int(self.ui.prodOrdPhoneInp.text())
-    #         quantity = int(self.ui.prodOrdQuantInp.text())
-    #     except ValueError:
-            
+    def add_product_to_bill(self):
+        try:
+            order_id = self.ui.orderIdLbl.text()
+            product_name = self.ui.prodOrdNameSel.currentText()
+            cx_phone_number = int(self.ui.prodOrdPhoneInp.text())
+            quantity = int(self.ui.prodOrdQuantInp.text())
+        except ValueError as ex:
+            self.services.display_info(self.ui.prodOrdInfoLbl, "Input type mismatch!", 'red')
+            print(Color.RED + f"Input Exception: {ex}" + Color.RED)
+            return
+
+        try:
+            with sqlite3.connect(DB_PATH) as conn:
+                cursor = conn.execute("SELECT 1 FROM orders WHERE order_id = ?", (order_id,))
+                newOrder: bool = cursor.fetchone() is None
+                # FIXME - Pick it up from here
+                cursor = conn.execute("SELECT selling_price FROM products WHERE product_name = ?", (product_name,))
+                result = cursor.fetchone()
+                total = float(result[0]) * quantity
+                conn.close()
+        except sqlite3.Error as ex:
+            print(Color.RED + f"SQLite Exception: {ex}" + Color.RED)
+        except Exception as ex:
+            print(Color.RED + f"Regular Exception: {ex}" + Color.RED)
+            return
+                
+                
     
     # def showOrders(self):
     #     self.tabWidget.setCurrentIndex(3)
