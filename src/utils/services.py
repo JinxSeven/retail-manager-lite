@@ -1,4 +1,6 @@
 import sqlite3
+import time
+
 from PyQt5.QtWidgets import QMessageBox, QComboBox
 from src.config import DB_PATH
 from .color import Color
@@ -56,6 +58,8 @@ class Services:
         except Exception as ex:
                 print(Color.RED + f"An unexpected error occurred: {ex}" + Color.RED)
                 
-    def display_info(self, label, info):
-        label.setAlignment(QtCore.Qt.AlignCenter)
+    def display_info(self, label, info, color = 'blue'):
         label.setText(info)
+        existing_style = label.styleSheet()
+        label.setStyleSheet(existing_style + f"color: {color};")
+        QtCore.QTimer.singleShot(3000, label.clear)
