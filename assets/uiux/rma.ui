@@ -36,7 +36,7 @@
       <x>50</x>
       <y>20</y>
       <width>881</width>
-      <height>611</height>
+      <height>621</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -145,7 +145,7 @@ QTabBar::tab:right:only-one {
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -331,6 +331,9 @@ color: red</string>
       <property name="text">
        <string/>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
@@ -343,7 +346,7 @@ color: red</string>
         <x>16</x>
         <y>20</y>
         <width>851</width>
-        <height>551</height>
+        <height>561</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -577,7 +580,7 @@ color: white</string>
        <string>Cx Phone No</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="cxPhoneNumInp">
+     <widget class="QLineEdit" name="prodOrdPhoneInp">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -588,10 +591,10 @@ color: white</string>
       </property>
       <property name="styleSheet">
        <string notr="true">color: white;
-font: 12pt &quot;Poppins&quot;;
+font: 12pt &quot;Poppins SemiBold&quot;;
 border-radius: 10px;
 background-color:rgb(27, 26, 56);
-padding:10px;</string>
+padding: 7px 12px;</string>
       </property>
       <property name="text">
        <string/>
@@ -603,9 +606,9 @@ padding:10px;</string>
      <widget class="QLabel" name="prodQuantLable">
       <property name="geometry">
        <rect>
-        <x>233</x>
+        <x>285</x>
         <y>290</y>
-        <width>121</width>
+        <width>71</width>
         <height>41</height>
        </rect>
       </property>
@@ -618,21 +621,21 @@ color: white</string>
        <string>Quantity</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="prodQuantInp">
+     <widget class="QLineEdit" name="prodOrdQuantInp">
       <property name="geometry">
        <rect>
-        <x>230</x>
+        <x>280</x>
         <y>330</y>
-        <width>131</width>
+        <width>81</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">color: white;
-font: 12pt &quot;Poppins&quot;;
+font: 12pt &quot;Poppins SemiBold&quot;;
 border-radius: 10px;
 background-color:rgb(27, 26, 56);
-padding:10px;</string>
+padding: 7px 12px;</string>
       </property>
       <property name="text">
        <string/>
@@ -687,24 +690,6 @@ background-color: #4c6cbf;
        <string>--</string>
       </property>
      </widget>
-     <widget class="QLabel" name="order_id">
-      <property name="geometry">
-       <rect>
-        <x>490</x>
-        <y>193</y>
-        <width>51</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 12pt &quot;Poppins SemiBold&quot;;
-color: red</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
      <widget class="QPushButton" name="nextOrderBtn">
       <property name="geometry">
        <rect>
@@ -736,8 +721,8 @@ background-color: #4c6cbf;
      <widget class="QLabel" name="order_id_2">
       <property name="geometry">
        <rect>
-        <x>413</x>
-        <y>192</y>
+        <x>403</x>
+        <y>201</y>
         <width>81</width>
         <height>21</height>
        </rect>
@@ -806,19 +791,19 @@ background-color: #4c6cbf;
     gridline-color: #E0E0E0; /* Light grid lines */
     color: white; /* Dark text color */
     font: 10pt &quot;Poppins&quot;;
-    background-color: #292D3E;
-    border: 2px solid #292D3E; </string>
+    background-color: rgb(20, 31, 69);
+    border: 2px solid  rgb(20, 31, 69); </string>
       </property>
       <property name="title">
        <string/>
       </property>
-      <widget class="QTableWidget" name="bill_table">
+      <widget class="QTableWidget" name="orderTable">
        <property name="geometry">
         <rect>
-         <x>0</x>
-         <y>50</y>
-         <width>441</width>
-         <height>281</height>
+         <x>10</x>
+         <y>60</y>
+         <width>421</width>
+         <height>271</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -872,12 +857,50 @@ QTableView::corner {
 }</string>
        </property>
       </widget>
+      <widget class="QLabel" name="orderIdLbl">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>12</y>
+         <width>170</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">  border-radius: 10px;
+  background-color: rgb(27, 26, 56);
+  font: 63 12pt &quot;Poppins SemiBold&quot;;
+  padding: 3px 7px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="orderDateLbl">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>12</y>
+         <width>111</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">  border-radius: 10px;
+  background-color: rgb(27, 26, 56);
+  font: 63 12pt &quot;Poppins SemiBold&quot;;
+  padding: 3px 7px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
      </widget>
      <widget class="QLabel" name="order_date">
       <property name="geometry">
        <rect>
-        <x>665</x>
-        <y>192</y>
+        <x>658</x>
+        <y>201</y>
         <width>51</width>
         <height>21</height>
        </rect>
@@ -891,54 +914,36 @@ color: white</string>
        <string>Date:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="dateLabel">
-      <property name="geometry">
-       <rect>
-        <x>715</x>
-        <y>193</y>
-        <width>101</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 12pt &quot;Poppins SemiBold&quot;;
-color: green</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="prodNameSelect">
+     <widget class="QComboBox" name="prodOrdNameSel">
       <property name="geometry">
        <rect>
         <x>50</x>
         <y>330</y>
-        <width>161</width>
+        <width>215</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QComboBox#prodNameSelect {
+       <string notr="true">QComboBox#prodOrdNameSel {
   border-radius: 10px;
   background-color: rgb(27, 26, 56);
-  font: 63 12pt &quot;Poppins SemiBold&quot;;
-  padding-top: 3px;
-  padding-left: 12px;
-  color: red;
+  font: 12pt &quot;Poppins SemiBold&quot;;
+  padding: 7px 12px;
+  color: white;
 }
 
-QComboBox#prodNameSelect::drop-down {
+QComboBox#prodOrdNameSel::drop-down {
   border-radius: 10px;
 }
 
 QComboBox QAbstractItemView {
-  background-color: rgb(27, 26, 56);
+  background-color: #292D3E;
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 12px;
   padding-right:12px;
-  color: red;
+  border-radius: 10px;
+  color: white;
 }
 
 /* Hide vertical scrollbar */
@@ -1010,11 +1015,11 @@ color: white;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: red;
-font: 63 14pt &quot;Poppins SemiBold&quot;;
+       <string notr="true">color: white;
+font: 12pt &quot;Poppins SemiBold&quot;;
 border-radius: 10px;
 background-color:rgb(27, 26, 56);
-padding:10px;</string>
+padding: 7px 12px;</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_9">
@@ -1045,14 +1050,36 @@ color: white;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color:rgb(27, 26, 56);
+       <string notr="true">color: white;
+font: 12pt &quot;Poppins SemiBold&quot;;
 border-radius: 10px;
-font: 63 12pt &quot;Poppins SemiBold&quot;;
-padding-left:10px;
-color: red</string>
+background-color:rgb(27, 26, 56);
+padding: 7px 12px;</string>
       </property>
       <property name="text">
        <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="prodModPosInfoLbl_2">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>540</y>
+        <width>441</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+/*color: red;*/
+color: #27e86f;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <zorder>columnView_3</zorder>
@@ -1063,24 +1090,865 @@ color: red</string>
      <zorder>navLogout1</zorder>
      <zorder>prodNameLable</zorder>
      <zorder>cxPhoneNumLable</zorder>
-     <zorder>cxPhoneNumInp</zorder>
+     <zorder>prodOrdPhoneInp</zorder>
      <zorder>prodQuantLable</zorder>
-     <zorder>prodQuantInp</zorder>
+     <zorder>prodOrdQuantInp</zorder>
      <zorder>oe_head</zorder>
      <zorder>clearOrderBtn</zorder>
      <zorder>nextOrderBtn</zorder>
      <zorder>navProdMod1</zorder>
      <zorder>groupBox</zorder>
      <zorder>order_date</zorder>
-     <zorder>dateLabel</zorder>
-     <zorder>prodNameSelect</zorder>
+     <zorder>prodOrdNameSel</zorder>
      <zorder>nextProdBtn</zorder>
      <zorder>order_id_2</zorder>
-     <zorder>order_id</zorder>
      <zorder>lineEdit</zorder>
      <zorder>label_9</zorder>
      <zorder>label_2</zorder>
      <zorder>label_3</zorder>
+     <zorder>prodModPosInfoLbl_2</zorder>
+    </widget>
+    <widget class="QWidget" name="tab_5">
+     <attribute name="title">
+      <string>Product Mod</string>
+     </attribute>
+     <widget class="QColumnView" name="columnView_10">
+      <property name="geometry">
+       <rect>
+        <x>16</x>
+        <y>20</y>
+        <width>851</width>
+        <height>561</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(0, 0, 0);
+border-radius: 10px;</string>
+      </property>
+     </widget>
+     <widget class="QColumnView" name="columnView_9">
+      <property name="geometry">
+       <rect>
+        <x>49</x>
+        <y>40</y>
+        <width>781</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(20, 31, 69);
+border-radius: 10px;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="navLogout3">
+      <property name="geometry">
+       <rect>
+        <x>664</x>
+        <y>60</y>
+        <width>111</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="toolTip">
+       <string>Logout</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#navLogout3 {
+background-color: #6788FF; /* Background color */
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+outline: 0;
+color: white; /* Text color */
+padding: 10px 20px; /* Padding for the button */
+border: none; /* Remove default button border */
+border-radius: 10px; /* Add some border-radius for a rounded appearance */
+}
+QPushButton#navLogout3:hover {
+cursor: pointer; /* Change cursor to pointer on hover */
+background-color: #4c6cbf;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../images/logout.svg</normaloff>../images/logout.svg</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>30</width>
+        <height>35</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="navProdMod3">
+      <property name="geometry">
+       <rect>
+        <x>384</x>
+        <y>60</y>
+        <width>111</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="toolTip">
+       <string>Logout</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#navProdMod3 {
+background-color: #4c6cbf; /* Background color */
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+outline: 0;
+color: white; /* Text color */
+padding: 10px 20px; /* Padding for the button */
+border: none; /* Remove default button border */
+border-radius: 10px; /* Add some border-radius for a rounded appearance */
+}
+QPushButton#navProdMod3:hover {
+cursor: pointer; /* Change cursor to pointer on hover */
+background-color: #4c6cbf;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../images/clipboard-list.svg</normaloff>../images/clipboard-list.svg</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>35</width>
+        <height>35</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="navOrderEntry3">
+      <property name="geometry">
+       <rect>
+        <x>104</x>
+        <y>60</y>
+        <width>111</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="toolTip">
+       <string>Order Entry</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#navOrderEntry3 {
+background-color: #6788FF; /* Background color */
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white; /* Text color */
+outline: 0;
+padding: 10px 20px; /* Padding for the button */
+border: none; /* Remove default button border */
+border-radius: 10px; /* Add some border-radius for a rounded appearance */
+}
+QPushButton#navOrderEntry3:	hover {
+cursor: pointer; /* Change cursor to pointer on hover */
+background-color: #4c6cbf;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../images/shopping.svg</normaloff>../images/shopping.svg</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>35</width>
+        <height>35</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="navViewOrders3">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>524</x>
+        <y>60</y>
+        <width>111</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="toolTip">
+       <string>Orders</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#navViewOrders3 {
+background-color: #6788FF; /* Background color */
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white; /* Text color */
+outline: 0;
+padding: 10px 20px; /* Padding for the button */
+border: none; /* Remove default button border */
+border-radius: 10px; /* Add some border-radius for a rounded appearance */
+}
+QPushButton#navViewOrders3:hover {
+cursor: pointer; /* Change cursor to pointer on hover */
+background-color: #4c6cbf;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../images/receipt.svg</normaloff>../images/receipt.svg</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>35</width>
+        <height>35</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="navManageStocks3">
+      <property name="geometry">
+       <rect>
+        <x>244</x>
+        <y>60</y>
+        <width>111</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="toolTip">
+       <string>Edit Orders</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#navManageStocks3 {
+background-color: #6788FF; /* Background color */
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+outline: 0;
+color: white; /* Text color */
+padding: 10px 20px; /* Padding for the button */
+border: none; /* Remove default button border */
+border-radius: 10px; /* Add some border-radius for a rounded appearance */
+}
+QPushButton#navManageStocks3:hover {
+cursor: pointer; /* Change cursor to pointer on hover */
+background-color: #4c6cbf;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../images/shelves.svg</normaloff>../images/shelves.svg</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>35</width>
+        <height>35</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>180</y>
+        <width>411</width>
+        <height>341</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins</family>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">    border-radius: 10px;
+    gridline-color: #E0E0E0; /* Light grid lines */
+    color: white; /* Dark text color */
+    font: 10pt &quot;Poppins&quot;;
+    background-color: rgb(20, 31, 69);
+    border: 2px solid  rgb(20, 31, 69); </string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>18</y>
+         <width>201</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 15pt &quot;Poppins SemiBold&quot;;
+color: white</string>
+       </property>
+       <property name="text">
+        <string>Add New Product</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_12">
+       <property name="geometry">
+        <rect>
+         <x>17</x>
+         <y>60</y>
+         <width>161</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white</string>
+       </property>
+       <property name="text">
+        <string>Product Name</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="prodAddNameInp">
+       <property name="geometry">
+        <rect>
+         <x>17</x>
+         <y>100</y>
+         <width>271</width>
+         <height>45</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Poppins SemiBold</family>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: white;
+font: 12pt &quot;Poppins SemiBold&quot;;
+border-radius: 10px;
+background-color: #4c6cbf;
+padding: 7px 12px;</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="prodAddSellingPriceInp">
+       <property name="geometry">
+        <rect>
+         <x>219</x>
+         <y>180</y>
+         <width>171</width>
+         <height>45</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: white;
+font: 12pt &quot;Poppins SemiBold&quot;;
+border-radius: 10px;
+background-color: #4c6cbf;
+padding: 7px 12px;</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="prodAddCostPriceInp">
+       <property name="geometry">
+        <rect>
+         <x>17</x>
+         <y>180</y>
+         <width>181</width>
+         <height>45</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: white;
+font: 12pt &quot;Poppins SemiBold&quot;;
+border-radius: 10px;
+background-color: #4c6cbf;
+padding: 7px 12px;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_13">
+       <property name="geometry">
+        <rect>
+         <x>215</x>
+         <y>148</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white</string>
+       </property>
+       <property name="text">
+        <string>Product SP</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_14">
+       <property name="geometry">
+        <rect>
+         <x>17</x>
+         <y>148</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white</string>
+       </property>
+       <property name="text">
+        <string>Product CP</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="prodAddBtn">
+       <property name="geometry">
+        <rect>
+         <x>219</x>
+         <y>260</y>
+         <width>171</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#prodAddBtn {
+background-color: #0b6bcb; /* Background color */
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white; /* Text color */
+outline: 0;
+padding: 10px 20px; /* Padding for the button */
+border: none; /* Remove default button border */
+border-radius: 10px; /* Add some border-radius for a rounded appearance */
+}
+QPushButton#prodAddBtn:hover {
+cursor: pointer; /* Change cursor to pointer on hover */
+background-color: #185ea5;
+}
+QPushButton#prodAddBtn:pressed,  /* Or QPushButton#prodAddBtn:active */
+QPushButton#prodAddBtn:checked { /* If using checkable buttons */
+    background-color: #335599; /* Example darker blue active color */
+    /* Add other styles as needed, e.g., border, text color */
+}</string>
+       </property>
+       <property name="text">
+        <string>Add Prod</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_15">
+       <property name="geometry">
+        <rect>
+         <x>17</x>
+         <y>228</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white</string>
+       </property>
+       <property name="text">
+        <string>Qunatity</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="prodAddQuantityInp">
+       <property name="geometry">
+        <rect>
+         <x>17</x>
+         <y>260</y>
+         <width>181</width>
+         <height>45</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: white;
+font: 12pt &quot;Poppins SemiBold&quot;;
+border-radius: 10px;
+background-color: #4c6cbf;
+padding: 7px 12px;</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>53</x>
+        <y>167</y>
+        <width>321</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 30pt &quot;Poppins SemiBold&quot;;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Product Mod</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="prodNameLabel">
+      <property name="geometry">
+       <rect>
+        <x>53</x>
+        <y>210</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white</string>
+      </property>
+      <property name="text">
+       <string>Product Name</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>53</x>
+        <y>295</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white</string>
+      </property>
+      <property name="text">
+       <string>Product CP</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>233</x>
+        <y>295</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white</string>
+      </property>
+      <property name="text">
+       <string>Product SP</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="prodModCostPriceInp">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>335</y>
+        <width>161</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+font: 12pt &quot;Poppins SemiBold&quot;;
+border-radius: 10px;
+background-color:rgb(27, 26, 56);
+padding: 7px 12px;</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="prodModSellingPriceInp">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>335</y>
+        <width>161</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+font: 12pt &quot;Poppins SemiBold&quot;;
+border-radius: 10px;
+background-color:rgb(27, 26, 56);
+padding: 7px 12px;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="prodModUpdateBtn">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>480</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#prodModUpdateBtn {
+background-color: #0b6bcb; /* Background color */
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white; /* Text color */
+outline: 0;
+padding: 10px 20px; /* Padding for the button */
+border: none; /* Remove default button border */
+border-radius: 10px; /* Add some border-radius for a rounded appearance */
+}
+QPushButton#prodModUpdateBtn:hover {
+cursor: pointer; /* Change cursor to pointer on hover */
+background-color: #185ea5;
+}</string>
+      </property>
+      <property name="text">
+       <string>Update</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="prodModDeleteBtn">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>480</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#prodModDeleteBtn {
+background-color: #c41c1c; /* Background color */
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white; /* Text color */
+outline: 0;
+padding: 10px 20px; /* Padding for the button */
+border: none; /* Remove default button border */
+border-radius: 10px; /* Add some border-radius for a rounded appearance */
+transition: all 0.3s;
+}
+QPushButton#prodModDeleteBtn:hover {
+cursor: pointer; /* Change cursor to pointer on hover */
+background-color: #a51818;
+}</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="prodModQuantityInp">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>417</y>
+        <width>161</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+font: 12pt &quot;Poppins SemiBold&quot;;
+border-radius: 10px;
+background-color:rgb(27, 26, 56);
+padding: 7px 12px;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>53</x>
+        <y>386</y>
+        <width>91</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white</string>
+      </property>
+      <property name="text">
+       <string>Quantity</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="prodModNameSel">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>250</y>
+        <width>251</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::ClickFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox#prodModNameSel {
+  border-radius: 10px;
+  background-color: rgb(27, 26, 56);
+  font: 12pt &quot;Poppins SemiBold&quot;;
+  padding: 7px 12px;
+  color: white;
+}
+
+QComboBox#prodModNameSel::drop-down {
+  border-radius: 10px;
+}
+
+QComboBox QAbstractItemView {
+  background-color: #292D3E;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 12px;
+  padding-right:12px;
+  border-radius: 10px;
+  color: white;
+}
+
+/* Hide vertical scrollbar */
+QComboBox QScrollBar:vertical {
+  width: 0px; /* Hides the scrollbar track */
+  background: none; /* Optional: removes background color for better invisibility */
+}
+
+/* Hide horizontal scrollbar (optional) */
+QComboBox QScrollBar:horizontal {
+  height: 0px; /* Hides the scrollbar track */
+  background: none; /* Optional: removes background color for better invisibility */
+}</string>
+      </property>
+      <property name="editable">
+       <bool>true</bool>
+      </property>
+      <property name="currentText">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="prodModInfoLbl">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>540</y>
+        <width>441</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+/*color: red;
+color: #27e86f;*/</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="prodModIdInp">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>417</y>
+        <width>161</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: red;
+font: 12pt &quot;Poppins SemiBold&quot;;
+border-radius: 10px;
+background-color:rgb(27, 26, 56);
+padding: 7px 12px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>233</x>
+        <y>386</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white</string>
+      </property>
+      <property name="text">
+       <string>Id</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="prodModResetBtn">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>480</y>
+        <width>91</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#prodModResetBtn {
+background-color: #9a5b13; /* Background color */
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white; /* Text color */
+outline: 0;
+padding: 10px 20px; /* Padding for the button */
+border: none; /* Remove default button border */
+border-radius: 10px; /* Add some border-radius for a rounded appearance */
+transition: all 0.3s;
+}
+QPushButton#prodModResetBtn:hover {
+cursor: pointer; /* Change cursor to pointer on hover */
+background-color: #804B10;
+}</string>
+      </property>
+      <property name="text">
+       <string>Reset</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_3">
      <property name="cursor">
@@ -1697,864 +2565,6 @@ background-color: #4c6cbf;
      <zorder>eo_display_2</zorder>
      <zorder>add_prod_2</zorder>
     </widget>
-    <widget class="QWidget" name="tab_5">
-     <attribute name="title">
-      <string>Product Mod</string>
-     </attribute>
-     <widget class="QColumnView" name="columnView_10">
-      <property name="geometry">
-       <rect>
-        <x>16</x>
-        <y>20</y>
-        <width>851</width>
-        <height>561</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgb(0, 0, 0);
-border-radius: 10px;</string>
-      </property>
-     </widget>
-     <widget class="QColumnView" name="columnView_9">
-      <property name="geometry">
-       <rect>
-        <x>49</x>
-        <y>40</y>
-        <width>781</width>
-        <height>101</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgb(20, 31, 69);
-border-radius: 10px;</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="navLogout3">
-      <property name="geometry">
-       <rect>
-        <x>664</x>
-        <y>60</y>
-        <width>111</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="toolTip">
-       <string>Logout</string>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#navLogout3 {
-background-color: #6788FF; /* Background color */
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-outline: 0;
-color: white; /* Text color */
-padding: 10px 20px; /* Padding for the button */
-border: none; /* Remove default button border */
-border-radius: 10px; /* Add some border-radius for a rounded appearance */
-}
-QPushButton#navLogout3:hover {
-cursor: pointer; /* Change cursor to pointer on hover */
-background-color: #4c6cbf;
-}</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>../images/logout.svg</normaloff>../images/logout.svg</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>30</width>
-        <height>35</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="navProdMod3">
-      <property name="geometry">
-       <rect>
-        <x>384</x>
-        <y>60</y>
-        <width>111</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="toolTip">
-       <string>Logout</string>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#navProdMod3 {
-background-color: #4c6cbf; /* Background color */
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-outline: 0;
-color: white; /* Text color */
-padding: 10px 20px; /* Padding for the button */
-border: none; /* Remove default button border */
-border-radius: 10px; /* Add some border-radius for a rounded appearance */
-}
-QPushButton#navProdMod3:hover {
-cursor: pointer; /* Change cursor to pointer on hover */
-background-color: #4c6cbf;
-}</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>../images/clipboard-list.svg</normaloff>../images/clipboard-list.svg</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>35</width>
-        <height>35</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="navOrderEntry3">
-      <property name="geometry">
-       <rect>
-        <x>104</x>
-        <y>60</y>
-        <width>111</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="toolTip">
-       <string>Order Entry</string>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#navOrderEntry3 {
-background-color: #6788FF; /* Background color */
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white; /* Text color */
-outline: 0;
-padding: 10px 20px; /* Padding for the button */
-border: none; /* Remove default button border */
-border-radius: 10px; /* Add some border-radius for a rounded appearance */
-}
-QPushButton#navOrderEntry3:	hover {
-cursor: pointer; /* Change cursor to pointer on hover */
-background-color: #4c6cbf;
-}</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>../images/shopping.svg</normaloff>../images/shopping.svg</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>35</width>
-        <height>35</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="navViewOrders3">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>524</x>
-        <y>60</y>
-        <width>111</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="toolTip">
-       <string>Orders</string>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#navViewOrders3 {
-background-color: #6788FF; /* Background color */
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white; /* Text color */
-outline: 0;
-padding: 10px 20px; /* Padding for the button */
-border: none; /* Remove default button border */
-border-radius: 10px; /* Add some border-radius for a rounded appearance */
-}
-QPushButton#navViewOrders3:hover {
-cursor: pointer; /* Change cursor to pointer on hover */
-background-color: #4c6cbf;
-}</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>../images/receipt.svg</normaloff>../images/receipt.svg</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>35</width>
-        <height>35</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="navManageStocks3">
-      <property name="geometry">
-       <rect>
-        <x>244</x>
-        <y>60</y>
-        <width>111</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="toolTip">
-       <string>Edit Orders</string>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#navManageStocks3 {
-background-color: #6788FF; /* Background color */
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-outline: 0;
-color: white; /* Text color */
-padding: 10px 20px; /* Padding for the button */
-border: none; /* Remove default button border */
-border-radius: 10px; /* Add some border-radius for a rounded appearance */
-}
-QPushButton#navManageStocks3:hover {
-cursor: pointer; /* Change cursor to pointer on hover */
-background-color: #4c6cbf;
-}</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>../images/shelves.svg</normaloff>../images/shelves.svg</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>35</width>
-        <height>35</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QGroupBox" name="groupBox_2">
-      <property name="geometry">
-       <rect>
-        <x>420</x>
-        <y>180</y>
-        <width>411</width>
-        <height>341</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Poppins</family>
-        <pointsize>10</pointsize>
-        <weight>50</weight>
-        <italic>false</italic>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">    border-radius: 10px;
-    gridline-color: #E0E0E0; /* Light grid lines */
-    color: white; /* Dark text color */
-    font: 10pt &quot;Poppins&quot;;
-    background-color: #292D3E;
-    border: 2px solid #292D3E; </string>
-      </property>
-      <property name="title">
-       <string/>
-      </property>
-      <widget class="QLabel" name="label_10">
-       <property name="geometry">
-        <rect>
-         <x>120</x>
-         <y>18</y>
-         <width>201</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 15pt &quot;Poppins SemiBold&quot;;
-color: white</string>
-       </property>
-       <property name="text">
-        <string>Add New Product</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_12">
-       <property name="geometry">
-        <rect>
-         <x>17</x>
-         <y>60</y>
-         <width>161</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white</string>
-       </property>
-       <property name="text">
-        <string>Product Name</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="prodAddNameInp">
-       <property name="geometry">
-        <rect>
-         <x>17</x>
-         <y>100</y>
-         <width>271</width>
-         <height>45</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Poppins SemiBold</family>
-         <pointsize>12</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: white;
-font: 12pt &quot;Poppins SemiBold&quot;;
-border-radius: 10px;
-background-color:rgb(20, 31, 69);
-padding: 7px 12px;</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="prodAddSellingPriceInp">
-       <property name="geometry">
-        <rect>
-         <x>219</x>
-         <y>180</y>
-         <width>171</width>
-         <height>45</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: white;
-font: 12pt &quot;Poppins SemiBold&quot;;
-border-radius: 10px;
-background-color:rgb(20, 31, 69);
-padding: 7px 12px;</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="prodAddCostPriceInp">
-       <property name="geometry">
-        <rect>
-         <x>17</x>
-         <y>180</y>
-         <width>181</width>
-         <height>45</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: white;
-font: 12pt &quot;Poppins SemiBold&quot;;
-border-radius: 10px;
-background-color:rgb(20, 31, 69);
-padding: 7px 12px;</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_13">
-       <property name="geometry">
-        <rect>
-         <x>215</x>
-         <y>148</y>
-         <width>131</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white</string>
-       </property>
-       <property name="text">
-        <string>Product SP</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_14">
-       <property name="geometry">
-        <rect>
-         <x>17</x>
-         <y>148</y>
-         <width>131</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white</string>
-       </property>
-       <property name="text">
-        <string>Product CP</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="prodAddBtn">
-       <property name="geometry">
-        <rect>
-         <x>219</x>
-         <y>260</y>
-         <width>171</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="cursor">
-        <cursorShape>PointingHandCursor</cursorShape>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton#prodAddBtn {
-background-color: #6788FF; /* Background color */
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white; /* Text color */
-outline: 0;
-padding: 10px 20px; /* Padding for the button */
-border: none; /* Remove default button border */
-border-radius: 10px; /* Add some border-radius for a rounded appearance */
-}
-QPushButton#prodAddBtn:hover {
-cursor: pointer; /* Change cursor to pointer on hover */
-background-color: #4c6cbf;
-}
-QPushButton#prodAddBtn:pressed,  /* Or QPushButton#prodAddBtn:active */
-QPushButton#prodAddBtn:checked { /* If using checkable buttons */
-    background-color: #335599; /* Example darker blue active color */
-    /* Add other styles as needed, e.g., border, text color */
-}</string>
-       </property>
-       <property name="text">
-        <string>Add Prod</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_15">
-       <property name="geometry">
-        <rect>
-         <x>17</x>
-         <y>228</y>
-         <width>131</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white</string>
-       </property>
-       <property name="text">
-        <string>Qunatity</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="prodAddQuantityInp">
-       <property name="geometry">
-        <rect>
-         <x>17</x>
-         <y>260</y>
-         <width>181</width>
-         <height>45</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: white;
-font: 12pt &quot;Poppins SemiBold&quot;;
-border-radius: 10px;
-background-color:rgb(20, 31, 69);
-padding: 7px 12px;</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>53</x>
-        <y>167</y>
-        <width>321</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 30pt &quot;Poppins SemiBold&quot;;
-color: white;</string>
-      </property>
-      <property name="text">
-       <string>Product Mod</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="prodNameLabel">
-      <property name="geometry">
-       <rect>
-        <x>53</x>
-        <y>210</y>
-        <width>111</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white</string>
-      </property>
-      <property name="text">
-       <string>Product Name</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_7">
-      <property name="geometry">
-       <rect>
-        <x>53</x>
-        <y>295</y>
-        <width>91</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white</string>
-      </property>
-      <property name="text">
-       <string>Product CP</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_8">
-      <property name="geometry">
-       <rect>
-        <x>233</x>
-        <y>295</y>
-        <width>101</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white</string>
-      </property>
-      <property name="text">
-       <string>Product SP</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="prodModCostPriceInp">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>335</y>
-        <width>161</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: white;
-font: 12pt &quot;Poppins SemiBold&quot;;
-border-radius: 10px;
-background-color:rgb(27, 26, 56);
-padding: 7px 12px;</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="prodModSellingPriceInp">
-      <property name="geometry">
-       <rect>
-        <x>230</x>
-        <y>335</y>
-        <width>161</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: white;
-font: 12pt &quot;Poppins SemiBold&quot;;
-border-radius: 10px;
-background-color:rgb(27, 26, 56);
-padding: 7px 12px;</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="prodModUpdateBtn">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>480</y>
-        <width>121</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#prodModUpdateBtn {
-background-color: #6788FF; /* Background color */
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white; /* Text color */
-outline: 0;
-padding: 10px 20px; /* Padding for the button */
-border: none; /* Remove default button border */
-border-radius: 10px; /* Add some border-radius for a rounded appearance */
-}
-QPushButton#prodModUpdateBtn:hover {
-cursor: pointer; /* Change cursor to pointer on hover */
-background-color: #4c6cbf;
-}</string>
-      </property>
-      <property name="text">
-       <string>Update</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="prodModDeleteBtn">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>480</y>
-        <width>91</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#prodModDeleteBtn {
-background-color: #9f0000; /* Background color */
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white; /* Text color */
-outline: 0;
-padding: 10px 20px; /* Padding for the button */
-border: none; /* Remove default button border */
-border-radius: 10px; /* Add some border-radius for a rounded appearance */
-transition: all 0.3s;
-}
-QPushButton#prodModDeleteBtn:hover {
-cursor: pointer; /* Change cursor to pointer on hover */
-background-color: #800402;
-}</string>
-      </property>
-      <property name="text">
-       <string>Delete</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="prodModQuantityInp">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>417</y>
-        <width>161</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: white;
-font: 12pt &quot;Poppins SemiBold&quot;;
-border-radius: 10px;
-background-color:rgb(27, 26, 56);
-padding: 7px 12px;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_11">
-      <property name="geometry">
-       <rect>
-        <x>53</x>
-        <y>386</y>
-        <width>91</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white</string>
-      </property>
-      <property name="text">
-       <string>Quantity</string>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="prodModNameSel">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>250</y>
-        <width>251</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="focusPolicy">
-       <enum>Qt::ClickFocus</enum>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QComboBox#prodModNameSel {
-  border-radius: 10px;
-  background-color: rgb(27, 26, 56);
-  font: 12pt &quot;Poppins SemiBold&quot;;
-  padding: 7px 12px;
-  color: white;
-}
-
-QComboBox#prodModNameSel::drop-down {
-  border-radius: 10px;
-}
-
-QComboBox QAbstractItemView {
-  background-color: #292D3E;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 12px;
-  padding-right:12px;
-  border-radius: 10px;
-  color: white;
-}
-
-/* Hide vertical scrollbar */
-QComboBox QScrollBar:vertical {
-  width: 0px; /* Hides the scrollbar track */
-  background: none; /* Optional: removes background color for better invisibility */
-}
-
-/* Hide horizontal scrollbar (optional) */
-QComboBox QScrollBar:horizontal {
-  height: 0px; /* Hides the scrollbar track */
-  background: none; /* Optional: removes background color for better invisibility */
-}</string>
-      </property>
-      <property name="editable">
-       <bool>true</bool>
-      </property>
-      <property name="currentText">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QLabel" name="prodModNegInfoLbl">
-      <property name="geometry">
-       <rect>
-        <x>220</x>
-        <y>540</y>
-        <width>441</width>
-        <height>30</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: red;
-/*color: #27e86f;*/</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QLabel" name="prodModPosInfoLbl">
-      <property name="geometry">
-       <rect>
-        <x>220</x>
-        <y>540</y>
-        <width>441</width>
-        <height>30</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-/*color: red;*/
-color: #27e86f;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="prodModIdInp">
-      <property name="geometry">
-       <rect>
-        <x>230</x>
-        <y>417</y>
-        <width>161</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: red;
-font: 12pt &quot;Poppins SemiBold&quot;;
-border-radius: 10px;
-background-color:rgb(27, 26, 56);
-padding: 7px 12px;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_16">
-      <property name="geometry">
-       <rect>
-        <x>233</x>
-        <y>386</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white</string>
-      </property>
-      <property name="text">
-       <string>Id</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="prodModResetBtn">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>480</y>
-        <width>91</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#prodModResetBtn {
-background-color: #e6a900; /* Background color */
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white; /* Text color */
-outline: 0;
-padding: 10px 20px; /* Padding for the button */
-border: none; /* Remove default button border */
-border-radius: 10px; /* Add some border-radius for a rounded appearance */
-transition: all 0.3s;
-}
-QPushButton#prodModResetBtn:hover {
-cursor: pointer; /* Change cursor to pointer on hover */
-background-color: #b38400;
-}</string>
-      </property>
-      <property name="text">
-       <string>Reset</string>
-      </property>
-     </widget>
-    </widget>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
       <string>View Orders</string>
@@ -3088,9 +3098,9 @@ background-color: #4c6cbf;
   <tabstop>add_prod_2</tabstop>
   <tabstop>columnView_10</tabstop>
   <tabstop>columnView_9</tabstop>
-  <tabstop>bill_table</tabstop>
+  <tabstop>orderTable</tabstop>
   <tabstop>columnView_3</tabstop>
-  <tabstop>prodQuantInp</tabstop>
+  <tabstop>prodOrdQuantInp</tabstop>
   <tabstop>navProdMod1</tabstop>
   <tabstop>loginInp</tabstop>
   <tabstop>logout_3</tabstop>
@@ -3104,10 +3114,10 @@ background-color: #4c6cbf;
   <tabstop>show_all</tabstop>
   <tabstop>add_prod_4</tabstop>
   <tabstop>lineEdit</tabstop>
-  <tabstop>cxPhoneNumInp</tabstop>
+  <tabstop>prodOrdPhoneInp</tabstop>
   <tabstop>columnView_4</tabstop>
   <tabstop>clearOrderBtn</tabstop>
-  <tabstop>prodNameSelect</tabstop>
+  <tabstop>prodOrdNameSel</tabstop>
   <tabstop>navOrderEntry1</tabstop>
   <tabstop>nextOrderBtn</tabstop>
   <tabstop>navManageStocks1</tabstop>
