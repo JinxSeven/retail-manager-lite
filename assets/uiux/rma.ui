@@ -1825,7 +1825,7 @@ font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white</string>
       </property>
       <property name="text">
-       <string>Quantity</string>
+       <string>Stock</string>
       </property>
      </widget>
      <widget class="QComboBox" name="prodModNameSel">

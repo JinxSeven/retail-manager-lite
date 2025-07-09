@@ -4,20 +4,19 @@ import datetime
 from src.config import DB_PATH
 from src.utils.color import Color
 from src.utils.services import Services
-from PyQt5.QtWidgets import QTableWidgetItem
 
 class OrderHandler:
     def __init__(self, ui):
         self.ui = ui
-        self.services = Services()
         
         self.generate_order_id()
         
         self.ui.orderDateLbl.setText(datetime.date.today().strftime('%d.%m.%Y'))
-        self.services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
+        # Loading combobox with product names
+        Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
         
     def generate_order_id(self):
-        self.ui.orderIdLbl.setText(str(secrets.token_hex(8)))
+        self.ui.orderIdLbl.setText(str(secrets.token_hex(4)))
 
     def add_product_to_bill(self):
         try:
@@ -26,7 +25,7 @@ class OrderHandler:
             cx_phone_number = int(self.ui.prodOrdPhoneInp.text())
             quantity = int(self.ui.prodOrdQuantInp.text())
         except ValueError as ex:
-            self.services.display_info(self.ui.prodOrdInfoLbl, "Input type mismatch!", 'red')
+            Services.display_info(self.ui.prodOrdInfoLbl, "Input type mismatch!", 'red')
             print(Color.RED + f"Input Exception: {ex}" + Color.RED)
             return
 

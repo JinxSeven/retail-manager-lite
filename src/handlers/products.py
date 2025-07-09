@@ -1,5 +1,6 @@
 import sqlite3
-import uuid
+import logging
+import secrets
 from src.config import DB_PATH
 from src.utils.color import Color
 from src.utils.services import Services
@@ -7,9 +8,8 @@ from src.utils.services import Services
 class ProductHandler:
     def __init__(self, ui):
         self.ui = ui
-        self.services = Services()
         
-        self.services.load_combobox(self.ui.prodModNameSel, "SELECT product_name FROM products")
+        Services.load_combobox(self.ui.prodModNameSel, "SELECT product_name FROM products")
         self.load_product_details()
         
         self.ui.prodAddBtn.clicked.connect(self.add_new_product)
@@ -41,9 +41,9 @@ class ProductHandler:
             cp = float(self.ui.prodAddCostPriceInp.text())
             sp = float(self.ui.prodAddSellingPriceInp.text())
             stock = int(self.ui.prodAddQuantityInp.text())
-            id = str(uuid.uuid4())
+            id = str(secrets.token_hex(4))
         except ValueError:
-            self.services.display_info(self.ui.prodModInfoLbl, 'Input type mismatch!', 'red')
+            Services.display_info(self.ui.prodModInfoLbl, 'Input type mismatch!', 'red')
             return
         
         try:
@@ -55,10 +55,11 @@ class ProductHandler:
             conn.commit()
             conn.close()
             
-            self.services.display_info(self.ui.prodModInfoLbl, 'Product added successfully!', 'green')
-            self.services.load_combobox(self.ui.prodModNameSel, "SELECT product_name FROM products")
+            Services.display_info(self.ui.prodModInfoLbl, 'Product added successfully!', 'green')
+            Services.load_combobox(self.ui.prodModNameSel, "SELECT product_name FROM products")
+            Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
         except sqlite3.Error as ex:
-            self.services.display_info(self.ui.prodModInfoLbl, 'Product might already exist!', 'red')
+            Services.display_info(self.ui.prodModInfoLbl, 'Product might already exist!', 'red')
             print(Color.RED + f"An error occurred while adding product: {ex}" + Color.RED)
             return
         finally:
@@ -71,11 +72,14 @@ class ProductHandler:
         id = self.ui.prodModIdInp.text()
         try:
             with sqlite3.connect(DB_PATH) as conn:
+                # SQLite treats each character as a separate item whe a string is passed
                 cursor = conn.execute("SELECT product_name FROM products WHERE product_id = ?", (id,))
                 name = cursor.fetchone()
         except sqlite3.Error as ex:
             print(Color.RED + f"An error occurred while fetching data: {ex}" + Color.RED)
-        proceed = self.services.confirmation_messagebox("Product Mod", f"Do you want to proceed deleting {name[0]}?")
+            return
+        
+        proceed = Services.confirmation_messagebox("Product Mod", f"Do you want to proceed deleting {name[0]}?")
         if not proceed:
             return
         
@@ -84,11 +88,13 @@ class ProductHandler:
                 conn.execute("DELETE FROM products WHERE product_id=?", (id,))
                 conn.commit()
                 
-            self.services.display_info(self.ui.prodModInfoLbl, 'Product deleted successfully!', 'red')
-            self.services.load_combobox(self.ui.prodModNameSel, "SELECT product_name FROM products")
+            Services.display_info(self.ui.prodModInfoLbl, 'Product deleted successfully!', 'red')
+
+            Services.load_combobox(self.ui.prodModNameSel, "SELECT product_name FROM products")
+            Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
         except sqlite3.Error as ex:
             print(Color.RED + f"An error occurred while deleting product: {ex}" + Color.RED)
-            self.services.display_info(self.ui.prodModInfoLbl, 'Could not delete product', 'red')
+            Services.display_info(self.ui.prodModInfoLbl, 'Could not delete product', 'red')
     
     def update_product(self):
         try:
@@ -99,7 +105,7 @@ class ProductHandler:
             stock = int(self.ui.prodModQuantityInp.text())
         except ValueError:
             self.ui.prodModInfoLbl.clear()
-            self.services.display_info(self.ui.prodModInfoLbl, 'Input type mismatch!', 'red')
+            Services.display_info(self.ui.prodModInfoLbl, 'Input type mismatch!', 'red')
             return
         
         try:
@@ -117,12 +123,12 @@ class ProductHandler:
                 self.ui.prodModNameSel.setCurrentIndex(prod_index)
                 
                 self.ui.prodModInfoLbl.clear()
-                self.services.display_info(self.ui.prodModInfoLbl, 'Product updated successfully!', 'green')
+                Services.display_info(self.ui.prodModInfoLbl, 'Product updated successfully!', 'green')
                 # self.services.load_combobox(self.ui.prodModNameSel, "SELECT product_name FROM products")
         except sqlite3.Error as ex:
             print(Color.RED + f"An error occurred while updating product: {ex}")
             self.ui.prodModInfoLbl.clear()
-            self.services.display_info(self.ui.prodModInfoLbl, 'Could not update product!', 'red')
+            Services.display_info(self.ui.prodModInfoLbl, 'Could not update product!', 'red')
         except Exception as ex:
             print(Color.RED + f"An error occurred while updating product: {ex}" + Color.RED)
     
@@ -134,7 +140,7 @@ class ProductHandler:
                 result = cursor.fetchone()
         except sqlite3.Error as ex:
             print(Color.RED + f"An error occurred while fetching data: {ex}" + Color.RESET)
-        proceed = self.services.confirmation_messagebox("Product Mod", f"Do you want to reset temporary changes made towards {str(result[1])}?")
+        proceed = Services.confirmation_messagebox("Product Mod", f"Do you want to reset temporary changes made towards {str(result[1])}?")
         if not proceed:
             return
 

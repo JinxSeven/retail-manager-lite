@@ -7,7 +7,8 @@ from .color import Color
 from PyQt5 import QtCore
 
 class Services:
-    def confirmation_messagebox(self, title: str, message: str) -> bool:
+    @staticmethod
+    def confirmation_messagebox(title: str, message: str) -> bool:
         msg = QMessageBox()
     
         msg.setWindowTitle(title)
@@ -45,7 +46,9 @@ class Services:
         result = msg.exec_()
         return result == QMessageBox.Yes
     
-    def load_combobox(self, combobox: QComboBox, query: str):
+    # Used to load combobox with details (Inputs: QComboBox, SqlQuery) 
+    @staticmethod
+    def load_combobox(combobox: QComboBox, query: str):
         try:
             combobox.clear()
             with sqlite3.connect(DB_PATH) as conn:
@@ -57,8 +60,9 @@ class Services:
                     print(Color.RED + f"An error occurred while loading combobox: {ex}" + Color.RED)
         except Exception as ex:
                 print(Color.RED + f"An unexpected error occurred: {ex}" + Color.RED)
-                
-    def display_info(self, label, info, color = 'blue'):
+
+    @staticmethod
+    def display_info(label, info, color = 'blue'):
         label.setText(info)
         existing_style = label.styleSheet()
         label.setStyleSheet(existing_style + f"color: {color};")
