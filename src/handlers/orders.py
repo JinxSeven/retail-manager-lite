@@ -10,8 +10,7 @@ class OrderHandler:
         self.ui = ui
         
         self.generate_order_id()
-        
-        self.ui.orderDateLbl.setText(datetime.date.today().strftime('%d.%m.%Y'))
+        self.ui.orderDateLbl.setText(datetime.date.today().strftime('%d.%m.%Y'))       
         # Loading combobox with product names
         Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
         

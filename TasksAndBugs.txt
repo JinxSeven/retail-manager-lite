@@ -1,2 +1,6 @@
+Tasks:
+Focus on fixing and completing "Order Entry Tab"
+
+Bugs:
 Product Mod - Deleting product leads to application crash - Fixed
 Prod Mod - Deleting product must update Order Entry page combobox - Fixed
