@@ -2,11 +2,11 @@ class Initializer:
     def __init__(self, ui):
         self.ui = ui
         self.ui.tabWidget.setCurrentIndex(0)
-        self.disableTabs()
+        self.disable_tabs()
         
-    def disableTabs(self):
+    def disable_tabs(self):
         for i in range(1, 5):
             self.ui.tabWidget.setTabEnabled(i, False)
-    def enableTabs(self):
+    def enable_tabs(self):
         for i in range(1, 5):
             self.ui.tabWidget.setTabEnabled(i, True)

@@ -7,13 +7,13 @@ class LoginHandler:
         self.services = Services()
         self.initializer = Initializer(self.ui)
         
-        self.initializer.disableTabs()
+        self.initializer.disable_tabs()
         self.ui.loginBtn.clicked.connect(self.login)
 
     def login(self):
         usr_pwd = self.ui.loginInp.text()
         if usr_pwd == "Login@123":
-            self.initializer.enableTabs()
+            self.initializer.enable_tabs()
             self.ui.tabWidget.setCurrentIndex(1)
             self.ui.tabWidget.setTabEnabled(0, False)
         else:
@@ -23,4 +23,4 @@ class LoginHandler:
         self.ui.loginInp.clear()
         self.ui.loginInfoLbl.clear()
         self.ui.tabWidget.setCurrentIndex(0)
-        self.initializer.disableTabs()
+        self.initializer.disable_tabs()
