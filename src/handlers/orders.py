@@ -1,27 +1,32 @@
 import sqlite3
 import secrets
 import datetime
+from typing import List
 from src.config import DB_PATH
+from src.models.order_model import Order
 from src.utils.color import Color
 from src.utils.services import Services
 
 class OrderHandler:
+    current_order: List[Order] = []
     def __init__(self, ui):
         self.ui = ui
         
         self.generate_order_id()
-        self.ui.orderDateLbl.setText(datetime.date.today().strftime('%d.%m.%Y'))       
+        self.ui.orderDateLbl.setText(datetime.date.today().strftime('%d.%m.%Y'))
+        self.ui.addToBillBtn.clicked.connect(self.add_product_to_bill)
+        
         # Loading combobox with product names
         Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
         
     def generate_order_id(self):
         self.ui.orderIdLbl.setText(str(secrets.token_hex(4)))
 
-    def add_product_to_bill(self):
+    def add_product_to_bill(self):        
         try:
             order_id = self.ui.orderIdLbl.text()
             product_name = self.ui.prodOrdNameSel.currentText()
-            cx_phone_number = int(self.ui.prodOrdPhoneInp.text())
+            # cx_phone_number = int(self.ui.prodOrdPhoneInp.text())
             quantity = int(self.ui.prodOrdQuantInp.text())
         except ValueError as ex:
             Services.display_info(self.ui.prodOrdInfoLbl, "Input type mismatch!", 'red')
@@ -30,21 +35,33 @@ class OrderHandler:
 
         try:
             with sqlite3.connect(DB_PATH) as conn:
-                cursor = conn.execute("SELECT 1 FROM orders WHERE order_id = ?", (order_id,))
-                newOrder: bool = cursor.fetchone() is None
-                # FIXME - Pick it up from here
                 cursor = conn.execute("SELECT selling_price FROM products WHERE product_name = ?", (product_name,))
-                result = cursor.fetchone()
-                total = float(result[0]) * quantity
-                conn.close()
+                product_price = cursor.fetchone()
+                cursor = conn.execute("SELECT product_id FROM products WHERE product_name = ?", (product_name,))
+                product_id = cursor.fetchone()
+
+            product_item = Order(
+                order_item_id=len(self.current_order),
+                order_id=order_id,
+                product_id=product_id,
+                product_name=product_name,
+                product_price=product_price[0],
+                quantity=quantity,
+            )
+            self.current_order.append(product_item)
+            self.calculate_total()            
         except sqlite3.Error as ex:
             print(Color.RED + f"SQLite Exception: {ex}" + Color.RED)
         except Exception as ex:
             print(Color.RED + f"Regular Exception: {ex}" + Color.RED)
             return
                 
-                
-    
+    def calculate_total(self):
+        total = 0.0
+        for i in range (len(self.current_order)):
+            total += self.current_order[i].product_price * self.current_order[i].quantity
+        
+        self.ui.grandTotalDsp.setText(str(total))
     # def showOrders(self):
     #     self.tabWidget.setCurrentIndex(3)
     #     self.orders_table.clear()
