@@ -8,4 +8,3 @@ class Order:
     product_name: str = None
     product_price: float = None
     quantity: int = None,
-    

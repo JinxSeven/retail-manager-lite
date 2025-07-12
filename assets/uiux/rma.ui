@@ -10,6 +10,12 @@
     <height>725</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="font">
    <font>
     <family>Poppins</family>
@@ -826,14 +832,12 @@ QTableView::corner {
 }
 </string>
        </property>
+       <property name="sortingEnabled">
+        <bool>true</bool>
+       </property>
        <column>
         <property name="text">
          <string>S.No</string>
-        </property>
-        <property name="font">
-         <font>
-          <family>Poppins</family>
-         </font>
         </property>
        </column>
        <column>

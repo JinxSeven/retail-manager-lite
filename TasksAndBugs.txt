@@ -1,5 +1,5 @@
 Tasks:
-Focus on fixing and completing "Order Entry Tab"
+Focus on fixing and completing "Order Entry Tab" - In Progress
 
 Bugs:
 Product Mod - Deleting product leads to application crash - Fixed

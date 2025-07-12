@@ -2,6 +2,7 @@ import sqlite3
 import secrets
 import datetime
 from typing import List
+from PyQt5.QtWidgets import QTableWidgetItem
 from src.config import DB_PATH
 from src.models.order_model import Order
 from src.utils.color import Color
@@ -39,7 +40,7 @@ class OrderHandler:
                 product_price = cursor.fetchone()
                 cursor = conn.execute("SELECT product_id FROM products WHERE product_name = ?", (product_name,))
                 product_id = cursor.fetchone()
-
+                
             product_item = Order(
                 order_item_id=len(self.current_order),
                 order_id=order_id,
@@ -48,20 +49,36 @@ class OrderHandler:
                 product_price=product_price[0],
                 quantity=quantity,
             )
+            
             self.current_order.append(product_item)
-            self.calculate_total()            
+            self.calculate_total()
+            
+            # Update table
+            self.ui.prodOrdTbl.verticalHeader().setVisible(False)
+            row_position = self.ui.prodOrdTbl.rowCount()
+            self.ui.prodOrdTbl.insertRow(row_position)
+            self.ui.prodOrdTbl.setItem(row_position, 0, QTableWidgetItem(str(row_position + 1)))
+            self.ui.prodOrdTbl.setItem(row_position, 1, QTableWidgetItem(str(product_item.product_name)))
+            self.ui.prodOrdTbl.setItem(row_position, 2, QTableWidgetItem(str(product_item.product_price)))
+            self.ui.prodOrdTbl.setItem(row_position, 3, QTableWidgetItem(str(product_item.quantity)))
+            self.ui.prodOrdTbl.setItem(row_position, 4, QTableWidgetItem(str(product_item.product_price * product_item.quantity)))
+
         except sqlite3.Error as ex:
             print(Color.RED + f"SQLite Exception: {ex}" + Color.RED)
+            return
         except Exception as ex:
             print(Color.RED + f"Regular Exception: {ex}" + Color.RED)
             return
-                
+        finally:
+            conn.close()
+            
     def calculate_total(self):
         total = 0.0
         for i in range (len(self.current_order)):
             total += self.current_order[i].product_price * self.current_order[i].quantity
         
         self.ui.grandTotalDsp.setText(str(total))
+        
     # def showOrders(self):
     #     self.tabWidget.setCurrentIndex(3)
     #     self.orders_table.clear()
