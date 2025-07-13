@@ -2,6 +2,8 @@ import sqlite3
 import secrets
 import datetime
 from typing import List
+
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QTableWidgetItem
 from src.config import DB_PATH
 from src.models.order_model import Order
@@ -50,19 +52,29 @@ class OrderHandler:
                 quantity=quantity,
             )
             
-            self.current_order.append(product_item)
-            self.calculate_total()
-            
-            # Update table
+            # Checks if product with same ID exists
             self.ui.prodOrdTbl.verticalHeader().setVisible(False)
-            row_position = self.ui.prodOrdTbl.rowCount()
-            self.ui.prodOrdTbl.insertRow(row_position)
-            self.ui.prodOrdTbl.setItem(row_position, 0, QTableWidgetItem(str(row_position + 1)))
-            self.ui.prodOrdTbl.setItem(row_position, 1, QTableWidgetItem(str(product_item.product_name)))
-            self.ui.prodOrdTbl.setItem(row_position, 2, QTableWidgetItem(str(product_item.product_price)))
-            self.ui.prodOrdTbl.setItem(row_position, 3, QTableWidgetItem(str(product_item.quantity)))
-            self.ui.prodOrdTbl.setItem(row_position, 4, QTableWidgetItem(str(product_item.product_price * product_item.quantity)))
-
+            matching_index = next((i for i, item in enumerate(self.current_order) if item.product_id == product_item.product_id), -1)
+            if matching_index == -1:
+                self.current_order.append(product_item)
+                self.calculate_total()
+                # Append new item to table
+                row_position = self.ui.prodOrdTbl.rowCount()
+                self.ui.prodOrdTbl.insertRow(row_position)
+                self.ui.prodOrdTbl.setItem(row_position, 0, QTableWidgetItem(str(row_position + 1)))
+                self.ui.prodOrdTbl.setItem(row_position, 1, QTableWidgetItem(str(product_item.product_name)))
+                self.ui.prodOrdTbl.setItem(row_position, 2, QTableWidgetItem(str(product_item.product_price)))
+                self.ui.prodOrdTbl.setItem(row_position, 3, QTableWidgetItem(str(product_item.quantity)))
+                self.ui.prodOrdTbl.setItem(row_position, 4, QTableWidgetItem(str(product_item.product_price * product_item.quantity)))
+            else:
+                self.current_order[matching_index].quantity += quantity
+                self.calculate_total()
+                # Finding row with matching product ID
+                match = self.ui.prodOrdTbl.findItems(product_item.product_name, Qt.MatchExactly)
+                row_to_update = match[0].row()
+                self.ui.prodOrdTbl.setItem(row_to_update, 3, QTableWidgetItem(str(self.current_order[matching_index].quantity)))
+                self.ui.prodOrdTbl.setItem(row_to_update, 4, QTableWidgetItem(str(product_item.product_price * self.current_order[matching_index].quantity)))
+                
         except sqlite3.Error as ex:
             print(Color.RED + f"SQLite Exception: {ex}" + Color.RED)
             return
