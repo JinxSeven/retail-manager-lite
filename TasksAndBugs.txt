@@ -1,5 +1,9 @@
 Tasks:
 Focus on fixing and completing "Order Entry Tab" - In Progress
+    SubTasks:
+    - Remove product from bill
+    - Update product  bill
+    
 
 Bugs:
 Product Mod - Deleting product leads to application crash - Fixed

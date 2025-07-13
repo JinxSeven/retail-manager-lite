@@ -59,6 +59,7 @@ class ProductHandler:
             Services.load_combobox(self.ui.prodModNameSel, "SELECT product_name FROM products")
             Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
         except sqlite3.Error as ex:
+            # Handling adding duplicate products
             Services.display_info(self.ui.prodModInfoLbl, 'Product might already exist!', 'red')
             print(Color.RED + f"An error occurred while adding product: {ex}" + Color.RED)
             return

@@ -2,7 +2,6 @@ import sqlite3
 import secrets
 import datetime
 from typing import List
-
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QTableWidgetItem
 from src.config import DB_PATH
@@ -10,10 +9,20 @@ from src.models.order_model import Order
 from src.utils.color import Color
 from src.utils.services import Services
 
+# TODO - Edit product quantity in bill
+
 class OrderHandler:
     current_order: List[Order] = []
     def __init__(self, ui):
         self.ui = ui
+        
+        # Setting ctable column width
+        self.ui.prodOrdTbl.setColumnWidth(0, 10)
+        self.ui.prodOrdTbl.setColumnWidth(1, 200)
+        self.ui.prodOrdTbl.setColumnWidth(2, 65)
+        self.ui.prodOrdTbl.setColumnWidth(3, 65)
+        self.ui.prodOrdTbl.setColumnWidth(4, 80)
+        self.ui.prodOrdTbl.setColumnWidth(5, 15)
         
         self.generate_order_id()
         self.ui.orderDateLbl.setText(datetime.date.today().strftime('%d.%m.%Y'))
@@ -25,11 +34,14 @@ class OrderHandler:
     def generate_order_id(self):
         self.ui.orderIdLbl.setText(str(secrets.token_hex(4)))
 
+    def delete_order_item(self):
+        # TODO - Delete order item from bill table
+        raise NotImplementedError("This method is not implemented")
+
     def add_product_to_bill(self):        
         try:
             order_id = self.ui.orderIdLbl.text()
             product_name = self.ui.prodOrdNameSel.currentText()
-            # cx_phone_number = int(self.ui.prodOrdPhoneInp.text())
             quantity = int(self.ui.prodOrdQuantInp.text())
         except ValueError as ex:
             Services.display_info(self.ui.prodOrdInfoLbl, "Input type mismatch!", 'red')
@@ -74,7 +86,8 @@ class OrderHandler:
                 row_to_update = match[0].row()
                 self.ui.prodOrdTbl.setItem(row_to_update, 3, QTableWidgetItem(str(self.current_order[matching_index].quantity)))
                 self.ui.prodOrdTbl.setItem(row_to_update, 4, QTableWidgetItem(str(product_item.product_price * self.current_order[matching_index].quantity)))
-                
+            # Clearing quantity field after adding prod to bill
+            self.ui.prodOrdQuantInp.clear()
         except sqlite3.Error as ex:
             print(Color.RED + f"SQLite Exception: {ex}" + Color.RED)
             return
