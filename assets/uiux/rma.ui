@@ -852,12 +852,17 @@ QTableView::corner {
        </column>
        <column>
         <property name="text">
-         <string>Quantity</string>
+         <string>Nos</string>
         </property>
        </column>
        <column>
         <property name="text">
          <string>Total</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Del</string>
         </property>
        </column>
       </widget>
