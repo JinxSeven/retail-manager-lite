@@ -7,6 +7,7 @@ from PyQt5.QtWidgets import QTableWidgetItem
 from src.config import DB_PATH
 from src.models.order_model import Order
 from src.utils.color import Color
+from src.utils.delete_button import DeleteButton
 from src.utils.services import Services
 
 # TODO - Edit product quantity in bill
@@ -78,6 +79,7 @@ class OrderHandler:
                 self.ui.prodOrdTbl.setItem(row_position, 2, QTableWidgetItem(str(product_item.product_price)))
                 self.ui.prodOrdTbl.setItem(row_position, 3, QTableWidgetItem(str(product_item.quantity)))
                 self.ui.prodOrdTbl.setItem(row_position, 4, QTableWidgetItem(str(product_item.product_price * product_item.quantity)))
+                self.ui.prodOrdTbl.setCellWidget(row_position, 5, DeleteButton())
             else:
                 self.current_order[matching_index].quantity += quantity
                 self.calculate_total()
