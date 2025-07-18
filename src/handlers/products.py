@@ -80,7 +80,7 @@ class ProductHandler:
             print(Color.RED + f"An error occurred while fetching data: {ex}" + Color.RED)
             return
         
-        proceed = Services.confirmation_messagebox("Product Mod", f"Do you want to proceed deleting {name[0]}?")
+        proceed = Services.confirmation_messagebox("Product Modification", f"Do you want to proceed deleting {name[0]}?")
         if not proceed:
             return
         

@@ -59,7 +59,7 @@ class OrderHandler:
             product_item = Order(
                 order_item_id=len(self.current_order),
                 order_id=order_id,
-                product_id=product_id,
+                product_id=product_id[0],
                 product_name=product_name,
                 product_price=product_price[0],
                 quantity=quantity,
@@ -79,9 +79,11 @@ class OrderHandler:
                 self.ui.prodOrdTbl.setItem(row_position, 2, QTableWidgetItem(str(product_item.product_price)))
                 self.ui.prodOrdTbl.setItem(row_position, 3, QTableWidgetItem(str(product_item.quantity)))
                 self.ui.prodOrdTbl.setItem(row_position, 4, QTableWidgetItem(str(product_item.product_price * product_item.quantity)))
-                self.ui.prodOrdTbl.setCellWidget(row_position, 5, DeleteButton())
+                self.ui.prodOrdTbl.setCellWidget(row_position, 5, DeleteButton(str(product_item.product_name), str(product_item.product_id), self.delete_prod))
             else:
                 self.current_order[matching_index].quantity += quantity
+                
+                
                 self.calculate_total()
                 # Finding row with matching product ID
                 match = self.ui.prodOrdTbl.findItems(product_item.product_name, Qt.MatchExactly)
@@ -106,6 +108,10 @@ class OrderHandler:
         
         self.ui.grandTotalDsp.setText(str(total))
         
+    def delete_prod(self):
+        print(f"Delete Logic")
+        
+    
     # def showOrders(self):
     #     self.tabWidget.setCurrentIndex(3)
     #     self.orders_table.clear()
