@@ -1,13 +1,14 @@
 Tasks:
 Focus on fixing and completing "Order Entry Tab" - In Progress
     SubTasks:
-    - Remove product from bill
-    - Update product  bill
+    - Remove order item from bill - Completed
+    - Update order item in bill - Completed
     
 
 Bugs:
-Product Mod - Deleting product leads to application crash - Fixed
-Prod Mod - Deleting product must update Order Entry page combobox - Fixed
+Prod Mod - Deleting product leads to application crash - Fixed
+Prod Mod - Deleting product must update order entry page combobox - Fixed
+Bill Mod - Removing product from order table doesnt update serial number - Pending
 
 Improve:
 Login password is unchangeable and hardcoded

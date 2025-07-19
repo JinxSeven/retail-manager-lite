@@ -6,10 +6,18 @@ from PyQt5.QtWidgets import QPushButton
 from src.utils.services import Services
 
 
+def click_handler(prod_name, prod_id, row, delete_func):
+    proceed = Services.confirmation_messagebox("Order Modification", f"Do you want to remove {prod_name} from order?")
+    if not proceed:
+        return
+    # Calling back method from orders.py
+    delete_func(prod_id, row)
+
+
 class DeleteButton(QPushButton):
     # Constructor
     # Takes object name and callback func as args
-    def __init__(self, prod_name: str, prod_id: str, delete_func, parent = None):
+    def __init__(self, prod_name: str, prod_id: str, row, delete_func, parent = None):
         icon = QIcon("assets/images/trash-can.svg")
         # Button
         # Base class (QPushButton) constructor
@@ -31,13 +39,5 @@ class DeleteButton(QPushButton):
             }
         """)
         
-        self.clicked.connect(partial(self.on_delete, prod_name, prod_id, delete_func))
+        self.clicked.connect(partial(click_handler, prod_name, prod_id, row, delete_func))
     
-    # Calling back method from orders.py
-    def on_delete(self, prod_name, prod_id, delete_func):
-        proceed = Services.confirmation_messagebox("Order Modification", f"Do you want to remove {prod_name} from order?")
-        if not proceed:
-            return
-        
-        delete_func()
-        

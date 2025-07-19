@@ -10,13 +10,15 @@ from src.utils.color import Color
 from src.utils.delete_button import DeleteButton
 from src.utils.services import Services
 
+
 # TODO - Edit product quantity in bill
 
 class OrderHandler:
     current_order: List[Order] = []
+
     def __init__(self, ui):
         self.ui = ui
-        
+
         # Setting ctable column width
         self.ui.prodOrdTbl.setColumnWidth(0, 10)
         self.ui.prodOrdTbl.setColumnWidth(1, 200)
@@ -24,14 +26,14 @@ class OrderHandler:
         self.ui.prodOrdTbl.setColumnWidth(3, 65)
         self.ui.prodOrdTbl.setColumnWidth(4, 80)
         self.ui.prodOrdTbl.setColumnWidth(5, 15)
-        
+
         self.generate_order_id()
         self.ui.orderDateLbl.setText(datetime.date.today().strftime('%d.%m.%Y'))
         self.ui.addToBillBtn.clicked.connect(self.add_product_to_bill)
-        
+
         # Loading combobox with product names
         Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
-        
+
     def generate_order_id(self):
         self.ui.orderIdLbl.setText(str(secrets.token_hex(4)))
 
@@ -39,7 +41,7 @@ class OrderHandler:
         # TODO - Delete order item from bill table
         raise NotImplementedError("This method is not implemented")
 
-    def add_product_to_bill(self):        
+    def add_product_to_bill(self):
         try:
             order_id = self.ui.orderIdLbl.text()
             product_name = self.ui.prodOrdNameSel.currentText()
@@ -55,7 +57,7 @@ class OrderHandler:
                 product_price = cursor.fetchone()
                 cursor = conn.execute("SELECT product_id FROM products WHERE product_name = ?", (product_name,))
                 product_id = cursor.fetchone()
-                
+
             product_item = Order(
                 order_item_id=len(self.current_order),
                 order_id=order_id,
@@ -64,10 +66,11 @@ class OrderHandler:
                 product_price=product_price[0],
                 quantity=quantity,
             )
-            
+
             # Checks if product with same ID exists
             self.ui.prodOrdTbl.verticalHeader().setVisible(False)
-            matching_index = next((i for i, item in enumerate(self.current_order) if item.product_id == product_item.product_id), -1)
+            matching_index = next(
+                (i for i, item in enumerate(self.current_order) if item.product_id == product_item.product_id), -1)
             if matching_index == -1:
                 self.current_order.append(product_item)
                 self.calculate_total()
@@ -78,18 +81,22 @@ class OrderHandler:
                 self.ui.prodOrdTbl.setItem(row_position, 1, QTableWidgetItem(str(product_item.product_name)))
                 self.ui.prodOrdTbl.setItem(row_position, 2, QTableWidgetItem(str(product_item.product_price)))
                 self.ui.prodOrdTbl.setItem(row_position, 3, QTableWidgetItem(str(product_item.quantity)))
-                self.ui.prodOrdTbl.setItem(row_position, 4, QTableWidgetItem(str(product_item.product_price * product_item.quantity)))
-                self.ui.prodOrdTbl.setCellWidget(row_position, 5, DeleteButton(str(product_item.product_name), str(product_item.product_id), self.delete_prod))
+                self.ui.prodOrdTbl.setItem(row_position, 4,
+                                           QTableWidgetItem(str(product_item.product_price * product_item.quantity)))
+                self.ui.prodOrdTbl.setCellWidget(row_position, 5, DeleteButton(str(product_item.product_name),
+                                                                               str(product_item.product_id),
+                                                                               row_position, self.delete_prod))
             else:
                 self.current_order[matching_index].quantity += quantity
-                
                 
                 self.calculate_total()
                 # Finding row with matching product ID
                 match = self.ui.prodOrdTbl.findItems(product_item.product_name, Qt.MatchExactly)
                 row_to_update = match[0].row()
-                self.ui.prodOrdTbl.setItem(row_to_update, 3, QTableWidgetItem(str(self.current_order[matching_index].quantity)))
-                self.ui.prodOrdTbl.setItem(row_to_update, 4, QTableWidgetItem(str(product_item.product_price * self.current_order[matching_index].quantity)))
+                self.ui.prodOrdTbl.setItem(row_to_update, 3,
+                                           QTableWidgetItem(str(self.current_order[matching_index].quantity)))
+                self.ui.prodOrdTbl.setItem(row_to_update, 4, QTableWidgetItem(
+                    str(product_item.product_price * self.current_order[matching_index].quantity)))
             # Clearing quantity field after adding prod to bill
             self.ui.prodOrdQuantInp.clear()
         except sqlite3.Error as ex:
@@ -100,18 +107,23 @@ class OrderHandler:
             return
         finally:
             conn.close()
-            
+
     def calculate_total(self):
         total = 0.0
-        for i in range (len(self.current_order)):
+        for i in range(len(self.current_order)):
             total += self.current_order[i].product_price * self.current_order[i].quantity
-        
+
         self.ui.grandTotalDsp.setText(str(total))
-        
-    def delete_prod(self):
-        print(f"Delete Logic")
-        
-    
+
+    def delete_prod(self, prod_id: str, row_to_delete: int):
+        for prod in self.current_order[:]:
+            if prod.product_id == prod_id:
+                self.current_order.remove(prod)
+                break
+
+        self.ui.prodOrdTbl.removeRow(row_to_delete)
+        self.calculate_total()
+
     # def showOrders(self):
     #     self.tabWidget.setCurrentIndex(3)
     #     self.orders_table.clear()
