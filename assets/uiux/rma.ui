@@ -374,7 +374,7 @@ border-radius: 10px;</string>
 border-radius: 10px;</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="navOrderEntry1">
+     <widget class="QPushButton" name="navOrderEntryOne">
       <property name="enabled">
        <bool>true</bool>
       </property>
@@ -390,7 +390,7 @@ border-radius: 10px;</string>
        <string>Order Entry</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#navOrderEntry1 {
+       <string notr="true">QPushButton {
 background-color: #4c6cbf;
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white;
@@ -399,7 +399,7 @@ padding: 10px 20px;
 border: none;
 border-radius: 10px;
 }
-QPushButton#navOrderEntry1:hover {
+QPushButton:hover {
 cursor: pointer;
 background-color: #4c6cbf;
 }</string>
@@ -427,7 +427,7 @@ background-color: #4c6cbf;
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="navManageStocks1">
+     <widget class="QPushButton" name="navProdModOne">
       <property name="geometry">
        <rect>
         <x>244</x>
@@ -440,16 +440,16 @@ background-color: #4c6cbf;
        <string>Edit Orders</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#navManageStocks1 {
+       <string notr="true">QPushButton {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
-outline: 0;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#navManageStocks1:hover {
+QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -481,16 +481,16 @@ background-color: #4c6cbf;
        <string>Orders</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#navViewOrders1 {
+       <string notr="true">QPushButton {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
-outline: 0;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#navViewOrders1:hover {
+QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -522,16 +522,16 @@ background-color: #4c6cbf;
        <string>Logout</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#navLogout1 {
+       <string notr="true">QPushButton {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
-outline: 0;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#navLogout1:hover {
+QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -727,16 +727,16 @@ color: white</string>
        <string>Logout</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#navProdMod1 {
+       <string notr="true">QPushButton {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
-outline: 0;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#navProdMod1:hover {
+QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -1096,8 +1096,8 @@ color: white</string>
      </widget>
      <zorder>columnView_3</zorder>
      <zorder>columnView_4</zorder>
-     <zorder>navOrderEntry1</zorder>
-     <zorder>navManageStocks1</zorder>
+     <zorder>navOrderEntryOne</zorder>
+     <zorder>navProdModOne</zorder>
      <zorder>navViewOrders1</zorder>
      <zorder>navLogout1</zorder>
      <zorder>prodNameLable</zorder>
@@ -1167,16 +1167,16 @@ border-radius: 10px;</string>
        <string>Logout</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#navLogout3 {
+       <string notr="true">QPushButton {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
-outline: 0;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#navLogout3:hover {
+QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -1211,16 +1211,16 @@ background-color: #4c6cbf;
        <string>Logout</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#navProdMod3 {
+       <string notr="true">QPushButton {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
-outline: 0;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#navProdMod3:hover {
+QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -1239,7 +1239,7 @@ background-color: #4c6cbf;
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="navOrderEntry3">
+     <widget class="QPushButton" name="navOrderEntryTwo">
       <property name="geometry">
        <rect>
         <x>104</x>
@@ -1255,7 +1255,7 @@ background-color: #4c6cbf;
        <string>Order Entry</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#navOrderEntry3 {
+       <string notr="true">QPushButton {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
@@ -1264,7 +1264,7 @@ padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#navOrderEntry3:	hover {
+QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -1302,7 +1302,7 @@ background-color: #4c6cbf;
        <string>Orders</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#navViewOrders3 {
+       <string notr="true">QPushButton {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
@@ -1311,7 +1311,7 @@ padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#navViewOrders3:hover {
+QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -1330,7 +1330,7 @@ background-color: #4c6cbf;
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="navManageStocks3">
+     <widget class="QPushButton" name="navProdModTwo">
       <property name="geometry">
        <rect>
         <x>244</x>
@@ -1346,17 +1346,17 @@ background-color: #4c6cbf;
        <string>Edit Orders</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#navManageStocks3 {
-background-color: #4c6cbf; /* Background color */
+       <string notr="true">QPushButton {
+background-color: #4c6cbf;
 font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white;
 outline: 0;
-color: white; /* Text color */
-padding: 10px 20px; /* Padding for the button */
-border: none; /* Remove default button border */
-border-radius: 10px; /* Add some border-radius for a rounded appearance */
+padding: 10px 20px;
+border: none;
+border-radius: 10px;
 }
-QPushButton#navManageStocks3:hover {
-cursor: pointer; /* Change cursor to pointer on hover */
+QPushButton:hover {
+cursor: pointer;
 background-color: #4c6cbf;
 }</string>
       </property>
@@ -1978,7 +1978,7 @@ background-color: #804B10;
        <string>Logout</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#logout_3 {
+       <string notr="true">QPushButton {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
@@ -1987,7 +1987,7 @@ padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#logout_3:hover {
+QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -2006,7 +2006,7 @@ background-color: #4c6cbf;
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="navBtnOne_4">
+     <widget class="QPushButton" name="navOrderEntryThree">
       <property name="geometry">
        <rect>
         <x>104</x>
@@ -2022,16 +2022,16 @@ background-color: #4c6cbf;
        <number>-1</number>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#navBtnOne_4 {
+       <string notr="true">QPushButton {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
-outline: 0;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#navBtnOne_4:hover {
+QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -2094,7 +2094,7 @@ border-radius: 10px;</string>
        <number>-1</number>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#orders_3 {
+       <string notr="true">QPushButton {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
@@ -2103,7 +2103,7 @@ padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#orders_3:hover {
+QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -2122,7 +2122,7 @@ background-color: #4c6cbf;
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="navBtnTwo_4">
+     <widget class="QPushButton" name="navProdModThree">
       <property name="geometry">
        <rect>
         <x>244</x>
@@ -2135,16 +2135,16 @@ background-color: #4c6cbf;
        <string>Edit Orders</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#navBtnTwo_4 {
+       <string notr="true">QPushButton {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
-outline: 0;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#navBtnTwo_4:hover {
+QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -2166,16 +2166,16 @@ background-color: #4c6cbf;
      <widget class="QLabel" name="o_head">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>160</y>
-        <width>101</width>
-        <height>31</height>
+        <x>53</x>
+        <y>167</y>
+        <width>141</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 20pt &quot;Poppins SemiBold&quot;;
-color: white</string>
+font: 63 30pt &quot;Poppins SemiBold&quot;;
+color: white;</string>
       </property>
       <property name="text">
        <string>Orders</string>
@@ -2184,10 +2184,10 @@ color: white</string>
      <widget class="QTableWidget" name="orders_table">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>210</y>
-        <width>721</width>
-        <height>241</height>
+        <x>50</x>
+        <y>220</y>
+        <width>781</width>
+        <height>331</height>
        </rect>
       </property>
       <property name="cursor" stdset="0">
@@ -2247,10 +2247,10 @@ QTableView::corner {
      <widget class="QDateEdit" name="dateEdit">
       <property name="geometry">
        <rect>
-        <x>619</x>
+        <x>699</x>
         <y>160</y>
-        <width>131</width>
-        <height>31</height>
+        <width>130</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -2260,7 +2260,7 @@ QDateEdit#dateEdit {
     background-color: rgb(27, 26, 56);
     padding-left: 32px;
     color: white;
-    font: 8pt &quot;Poppins&quot;;
+    font: 10pt &quot;Poppins&quot;;
 }
 
 /* Style for QDateEdit's drop-down button */
@@ -2363,35 +2363,6 @@ QCalendarWidget QToolButton#qt_calendar_nextmonth {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="show_all">
-      <property name="geometry">
-       <rect>
-        <x>510</x>
-        <y>160</y>
-        <width>91</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#show_all {
-background-color: #6788FF; /* Background color */
-font: 63 8pt &quot;Poppins SemiBold&quot;;
-color: white; /* Text color */
-outline: 0;
-padding-top: 2px;
- /* Padding for the button */
-border: none; /* Remove default button border */
-border-radius: 10px; /* Add some border-radius for a rounded appearance */
-}
-QPushButton#show_all:hover {
-cursor: pointer; /* Change cursor to pointer on hover */
-background-color: #4c6cbf;
-}</string>
-      </property>
-      <property name="text">
-       <string>Show All</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="add_prod_4">
       <property name="geometry">
        <rect>
@@ -2405,17 +2376,17 @@ background-color: #4c6cbf;
        <string>Logout</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#add_prod_4 {
-background-color: #4c6cbf; /* Background color */
+       <string notr="true">QPushButton {
+background-color: #4c6cbf;
 font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white;
 outline: 0;
-color: white; /* Text color */
-padding: 10px 20px; /* Padding for the button */
-border: none; /* Remove default button border */
-border-radius: 10px; /* Add some border-radius for a rounded appearance */
+padding: 10px 20px;
+border: none;
+border-radius: 10px;
 }
-QPushButton#add_prod_4:hover {
-cursor: pointer; /* Change cursor to pointer on hover */
+QPushButton:hover {
+cursor: pointer;
 background-color: #4c6cbf;
 }</string>
       </property>
@@ -2436,13 +2407,12 @@ background-color: #4c6cbf;
      <zorder>columnView_7</zorder>
      <zorder>columnView_8</zorder>
      <zorder>orders_3</zorder>
-     <zorder>navBtnTwo_4</zorder>
+     <zorder>navProdModThree</zorder>
      <zorder>logout_3</zorder>
-     <zorder>navBtnOne_4</zorder>
+     <zorder>navOrderEntryThree</zorder>
      <zorder>o_head</zorder>
      <zorder>orders_table</zorder>
      <zorder>dateEdit</zorder>
-     <zorder>show_all</zorder>
      <zorder>add_prod_4</zorder>
     </widget>
     <widget class="QWidget" name="tab_3">
@@ -2465,16 +2435,16 @@ background-color: #4c6cbf;
        <string>Logout</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#logout_2 {
+       <string notr="true">QPushButton {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
-outline: 0;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#logout_2:hover {
+QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -2493,7 +2463,7 @@ background-color: #4c6cbf;
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="navBtnOne_2">
+     <widget class="QPushButton" name="navOrderEntryFour">
       <property name="geometry">
        <rect>
         <x>104</x>
@@ -2506,7 +2476,7 @@ background-color: #4c6cbf;
        <string>Order Entry</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#navBtnOne_2 {
+       <string notr="true">QPushButton {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
@@ -2515,7 +2485,7 @@ padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#navBtnOne_2:hover {
+QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -2578,17 +2548,17 @@ border-radius: 10px;</string>
        <string>Orders</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#orders_2 {
-background-color: #4c6cbf; /* Background color */
+       <string notr="true">QPushButton {
+background-color: #4c6cbf;
 font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white; /* Text color */
+color: white;
 outline: 0;
-padding: 10px 20px; /* Padding for the button */
-border: none; /* Remove default button border */
-border-radius: 10px; /* Add some border-radius for a rounded appearance */
+padding: 10px 20px;
+border: none;
+border-radius: 10px;
 }
-QPushButton#orders_2:hover {
-cursor: pointer; /* Change cursor to pointer on hover */
+QPushButton:hover {
+cursor: pointer;
 background-color: #4c6cbf;
 }</string>
       </property>
@@ -2606,7 +2576,7 @@ background-color: #4c6cbf;
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="navBtnTwo_2">
+     <widget class="QPushButton" name="navProdModFour">
       <property name="geometry">
        <rect>
         <x>244</x>
@@ -2619,16 +2589,16 @@ background-color: #4c6cbf;
        <string>Edit Orders</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#navBtnTwo_2 {
+       <string notr="true">QPushButton {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
-outline: 0;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#navBtnTwo_2:hover {
+QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -3009,16 +2979,16 @@ color: red;</string>
        <string>Logout</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#add_prod_2 {
+       <string notr="true">QPushButton {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
-outline: 0;
 color: white; /* Text color */
+outline: 0;
 padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#add_prod_2:hover {
+QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -3040,8 +3010,8 @@ background-color: #4c6cbf;
      <zorder>columnView_5</zorder>
      <zorder>columnView_6</zorder>
      <zorder>orders_2</zorder>
-     <zorder>navBtnTwo_2</zorder>
-     <zorder>navBtnOne_2</zorder>
+     <zorder>navProdModFour</zorder>
+     <zorder>navOrderEntryFour</zorder>
      <zorder>logout_2</zorder>
      <zorder>eo_instruction_2</zorder>
      <zorder>eo_instruction_3</zorder>
@@ -3085,19 +3055,19 @@ background-color: #4c6cbf;
   <tabstop>prodModQuantityInp</tabstop>
   <tabstop>prodModDeleteBtn</tabstop>
   <tabstop>prodModUpdateBtn</tabstop>
-  <tabstop>navOrderEntry3</tabstop>
-  <tabstop>navManageStocks3</tabstop>
+  <tabstop>navOrderEntryTwo</tabstop>
+  <tabstop>navProdModTwo</tabstop>
   <tabstop>navProdMod3</tabstop>
   <tabstop>navViewOrders3</tabstop>
   <tabstop>navLogout3</tabstop>
   <tabstop>columnView</tabstop>
   <tabstop>logout_2</tabstop>
   <tabstop>loginBtn</tabstop>
-  <tabstop>navBtnOne_2</tabstop>
+  <tabstop>navOrderEntryFour</tabstop>
   <tabstop>columnView_5</tabstop>
   <tabstop>columnView_6</tabstop>
   <tabstop>orders_2</tabstop>
-  <tabstop>navBtnTwo_2</tabstop>
+  <tabstop>navProdModFour</tabstop>
   <tabstop>eo_input_3</tabstop>
   <tabstop>eo_input_2</tabstop>
   <tabstop>eo_button_1</tabstop>
@@ -3114,22 +3084,21 @@ background-color: #4c6cbf;
   <tabstop>navProdMod1</tabstop>
   <tabstop>loginInp</tabstop>
   <tabstop>logout_3</tabstop>
-  <tabstop>navBtnOne_4</tabstop>
+  <tabstop>navOrderEntryThree</tabstop>
   <tabstop>columnView_7</tabstop>
   <tabstop>columnView_8</tabstop>
   <tabstop>orders_3</tabstop>
-  <tabstop>navBtnTwo_4</tabstop>
+  <tabstop>navProdModThree</tabstop>
   <tabstop>orders_table</tabstop>
   <tabstop>dateEdit</tabstop>
-  <tabstop>show_all</tabstop>
   <tabstop>add_prod_4</tabstop>
   <tabstop>lineEdit</tabstop>
   <tabstop>prodOrdPhoneInp</tabstop>
   <tabstop>columnView_4</tabstop>
   <tabstop>prodOrdNameSel</tabstop>
-  <tabstop>navOrderEntry1</tabstop>
+  <tabstop>navOrderEntryOne</tabstop>
   <tabstop>nextOrderBtn</tabstop>
-  <tabstop>navManageStocks1</tabstop>
+  <tabstop>navProdModOne</tabstop>
   <tabstop>navViewOrders1</tabstop>
   <tabstop>columnView_2</tabstop>
   <tabstop>tabWidget</tabstop>

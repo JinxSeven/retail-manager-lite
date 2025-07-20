@@ -16,10 +16,10 @@ class MainApp(QMainWindow, ui):
         self.setupUi(self)
         initialize_db()
 
-        self.login_handler = LoginHandler(self)
-        self.order_handler = OrderHandler(self)
-        self.product_handler = ProductHandler(self)
         self.initializer_handler = Initializer(self)
+        self.login_handler = LoginHandler(self)
+        self.product_handler = ProductHandler(self)
+        self.order_handler = OrderHandler(self)
 
 def main():
     app = QApplication(sys.argv)

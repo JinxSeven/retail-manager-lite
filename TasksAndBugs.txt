@@ -2,8 +2,8 @@ Tasks:
 Focus on fixing and completing "Order Entry Tab" - In Progress
     SubTasks:
     - Remove order item from bill - Completed
-    - Update order item in bill - Completed
-    
+    - Increase order item quant when duplicate is found in bill - Completed
+    - Reduce order item quant found in bill
 
 Bugs:
 Prod Mod - Deleting product leads to application crash - Fixed
