@@ -1,5 +1,4 @@
 import sqlite3
-import logging
 import secrets
 from src.config import DB_PATH
 from src.utils.color import Color

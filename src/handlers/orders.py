@@ -33,14 +33,23 @@ class OrderHandler:
 
         # Loading combobox with product names
         Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
+        self.ui.prodOrdNameSel.currentIndexChanged.connect(self.load_prod_quant)
 
     def generate_order_id(self):
         self.ui.orderIdLbl.setText(str(secrets.token_hex(4)))
 
-    def delete_order_item(self):
-        # TODO - Delete order item from bill table
-        raise NotImplementedError("This method is not implemented")
-
+    def load_prod_quant(self):
+        if self.current_order is []:
+            return
+        else:
+            prod_name = self.ui.prodOrdNameSel.currentText()
+            prod_quant = next((prod.quantity for i, prod in enumerate(self.current_order) if prod.product_name == prod_name), 0)
+            
+            if prod_quant != 0:
+                self.ui.prodOrdQuantInp.setText(str(prod_quant))
+            else:
+                self.ui.prodOrdQuantInp.clear()
+            
     def add_product_to_bill(self):
         try:
             order_id = self.ui.orderIdLbl.text()
@@ -87,7 +96,7 @@ class OrderHandler:
                                                                                str(product_item.product_id),
                                                                                row_position, self.delete_prod))
             else:
-                self.current_order[matching_index].quantity += quantity
+                self.current_order[matching_index].quantity = quantity
                 
                 self.calculate_total()
                 # Finding row with matching product ID
@@ -98,7 +107,7 @@ class OrderHandler:
                 self.ui.prodOrdTbl.setItem(row_to_update, 4, QTableWidgetItem(
                     str(product_item.product_price * self.current_order[matching_index].quantity)))
             # Clearing quantity field after adding prod to bill
-            self.ui.prodOrdQuantInp.clear()
+            # self.ui.prodOrdQuantInp.clear()
         except sqlite3.Error as ex:
             print(Color.RED + f"SQLite Exception: {ex}" + Color.RED)
             return
@@ -123,4 +132,5 @@ class OrderHandler:
 
         self.ui.prodOrdTbl.removeRow(row_to_delete)
         self.calculate_total()
+        self.load_prod_quant()
 

@@ -3,12 +3,15 @@ Focus on fixing and completing "Order Entry Tab" - In Progress
     SubTasks:
     - Remove order item from bill - Completed
     - Increase order item quant when duplicate is found in bill - Completed
-    - Reduce order item quant found in bill
+    - Update duplicate order -> Overhaul - Completed
 
 Bugs:
 Prod Mod - Deleting product leads to application crash - Fixed
 Prod Mod - Deleting product must update order entry page combobox - Fixed
-Bill Mod - Removing product from order table doesnt update serial number - Pending
+Bill Mod - Removing product from order table doesn't update serial number - Pending
+
+Critical Bugs:
+Bill Mod - Unable to remove certain products (Brown Rice in this case) from bill after removing some other prod - Pending
 
 Improve:
 Login password is unchangeable and hardcoded
