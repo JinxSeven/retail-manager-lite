@@ -11,7 +11,7 @@ Prod Mod - Deleting product must update order entry page combobox - Fixed
 Bill Mod - Removing product from order table doesn't update serial number - Pending
 
 Critical Bugs:
-Bill Mod - Unable to remove certain products (Brown Rice in this case) from bill after removing some other prod - Pending
+Bill Mod - Unable to remove certain products from bill after removing some other prod - Fixed
 
 Improve:
 Login password is unchangeable and hardcoded

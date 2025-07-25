@@ -1,23 +1,20 @@
 from functools import partial
-
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QPushButton
-
+from PyQt5.QtWidgets import QPushButton, QTableWidget, QWidget
 from src.utils.services import Services
 
-
-def click_handler(prod_name, prod_id, row, delete_func):
-    proceed = Services.confirmation_messagebox("Order Modification", f"Do you want to remove {prod_name} from order?")
-    if not proceed:
-        return
-    # Calling back method from orders.py
-    delete_func(prod_id, row)
+def get_widget_row(table: QTableWidget, widget: QWidget) -> int:
+    for row in range(table.rowCount()):
+        for col in range(table.columnCount()):
+            if table.cellWidget(row, col) == widget:
+                return row
+    return -1  # not found
 
 
 class DeleteButton(QPushButton):
     # Constructor
     # Takes object name and callback func as args
-    def __init__(self, prod_name: str, prod_id: str, row, delete_func, parent = None):
+    def __init__(self, prod_name: str, prod_id: str, delete_func, parent):
         icon = QIcon("assets/images/trash-can.svg")
         # Button
         # Base class (QPushButton) constructor
@@ -39,5 +36,12 @@ class DeleteButton(QPushButton):
             }
         """)
         
-        self.clicked.connect(partial(click_handler, prod_name, prod_id, row, delete_func))
-    
+        self.clicked.connect(partial(self.click_handler, parent, prod_name, prod_id, delete_func))
+
+    def click_handler(self, parent, prod_name, prod_id, delete_func):
+        row = get_widget_row(parent, self)
+        proceed = Services.confirmation_messagebox("Order Modification", f"Do you want to remove {prod_name} from order?")
+        if not proceed:
+            return
+        # Calling back method from orders.py
+        delete_func(prod_id, row)

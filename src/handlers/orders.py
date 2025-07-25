@@ -34,7 +34,7 @@ class OrderHandler:
         # Loading combobox with product names
         Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
         self.ui.prodOrdNameSel.currentIndexChanged.connect(self.load_prod_quant)
-
+        
     def generate_order_id(self):
         self.ui.orderIdLbl.setText(str(secrets.token_hex(4)))
 
@@ -94,7 +94,7 @@ class OrderHandler:
                                            QTableWidgetItem(str(product_item.product_price * product_item.quantity)))
                 self.ui.prodOrdTbl.setCellWidget(row_position, 5, DeleteButton(str(product_item.product_name),
                                                                                str(product_item.product_id),
-                                                                               row_position, self.delete_prod))
+                                                                               self.delete_prod, self.ui.prodOrdTbl))
             else:
                 self.current_order[matching_index].quantity = quantity
                 
