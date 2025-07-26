@@ -8,7 +8,7 @@ Focus on fixing and completing "Order Entry Tab" - In Progress
 Bugs:
 Prod Mod - Deleting product leads to application crash - Fixed
 Prod Mod - Deleting product must update order entry page combobox - Fixed
-Bill Mod - Removing product from order table doesn't update serial number - Pending
+Bill Mod - Removing product from order table doesn't update serial number - Fixed
 
 Critical Bugs:
 Bill Mod - Unable to remove certain products from bill after removing some other prod - Fixed

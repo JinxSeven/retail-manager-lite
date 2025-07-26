@@ -123,6 +123,11 @@ class OrderHandler:
             total += self.current_order[i].product_price * self.current_order[i].quantity
 
         self.ui.grandTotalDsp.setText(str(total))
+        
+    def renumber_serial_numbers(self, current_row: int):
+        for i in range(current_row, self.ui.prodOrdTbl.rowCount()):
+            self.ui.prodOrdTbl.setItem(i, 0, QTableWidgetItem(str(i + 1)))
+            
 
     def delete_prod(self, prod_id: str, row_to_delete: int):
         for prod in self.current_order[:]:
@@ -133,4 +138,5 @@ class OrderHandler:
         self.ui.prodOrdTbl.removeRow(row_to_delete)
         self.calculate_total()
         self.load_prod_quant()
+        self.renumber_serial_numbers(row_to_delete)
 
