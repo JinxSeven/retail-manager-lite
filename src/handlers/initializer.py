@@ -21,5 +21,5 @@ class Initializer:
             self.ui.tabWidget.setTabEnabled(i, False)
     
     def enable_tabs(self):
-        for i in range(1, 5):
+        for i in range(1, 4):
             self.ui.tabWidget.setTabEnabled(i, True)
