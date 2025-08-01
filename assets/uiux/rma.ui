@@ -151,7 +151,7 @@ QTabBar::tab:right:only-one {
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -678,7 +678,7 @@ color: white</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#nextOrderBtn {
+       <string notr="true">QPushButton {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
@@ -687,7 +687,7 @@ padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#nextOrderBtn:hover {
+QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -714,7 +714,7 @@ color: white</string>
        <string>Order ID:</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="navProdMod1">
+     <widget class="QPushButton" name="navManOrdOne">
       <property name="geometry">
        <rect>
         <x>384</x>
@@ -888,7 +888,7 @@ QTableView::corner {
       <widget class="QLabel" name="orderDateLbl">
        <property name="geometry">
         <rect>
-         <x>411</x>
+         <x>330</x>
          <y>12</y>
          <width>111</width>
          <height>40</height>
@@ -908,7 +908,7 @@ QTableView::corner {
      <widget class="QLabel" name="order_date">
       <property name="geometry">
        <rect>
-        <x>660</x>
+        <x>579</x>
         <y>192</y>
         <width>51</width>
         <height>21</height>
@@ -1107,7 +1107,7 @@ color: white</string>
      <zorder>prodOrdQuantInp</zorder>
      <zorder>oe_head</zorder>
      <zorder>nextOrderBtn</zorder>
-     <zorder>navProdMod1</zorder>
+     <zorder>navManOrdOne</zorder>
      <zorder>groupBox</zorder>
      <zorder>order_date</zorder>
      <zorder>prodOrdNameSel</zorder>
@@ -1378,9 +1378,9 @@ background-color: #4c6cbf;
       <property name="geometry">
        <rect>
         <x>420</x>
-        <y>180</y>
+        <y>170</y>
         <width>411</width>
-        <height>341</height>
+        <height>351</height>
        </rect>
       </property>
       <property name="font">
@@ -1997,12 +1997,12 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../images/logout.png</normaloff>../images/logout.png</iconset>
+        <normaloff>../images/logout.svg</normaloff>../images/logout.svg</iconset>
       </property>
       <property name="iconSize">
        <size>
-        <width>75</width>
-        <height>75</height>
+        <width>30</width>
+        <height>35</height>
        </size>
       </property>
      </widget>
@@ -2041,12 +2041,12 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../images/order_entry.png</normaloff>../images/order_entry.png</iconset>
+        <normaloff>../images/shopping.svg</normaloff>../images/shopping.svg</iconset>
       </property>
       <property name="iconSize">
        <size>
-        <width>75</width>
-        <height>75</height>
+        <width>35</width>
+        <height>35</height>
        </size>
       </property>
      </widget>
@@ -2056,7 +2056,7 @@ background-color: #4c6cbf;
         <x>16</x>
         <y>20</y>
         <width>851</width>
-        <height>551</height>
+        <height>561</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -2113,12 +2113,12 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../images/orders.png</normaloff>../images/orders.png</iconset>
+        <normaloff>../images/receipt.svg</normaloff>../images/receipt.svg</iconset>
       </property>
       <property name="iconSize">
        <size>
-        <width>75</width>
-        <height>75</height>
+        <width>35</width>
+        <height>35</height>
        </size>
       </property>
      </widget>
@@ -2154,12 +2154,12 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../images/edit_order.png</normaloff>../images/edit_order.png</iconset>
+        <normaloff>../images/shelves.svg</normaloff>../images/shelves.svg</iconset>
       </property>
       <property name="iconSize">
        <size>
-        <width>75</width>
-        <height>75</height>
+        <width>35</width>
+        <height>35</height>
        </size>
       </property>
      </widget>
@@ -2187,7 +2187,7 @@ color: white;</string>
         <x>50</x>
         <y>220</y>
         <width>781</width>
-        <height>331</height>
+        <height>301</height>
        </rect>
       </property>
       <property name="cursor" stdset="0">
@@ -2244,23 +2244,23 @@ QTableView::corner {
 }</string>
       </property>
      </widget>
-     <widget class="QDateEdit" name="dateEdit">
+     <widget class="QDateEdit" name="ordDateFilter">
       <property name="geometry">
        <rect>
-        <x>699</x>
+        <x>532</x>
         <y>160</y>
-        <width>130</width>
-        <height>41</height>
+        <width>121</width>
+        <height>45</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">/* Style for QDateEdit */
-QDateEdit#dateEdit {
+QDateEdit {
     border-radius: 10px;
     background-color: rgb(27, 26, 56);
-    padding-left: 32px;
+    padding-left: 7px;
     color: white;
-    font: 10pt &quot;Poppins&quot;;
+    font: 10pt &quot;Poppins SemiBold&quot;;
 }
 
 /* Style for QDateEdit's drop-down button */
@@ -2273,7 +2273,7 @@ QDateEdit::drop-down {
 }
 
 QDateEdit::down-arrow {
-    image: url(:/icons/calendar_icon.png); /* Use your custom icon here */
+    image: url(:/svg_icons/caret-down.svg); /* Use your custom icon here */
     width: 15px;
     height: 15px;
 }
@@ -2292,36 +2292,7 @@ QCalendarWidget QToolButton {
     border: none;
 	padding-right: 15px;
 	padding-left: 15px;
-    border-radius: 5px;
     font: 8pt &quot;Poppins&quot;;
-}
-
-QCalendarWidget QToolButton::hover {
-    background-color: rgb(40, 39, 74);
-}
-
-QCalendarWidget QMenu {
-    background-color: rgb(27, 26, 56);
-    color: white;
-    border: 1px solid white;
-}
-
-QCalendarWidget QSpinBox {
-    background-color: rgb(27, 26, 56);
-    color: white;
-    border: none;
-    border-radius: 5px;
-}
-
-QCalendarWidget QSpinBox::up-button, QCalendarWidget QSpinBox::down-button {
-    background-color: rgb(27, 26, 56);
-    subcontrol-origin: border;
-    subcontrol-position: center;
-    width: 15px;
-}
-
-QCalendarWidget QSpinBox::up-arrow, QCalendarWidget QSpinBox::down-arrow {
-    image: none; /* Use custom icons if necessary */
 }
 
 QCalendarWidget QAbstractItemView:enabled {
@@ -2332,32 +2303,69 @@ QCalendarWidget QAbstractItemView:enabled {
     border: none;
 }
 
-QCalendarWidget QAbstractItemView:disabled {
-    color: grey;
+QCalendarWidget QWidget#qt_calendar_navigationbar {
+    background-color: rgb(27, 26, 56);  /* Match your main bg */
+    color: white;
 }
 
-/* Optional: Style for disabled state */
-QDateEdit:disabled {
-    background-color: rgb(45, 44, 89);
-    color: grey;
-}
-
-QCalendarWidget QToolButton#qt_calendar_prevmonth {
-    width: 0px;
-    height: 0px;
-    border: none;
-    background: none;
+QCalendarWidget QToolButton#qt_calendar_prevmonth,
+QCalendarWidget QToolButton#qt_calendar_nextmonth {
+    qproperty-icon: none;  /* Remove default arrows if needed */
+    color: white;
+    background: transparent;
 }
 
 QCalendarWidget QToolButton#qt_calendar_nextmonth {
-    width: 0px;
-    height: 0px;
-    border: none;
-    background: none;
+    image: url(:/svg_icons/square-right.svg);
+    width: 15px;
+    height: 15px;
+}
+
+QCalendarWidget QToolButton#qt_calendar_prevmonth {
+    image: url(:/svg_icons/square-left.svg);
+    width: 15px;
+    height: 15px;
+}
+
+QCalendarWidget QMenu {
+    background-color: rgb(27, 26, 56);
+    color: white;
+    border: 1px solid white;
+}
+
+/* Weekday names text */
+QCalendarWidget QAbstractItemView:disabled {
+    color: white;  /* Weekday names color */
+    font: 8pt &quot;Poppins SemiBold&quot;;  /* Make slightly bolder than dates */
+    background-color: transparent;
+}
+
+QCalendarWidget QTableView {
+    alternate-background-color: rgb(20, 31, 69); /* Header bg */
+}
+
+QCalendarWidget QTableView::item {
+    color: white; /* Weekday text color */
+    background-color: rgb(20, 31, 69); /* Cell bg */
+    font: 8pt &quot;Poppins SemiBold&quot;;
+}
+
+QCalendarWidget QToolButton::menu-indicator {
+    image: url(:/svg_icons/caret_down.svg);
+    width: 12px;
+    height: 12px;
+    subcontrol-position: right center;
 }</string>
       </property>
+      <property name="minimumDate">
+       <date>
+        <year>2025</year>
+        <month>8</month>
+        <day>1</day>
+       </date>
+      </property>
       <property name="displayFormat">
-       <string>yyyy-MM-dd</string>
+       <string>dd-MM-yyyy</string>
       </property>
       <property name="calendarPopup">
        <bool>true</bool>
@@ -2395,13 +2403,264 @@ background-color: #4c6cbf;
       </property>
       <property name="icon">
        <iconset>
-        <normaloff>../images/add_prod.png</normaloff>../images/add_prod.png</iconset>
+        <normaloff>../images/clipboard-list.svg</normaloff>../images/clipboard-list.svg</iconset>
       </property>
       <property name="iconSize">
        <size>
-        <width>75</width>
-        <height>75</height>
+        <width>35</width>
+        <height>35</height>
        </size>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="prodAddNameInp_2">
+      <property name="geometry">
+       <rect>
+        <x>367</x>
+        <y>160</y>
+        <width>161</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Poppins SemiBold</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+	color: white;
+	font: 12pt &quot;Poppins SemiBold&quot;;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	background-color:rgb(27, 26, 56);
+	padding: 7px 12px;
+	border-radius: 10px;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Search...</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="searchByOrd">
+      <property name="geometry">
+       <rect>
+        <x>268</x>
+        <y>160</y>
+        <width>95</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+font: 8pt &quot;Poppins&quot;;
+border-top-right-radius: 10px;
+border-top-left-radius: 10px;
+background-color:rgb(27, 26, 56);
+padding: 4px 12px;</string>
+      </property>
+      <property name="text">
+       <string>Order ID</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="searchByPhone">
+      <property name="geometry">
+       <rect>
+        <x>268</x>
+        <y>185</y>
+        <width>95</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+font: 8pt &quot;Poppins&quot;;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+background-color:rgb(27, 26, 56);
+padding: 4px 12px;</string>
+      </property>
+      <property name="text">
+       <string>Cx Phone</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="logout_4">
+      <property name="geometry">
+       <rect>
+        <x>780</x>
+        <y>160</y>
+        <width>51</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Logout</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+background-color: #6788FF;
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white;
+outline: 0;
+padding: 10px 20px;
+border: none;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-radius: 10px;
+}
+QPushButton:hover {
+cursor: pointer;
+background-color: #4c6cbf;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../images/magnifier.svg</normaloff>../images/magnifier.svg</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>20</width>
+        <height>35</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="ordDateFilter_2">
+      <property name="geometry">
+       <rect>
+        <x>656</x>
+        <y>160</y>
+        <width>121</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/* Style for QDateEdit */
+QDateEdit {
+    border-radius: 10px;
+    background-color: rgb(27, 26, 56);
+    padding-left: 7px;
+    color: white;
+    font: 10pt &quot;Poppins SemiBold&quot;;
+}
+
+/* Style for QDateEdit's drop-down button */
+QDateEdit::drop-down {
+	border: 10px;
+    width: 30px;
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    /* border-left: 1px solid white; Optional: add a border to separate the button */
+}
+
+QDateEdit::down-arrow {
+    image: url(:/svg_icons/caret-down.svg); /* Use your custom icon here */
+    width: 15px;
+    height: 15px;
+}
+
+/* Style for the calendar popup */
+QCalendarWidget {
+    background-color: rgb(27, 26, 56);
+    color: white;
+    border-radius: 10px;
+    font: 8pt &quot;Poppins&quot;;
+}
+
+QCalendarWidget QToolButton {
+    background-color: rgb(27, 26, 56);
+    color: white;
+    border: none;
+	padding-right: 15px;
+	padding-left: 15px;
+    font: 8pt &quot;Poppins&quot;;
+}
+
+QCalendarWidget QAbstractItemView:enabled {
+    color: white;
+    background-color: rgb(27, 26, 56);
+    selection-background-color: rgb(40, 39, 74);
+    selection-color: white;
+    border: none;
+}
+
+QCalendarWidget QWidget#qt_calendar_navigationbar {
+    background-color: rgb(27, 26, 56);  /* Match your main bg */
+    color: white;
+}
+
+QCalendarWidget QToolButton#qt_calendar_prevmonth,
+QCalendarWidget QToolButton#qt_calendar_nextmonth {
+    qproperty-icon: none;  /* Remove default arrows if needed */
+    color: white;
+    background: transparent;
+}
+
+QCalendarWidget QToolButton#qt_calendar_nextmonth {
+    image: url(:/svg_icons/square-right.svg);
+    width: 15px;
+    height: 15px;
+}
+
+QCalendarWidget QToolButton#qt_calendar_prevmonth {
+    image: url(:/svg_icons/square-left.svg);
+    width: 15px;
+    height: 15px;
+}
+
+QCalendarWidget QMenu {
+    background-color: rgb(27, 26, 56);
+    color: white;
+    border: 1px solid white;
+}
+
+/* Weekday names text */
+QCalendarWidget QAbstractItemView:disabled {
+    color: white;  /* Weekday names color */
+    font: 8pt &quot;Poppins SemiBold&quot;;  /* Make slightly bolder than dates */
+    background-color: transparent;
+}
+
+QCalendarWidget QTableView {
+    alternate-background-color: rgb(20, 31, 69); /* Header bg */
+}
+
+QCalendarWidget QTableView::item {
+    color: white; /* Weekday text color */
+    background-color: rgb(20, 31, 69); /* Cell bg */
+    font: 8pt &quot;Poppins SemiBold&quot;;
+}
+
+QCalendarWidget QToolButton::menu-indicator {
+    image: url(:/svg_icons/caret_down.svg);
+    width: 12px;
+    height: 12px;
+    subcontrol-position: right center;
+}</string>
+      </property>
+      <property name="minimumDate">
+       <date>
+        <year>2025</year>
+        <month>8</month>
+        <day>1</day>
+       </date>
+      </property>
+      <property name="displayFormat">
+       <string>dd-MM-yyyy</string>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
       </property>
      </widget>
      <zorder>columnView_7</zorder>
@@ -2412,8 +2671,13 @@ background-color: #4c6cbf;
      <zorder>navOrderEntryThree</zorder>
      <zorder>o_head</zorder>
      <zorder>orders_table</zorder>
-     <zorder>dateEdit</zorder>
+     <zorder>ordDateFilter</zorder>
      <zorder>add_prod_4</zorder>
+     <zorder>prodAddNameInp_2</zorder>
+     <zorder>searchByOrd</zorder>
+     <zorder>searchByPhone</zorder>
+     <zorder>logout_4</zorder>
+     <zorder>ordDateFilter_2</zorder>
     </widget>
     <widget class="QWidget" name="tab_3">
      <property name="cursor">
@@ -3081,7 +3345,7 @@ background-color: #4c6cbf;
   <tabstop>prodOrdTbl</tabstop>
   <tabstop>columnView_3</tabstop>
   <tabstop>prodOrdQuantInp</tabstop>
-  <tabstop>navProdMod1</tabstop>
+  <tabstop>navManOrdOne</tabstop>
   <tabstop>loginInp</tabstop>
   <tabstop>logout_3</tabstop>
   <tabstop>navOrderEntryThree</tabstop>
@@ -3090,7 +3354,7 @@ background-color: #4c6cbf;
   <tabstop>orders_3</tabstop>
   <tabstop>navProdModThree</tabstop>
   <tabstop>orders_table</tabstop>
-  <tabstop>dateEdit</tabstop>
+  <tabstop>ordDateFilter</tabstop>
   <tabstop>add_prod_4</tabstop>
   <tabstop>lineEdit</tabstop>
   <tabstop>prodOrdPhoneInp</tabstop>
@@ -3104,6 +3368,8 @@ background-color: #4c6cbf;
   <tabstop>tabWidget</tabstop>
   <tabstop>navLogout1</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="date_picker.qrc"/>
+ </resources>
  <connections/>
 </ui>
