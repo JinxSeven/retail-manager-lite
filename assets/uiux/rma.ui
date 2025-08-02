@@ -668,7 +668,7 @@ color: white</string>
        <string>Order Entry</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="nextOrderBtn">
+     <widget class="QPushButton" name="submitOrderBtn">
       <property name="geometry">
        <rect>
         <x>180</x>
@@ -678,7 +678,7 @@ color: white</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#nextOrderBtn {
+       <string notr="true">QPushButton {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
@@ -687,7 +687,7 @@ padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#nextOrderBtn:hover {
+QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -1106,7 +1106,7 @@ color: white</string>
      <zorder>prodQuantLable</zorder>
      <zorder>prodOrdQuantInp</zorder>
      <zorder>oe_head</zorder>
-     <zorder>nextOrderBtn</zorder>
+     <zorder>submitOrderBtn</zorder>
      <zorder>navProdMod1</zorder>
      <zorder>groupBox</zorder>
      <zorder>order_date</zorder>
@@ -3038,7 +3038,7 @@ background-color: #4c6cbf;
      <x>0</x>
      <y>0</y>
      <width>988</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
@@ -3097,7 +3097,7 @@ background-color: #4c6cbf;
   <tabstop>columnView_4</tabstop>
   <tabstop>prodOrdNameSel</tabstop>
   <tabstop>navOrderEntryOne</tabstop>
-  <tabstop>nextOrderBtn</tabstop>
+  <tabstop>submitOrderBtn</tabstop>
   <tabstop>navProdModOne</tabstop>
   <tabstop>navViewOrders1</tabstop>
   <tabstop>columnView_2</tabstop>

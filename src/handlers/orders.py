@@ -1,6 +1,6 @@
 import sqlite3
 import secrets
-import datetime
+from datetime import datetime
 from typing import List
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QTableWidgetItem
@@ -10,8 +10,6 @@ from src.utils.color import Color
 from src.utils.delete_button import DeleteButton
 from src.utils.services import Services
 
-
-# TODO - Edit product quantity in bill
 
 class OrderHandler:
     current_order: List[Order] = []
@@ -28,8 +26,9 @@ class OrderHandler:
         self.ui.prodOrdTbl.setColumnWidth(5, 15)
 
         self.generate_order_id()
-        self.ui.orderDateLbl.setText(datetime.date.today().strftime('%d.%m.%Y'))
+        self.ui.orderDateLbl.setText(datetime.today().strftime('%d.%m.%Y'))
         self.ui.addToBillBtn.clicked.connect(self.add_product_to_bill)
+        self.ui.submitOrderBtn.clicked.connect(self.submit_order)
 
         # Loading combobox with product names
         Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
@@ -140,3 +139,52 @@ class OrderHandler:
         self.load_prod_quant()
         self.renumber_serial_numbers(row_to_delete)
 
+    def submit_order(self):
+        try:
+            with sqlite3.connect(DB_PATH, timeout=10) as conn:
+                cursor = conn.cursor()
+                OrderId = self.ui.orderIdLbl.text()
+                grandTotal = float(self.ui.grandTotalDsp.text())
+                phone = self.ui.prodOrdPhoneInp.text()
+                current_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+                conn.execute("BEGIN TRANSACTION")
+
+                # Insert order header
+                cursor.execute("""
+                    INSERT INTO orders(order_id, order_date_time, cx_phone_num, grand_total) 
+                    VALUES (?, ?, ?, ?)""",
+                    (OrderId, current_datetime, phone, grandTotal)
+                )
+
+                # Insert order items
+                for record in self.current_order:
+                    cursor.execute("""
+                        INSERT INTO order_items(order_id, product_id, quantity) 
+                        VALUES (?, ?, ?)""",
+                        (record.order_id, record.product_id, record.quantity)
+                    )
+
+                conn.commit()
+                self.clear_orders_tab()
+                Services.display_info(self.ui.prodOrdInfoLbl,"Order submitted successfully",'green')
+
+        except sqlite3.Error as ex:
+            Services.display_info(self.ui.prodOrdInfoLbl,"Order submission failed",Color.RED)
+            print(Color.RED + f"An SQLite error occurred: {ex}" + Color.RESET)
+        except Exception as ex:
+            Services.display_info(self.ui.prodOrdInfoLbl,"Order submission failed",Color.RED)
+            print(Color.RED + f"An unexpected error occurred: {ex}" + Color.RESET)
+
+    def clear_orders_tab(self):
+        self.ui.prodOrdPhoneInp.clear() # clears the phone number in orders
+        self.ui.lineEdit.clear() # clears the points field 
+        self.ui.prodOrdQuantInp.clear() # clears the NOS field
+        self.ui.grandTotalDsp.clear() # clears the grandTotal
+        self.ui.prodOrdTbl.clearContents() # clears the table
+        self.generate_order_id()
+                
+            
+            
+            
+            
