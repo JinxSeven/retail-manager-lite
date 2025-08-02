@@ -7,6 +7,7 @@ from handlers.login import LoginHandler
 from handlers.orders import OrderHandler
 from handlers.products import ProductHandler
 from handlers.initializer import Initializer
+from handlers.manage_orders import ManageOrdersHandler
 
 ui, _ = loadUiType('assets/uiux/rma.ui')
 
@@ -20,6 +21,7 @@ class MainApp(QMainWindow, ui):
         self.login_handler = LoginHandler(self)
         self.product_handler = ProductHandler(self)
         self.order_handler = OrderHandler(self)
+        self.manage_orders_handler = ManageOrdersHandler(self)
 
 def main():
     app = QApplication(sys.argv)

@@ -10,7 +10,6 @@ from src.utils.color import Color
 from src.utils.delete_button import DeleteButton
 from src.utils.services import Services
 
-
 class OrderHandler:
     current_order: List[Order] = []
 
@@ -55,7 +54,7 @@ class OrderHandler:
             order_id = self.ui.orderIdLbl.text()
             product_name = self.ui.prodOrdNameSel.currentText()
             quantity = int(self.ui.prodOrdQuantInp.text())
-            if(quantity<1): 
+            if quantity < 1: 
                 Services.display_info(self.ui.prodOrdInfoLbl, "Enter a positive value in Quantity", 'red')
                 return
         except ValueError as ex:
@@ -145,14 +144,14 @@ class OrderHandler:
 
     def submit_order(self):
         self.ui.submitOrderBtn.setEnabled(False)  # disable the submit button while processing submit request
-        if not self.order_tab_input_validation():
+        if not self.order_input_validation():
             self.ui.submitOrderBtn.setEnabled(True)
             return
         try:
             with sqlite3.connect(DB_PATH, timeout=10) as conn:
                 cursor = conn.cursor()
-                OrderId = self.ui.orderIdLbl.text()
-                grandTotal = float(self.ui.grandTotalDsp.text())
+                order_id = self.ui.orderIdLbl.text()
+                grand_total = float(self.ui.grandTotalDsp.text())
                 phone = self.ui.prodOrdPhoneInp.text()
                 current_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -162,7 +161,7 @@ class OrderHandler:
                 cursor.execute("""
                     INSERT INTO orders(order_id, order_date_time, cx_phone_num, grand_total) 
                     VALUES (?, ?, ?, ?)""",
-                    (OrderId, current_datetime, phone, grandTotal)
+                    (order_id, current_datetime, phone, grand_total)
                 )
 
                 # Insert order items
@@ -186,29 +185,24 @@ class OrderHandler:
 
         self.ui.submitOrderBtn.setEnabled(True)  # Enable the submit button after processing submit request
 
-    def clear_orders_tab(self):
-        self.current_order = [] # clears the old order list
-        self.ui.prodOrdPhoneInp.clear() # clears the phone number in orders
-        self.ui.lineEdit.clear() # clears the points field 
-        self.ui.prodOrdQuantInp.clear() # clears the NOS field
-        self.ui.grandTotalDsp.clear() # clears the grandTotal
-        self.ui.prodOrdTbl.setRowCount(0) # clears the table completely with grids
-        self.generate_order_id()
-        
-                
-    def order_tab_input_validation(self):
+    def clear_orders_tab(self, new_ord_id = True):
+        self.current_order = [] # clears the local order list
+        self.ui.prodOrdPhoneInp.clear() # clears the phone number field
+        self.ui.prodOrdQuantInp.clear() # clears the Nos field
+        self.ui.grandTotalDsp.clear() # clears the grandTotal 
+        self.ui.prodOrdTbl.setRowCount(0) # clears the table completely
+        if new_ord_id: self.generate_order_id()
+
+    def order_input_validation(self):
         phone = self.ui.prodOrdPhoneInp.text()
 
         if len(self.current_order) < 1:
-            Services.display_info(self.ui.prodOrdInfoLbl, "Order quantity must be greater than one", 'red')
+            Services.display_info(self.ui.prodOrdInfoLbl, "No product found in order table", 'red')
             return False
         
         if len(phone) != 10 or not phone.isdigit():
-            Services.display_info(self.ui.prodOrdInfoLbl, "Enter a Valid Phone number", 'red')
+            Services.display_info(self.ui.prodOrdInfoLbl, "Phone number can't be empty", 'red')
             return False
         
         return True
 
-
-            
-            
