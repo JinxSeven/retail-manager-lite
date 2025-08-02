@@ -2,9 +2,11 @@ import sqlite3
 from config import DB_PATH
 from utils.color import Color
 
+conn = sqlite3.connect(DB_PATH)
+
 def initialize_db():
     try:
-        conn = sqlite3.connect(DB_PATH)
+        
         conn.execute("""
             CREATE TABLE IF NOT EXISTS products (
                 product_id TEXT PRIMARY KEY,
