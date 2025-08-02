@@ -971,7 +971,7 @@ QComboBox QScrollBar:horizontal {
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>73</x>
+        <x>72</x>
         <y>473</y>
         <width>71</width>
         <height>16</height>
@@ -1068,7 +1068,7 @@ background-color: #4c6cbf;
      <zorder>prodQuantLable</zorder>
      <zorder>prodOrdQuantInp</zorder>
      <zorder>oe_head</zorder>
-     <zorder>nextOrderBtn</zorder>
+     <zorder>submitOrderBtn</zorder>
      <zorder>navManOrdOne</zorder>
      <zorder>groupBox</zorder>
      <zorder>order_date</zorder>
@@ -2141,70 +2141,7 @@ color: white;</string>
        <string>Orders</string>
       </property>
      </widget>
-     <widget class="QTableWidget" name="orders_table">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>220</y>
-        <width>781</width>
-        <height>301</height>
-       </rect>
-      </property>
-      <property name="cursor" stdset="0">
-       <cursorShape>SizeVerCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">/* QTableWidget Style */
-QTableWidget {
-    border-radius: 10px;
-    gridline-color: #E0E0E0; /* Light grid lines */
-    color: white; /* Dark text color */
-    font: 10pt &quot;Poppins&quot;;
-    background-color: #292D3E;
-    border: 2px solid #292D3E; /* Border color same as background to enhance rounded effect */
-}
-
-/* QTableWidget Item Style */
-QTableWidget::item {
-    border: none; /* Ensure no extra border on items */
-}
-
-/* Header Style */
-QHeaderView::section {
-    background-color: #F5F5F5; /* Light background */
-    padding: 5px;
-    border: none;
-    border-bottom: 1px solid #E0E0E0;
-    color: black;
-    font: 10pt &quot;Poppins&quot;;
-}
-
-/* Vertical Scrollbar */
-QScrollBar:vertical {
-    width: 0px; /* Hides the scrollbar track */
-    background: none; /* Optional: removes background color for better invisibility */
-}
-
-/* Horizontal Scrollbar (optional) */
-QScrollBar:horizontal {
-    height: 0px; /* Hides the scrollbar track */
-    background: none; /* Optional: removes background color for better invisibility */
-}
-
-/* QTableWidget Viewport Style */
-QTableView::viewport {
-    border-radius: 10px;
-    background-color: #292D3E; /* Ensures viewport has same background */
-}
-
-/* Ensuring corners stay rounded by overlapping header and viewport */
-QTableView::corner {
-    background-color: #292D3E; /* Same as the QTableWidget background color */
-    border-radius: 10px 0 0 0; /* Top-left rounded corner */
-}</string>
-      </property>
-     </widget>
-     <widget class="QDateEdit" name="ordDateFilter">
+     <widget class="QDateEdit" name="ordDateFltrStart">
       <property name="geometry">
        <rect>
         <x>532</x>
@@ -2372,7 +2309,7 @@ background-color: #4c6cbf;
        </size>
       </property>
      </widget>
-     <widget class="QLineEdit" name="prodAddNameInp_2">
+     <widget class="QLineEdit" name="searchQryInput">
       <property name="geometry">
        <rect>
         <x>367</x>
@@ -2453,7 +2390,7 @@ padding: 4px 12px;</string>
        <string>Cx Phone</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="logout_4">
+     <widget class="QPushButton" name="beginSearchBtn">
       <property name="geometry">
        <rect>
         <x>780</x>
@@ -2496,7 +2433,7 @@ background-color: #4c6cbf;
        </size>
       </property>
      </widget>
-     <widget class="QDateEdit" name="ordDateFilter_2">
+     <widget class="QDateEdit" name="ordDateFltrEnd">
       <property name="geometry">
        <rect>
         <x>656</x>
@@ -2623,6 +2560,180 @@ QCalendarWidget QToolButton::menu-indicator {
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QLabel" name="manOrdInfoLbl">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>540</y>
+        <width>441</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+/*color: red;
+color: #27e86f;*/</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>220</y>
+        <width>781</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">    border-radius: 10px;
+    gridline-color: #E0E0E0; /* Light grid lines */
+    color: white; /* Dark text color */
+    font: 10pt &quot;Poppins&quot;;
+    background-color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QTableWidget" name="manageOrdTbl">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>0</y>
+         <width>771</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">/* QTableWidget Dark Mode - Compact */
+QTableWidget {
+    border-radius: 8px;
+    gridline-color: #44475a; /* Subtle grid lines */
+    color: #F8F8F2; /* Light text color */
+    font: 9pt &quot;Poppins&quot;; /* Smaller font */
+    background-color: #1E1E1E; /* Dark background */
+    border: 1px solid #1E1E1E; /* Border blends with background */
+}
+
+/* QTableWidget Items */
+QTableWidget::item {
+    border: none;
+    padding: 2px 5px; /* Reduce padding for compact view */
+}
+
+/* Header Style - Dark Mode */
+QHeaderView::section {
+    background-color: #2E2E2E; /* Dark header */
+    padding: 3px 6px; /* Smaller padding */
+    border: none;
+    border-radius: 8px;
+    border-bottom: 1px solid #44475a;
+    color: #CCCCCC; /* Soft white text */
+    font: 9pt &quot;Poppins&quot;;
+}
+
+/* Hide Scrollbars for Minimalist Look */
+QScrollBar:vertical, QScrollBar:horizontal {
+    width: 0px;
+    height: 0px;
+    background: none;
+}
+
+/* QTableWidget Viewport */
+QTableView::viewport {
+    border-radius: 8px;
+    background-color: #1E1E1E;
+}
+
+/* Corner Styling for Rounded Look */
+QTableView::corner {
+    background-color: #1E1E1E;
+    border-radius: 8px 0 0 0;
+}
+</string>
+       </property>
+       <property name="sortingEnabled">
+        <bool>true</bool>
+       </property>
+       <column>
+        <property name="text">
+         <string>Order ID</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Cx Phone</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Date Time</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Bill Total</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>View</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Print</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Delete</string>
+        </property>
+       </column>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>548</x>
+        <y>153</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 8pt &quot;Poppins&quot;;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Start Date</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>675</x>
+        <y>152</y>
+        <width>61</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 8pt &quot;Poppins&quot;;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>End Date</string>
+      </property>
+     </widget>
      <zorder>columnView_7</zorder>
      <zorder>columnView_8</zorder>
      <zorder>orders_3</zorder>
@@ -2630,14 +2741,17 @@ QCalendarWidget QToolButton::menu-indicator {
      <zorder>logout_3</zorder>
      <zorder>navOrderEntryThree</zorder>
      <zorder>o_head</zorder>
-     <zorder>orders_table</zorder>
-     <zorder>ordDateFilter</zorder>
+     <zorder>ordDateFltrStart</zorder>
      <zorder>add_prod_4</zorder>
-     <zorder>prodAddNameInp_2</zorder>
+     <zorder>searchQryInput</zorder>
      <zorder>searchByOrd</zorder>
      <zorder>searchByPhone</zorder>
-     <zorder>logout_4</zorder>
-     <zorder>ordDateFilter_2</zorder>
+     <zorder>beginSearchBtn</zorder>
+     <zorder>ordDateFltrEnd</zorder>
+     <zorder>manOrdInfoLbl</zorder>
+     <zorder>groupBox_3</zorder>
+     <zorder>label_5</zorder>
+     <zorder>label_6</zorder>
     </widget>
     <widget class="QWidget" name="tab_3">
      <property name="cursor">
@@ -3262,7 +3376,7 @@ background-color: #4c6cbf;
      <x>0</x>
      <y>0</y>
      <width>988</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -3313,8 +3427,7 @@ background-color: #4c6cbf;
   <tabstop>columnView_8</tabstop>
   <tabstop>orders_3</tabstop>
   <tabstop>navProdModThree</tabstop>
-  <tabstop>orders_table</tabstop>
-  <tabstop>ordDateFilter</tabstop>
+  <tabstop>ordDateFltrStart</tabstop>
   <tabstop>add_prod_4</tabstop>
   <tabstop>prodOrdPhoneInp</tabstop>
   <tabstop>columnView_4</tabstop>
