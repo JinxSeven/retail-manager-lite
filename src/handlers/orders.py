@@ -1,6 +1,6 @@
 import sqlite3
 import secrets
-import datetime
+from datetime import datetime
 from typing import List
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QTableWidgetItem
@@ -10,8 +10,6 @@ from src.utils.color import Color
 from src.utils.delete_button import DeleteButton
 from src.utils.services import Services
 
-
-# TODO - Edit product quantity in bill
 
 class OrderHandler:
     current_order: List[Order] = []
@@ -28,8 +26,10 @@ class OrderHandler:
         self.ui.prodOrdTbl.setColumnWidth(5, 15)
 
         self.generate_order_id()
-        self.ui.orderDateLbl.setText(datetime.date.today().strftime('%d.%m.%Y'))
+        self.ui.orderDateLbl.setText(datetime.today().strftime('%d.%m.%Y'))
         self.ui.addToBillBtn.clicked.connect(self.add_product_to_bill)
+        self.ui.submitOrderBtn.clicked.connect(self.submit_order)
+
 
         # Loading combobox with product names
         Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
@@ -55,6 +55,9 @@ class OrderHandler:
             order_id = self.ui.orderIdLbl.text()
             product_name = self.ui.prodOrdNameSel.currentText()
             quantity = int(self.ui.prodOrdQuantInp.text())
+            if(quantity<1): 
+                Services.display_info(self.ui.prodOrdInfoLbl, "Enter a positive value in Quantity", 'red')
+                return
         except ValueError as ex:
             Services.display_info(self.ui.prodOrdInfoLbl, "Input type mismatch!", 'red')
             print(Color.RED + f"Input Exception: {ex}" + Color.RED)
@@ -140,3 +143,72 @@ class OrderHandler:
         self.load_prod_quant()
         self.renumber_serial_numbers(row_to_delete)
 
+    def submit_order(self):
+        self.ui.submitOrderBtn.setEnabled(False)  # disable the submit button while processing submit request
+        if not self.order_tab_input_validation():
+            self.ui.submitOrderBtn.setEnabled(True)
+            return
+        try:
+            with sqlite3.connect(DB_PATH, timeout=10) as conn:
+                cursor = conn.cursor()
+                OrderId = self.ui.orderIdLbl.text()
+                grandTotal = float(self.ui.grandTotalDsp.text())
+                phone = self.ui.prodOrdPhoneInp.text()
+                current_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+                conn.execute("BEGIN TRANSACTION")
+
+                # Insert order header
+                cursor.execute("""
+                    INSERT INTO orders(order_id, order_date_time, cx_phone_num, grand_total) 
+                    VALUES (?, ?, ?, ?)""",
+                    (OrderId, current_datetime, phone, grandTotal)
+                )
+
+                # Insert order items
+                for record in self.current_order:
+                    cursor.execute("""
+                        INSERT INTO order_items(order_id, product_id, quantity) 
+                        VALUES (?, ?, ?)""",
+                        (record.order_id, record.product_id, record.quantity)
+                    )
+
+                conn.commit()
+                self.clear_orders_tab()
+                Services.display_info(self.ui.prodOrdInfoLbl,"Order submitted successfully",'green')
+
+        except sqlite3.Error as ex:
+            Services.display_info(self.ui.prodOrdInfoLbl,"Order submission failed",Color.RED)
+            print(Color.RED + f"An SQLite error occurred: {ex}" + Color.RESET)
+        except Exception as ex:
+            Services.display_info(self.ui.prodOrdInfoLbl,"Order submission failed",Color.RED)
+            print(Color.RED + f"An unexpected error occurred: {ex}" + Color.RESET)
+
+        self.ui.submitOrderBtn.setEnabled(True)  # Enable the submit button after processing submit request
+
+    def clear_orders_tab(self):
+        self.current_order = [] # clears the old order list
+        self.ui.prodOrdPhoneInp.clear() # clears the phone number in orders
+        self.ui.lineEdit.clear() # clears the points field 
+        self.ui.prodOrdQuantInp.clear() # clears the NOS field
+        self.ui.grandTotalDsp.clear() # clears the grandTotal
+        self.ui.prodOrdTbl.setRowCount(0) # clears the table completely with grids
+        self.generate_order_id()
+        
+                
+    def order_tab_input_validation(self):
+        phone = self.ui.prodOrdPhoneInp.text()
+
+        if len(self.current_order) < 1:
+            Services.display_info(self.ui.prodOrdInfoLbl, "Order quantity must be greater than one", 'red')
+            return False
+        
+        if len(phone) != 10 or not phone.isdigit():
+            Services.display_info(self.ui.prodOrdInfoLbl, "Enter a Valid Phone number", 'red')
+            return False
+        
+        return True
+
+
+            
+            

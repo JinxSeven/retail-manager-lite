@@ -591,7 +591,7 @@ color: white</string>
        <rect>
         <x>50</x>
         <y>250</y>
-        <width>131</width>
+        <width>171</width>
         <height>41</height>
        </rect>
       </property>
@@ -668,7 +668,7 @@ color: white</string>
        <string>Order Entry</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="nextOrderBtn">
+     <widget class="QPushButton" name="submitOrderBtn">
       <property name="geometry">
        <rect>
         <x>180</x>
@@ -678,7 +678,7 @@ color: white</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton#nextOrderBtn {
+       <string notr="true">QPushButton {
 background-color: #6788FF; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
@@ -687,7 +687,7 @@ padding: 10px 20px; /* Padding for the button */
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
-QPushButton#nextOrderBtn:hover {
+QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
 background-color: #4c6cbf;
 }</string>
@@ -986,26 +986,6 @@ color: white;</string>
        <string>Grand Total</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit">
-      <property name="geometry">
-       <rect>
-        <x>200</x>
-        <y>250</y>
-        <width>81</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: white;
-font: 12pt &quot;Poppins SemiBold&quot;;
-border-radius: 10px;
-background-color:rgb(27, 26, 56);
-padding: 7px 12px;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
      <widget class="QLabel" name="grandTotalDsp">
       <property name="geometry">
        <rect>
@@ -1076,24 +1056,6 @@ background-color: #4c6cbf;
        <string>+</string>
       </property>
      </widget>
-     <widget class="QLabel" name="cxPhoneNumLable_2">
-      <property name="geometry">
-       <rect>
-        <x>203</x>
-        <y>210</y>
-        <width>71</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white</string>
-      </property>
-      <property name="text">
-       <string>Points</string>
-      </property>
-     </widget>
      <zorder>columnView_3</zorder>
      <zorder>columnView_4</zorder>
      <zorder>navOrderEntryOne</zorder>
@@ -1106,18 +1068,16 @@ color: white</string>
      <zorder>prodQuantLable</zorder>
      <zorder>prodOrdQuantInp</zorder>
      <zorder>oe_head</zorder>
-     <zorder>nextOrderBtn</zorder>
+     <zorder>submitOrderBtn</zorder>
      <zorder>navProdMod1</zorder>
      <zorder>groupBox</zorder>
      <zorder>order_date</zorder>
      <zorder>prodOrdNameSel</zorder>
      <zorder>order_id_2</zorder>
-     <zorder>lineEdit</zorder>
      <zorder>grandTotalDsp</zorder>
      <zorder>label_3</zorder>
      <zorder>prodOrdInfoLbl</zorder>
      <zorder>addToBillBtn</zorder>
-     <zorder>cxPhoneNumLable_2</zorder>
     </widget>
     <widget class="QWidget" name="tab_5">
      <attribute name="title">
@@ -3038,7 +2998,7 @@ background-color: #4c6cbf;
      <x>0</x>
      <y>0</y>
      <width>988</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
@@ -3092,12 +3052,11 @@ background-color: #4c6cbf;
   <tabstop>orders_table</tabstop>
   <tabstop>dateEdit</tabstop>
   <tabstop>add_prod_4</tabstop>
-  <tabstop>lineEdit</tabstop>
   <tabstop>prodOrdPhoneInp</tabstop>
   <tabstop>columnView_4</tabstop>
   <tabstop>prodOrdNameSel</tabstop>
   <tabstop>navOrderEntryOne</tabstop>
-  <tabstop>nextOrderBtn</tabstop>
+  <tabstop>submitOrderBtn</tabstop>
   <tabstop>navProdModOne</tabstop>
   <tabstop>navViewOrders1</tabstop>
   <tabstop>columnView_2</tabstop>
