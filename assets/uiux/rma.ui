@@ -2144,7 +2144,7 @@ color: white;</string>
      <widget class="QDateEdit" name="ordDateFltrStart">
       <property name="geometry">
        <rect>
-        <x>532</x>
+        <x>481</x>
         <y>160</y>
         <width>121</width>
         <height>45</height>
@@ -2312,7 +2312,7 @@ background-color: #4c6cbf;
      <widget class="QLineEdit" name="searchQryInput">
       <property name="geometry">
        <rect>
-        <x>367</x>
+        <x>317</x>
         <y>160</y>
         <width>161</width>
         <height>45</height>
@@ -2348,7 +2348,7 @@ background-color: #4c6cbf;
      <widget class="QRadioButton" name="searchByOrd">
       <property name="geometry">
        <rect>
-        <x>268</x>
+        <x>219</x>
         <y>160</y>
         <width>95</width>
         <height>21</height>
@@ -2372,7 +2372,7 @@ padding: 4px 12px;</string>
      <widget class="QRadioButton" name="searchByPhone">
       <property name="geometry">
        <rect>
-        <x>268</x>
+        <x>219</x>
         <y>185</y>
         <width>95</width>
         <height>20</height>
@@ -2393,9 +2393,9 @@ padding: 4px 12px;</string>
      <widget class="QPushButton" name="beginSearchBtn">
       <property name="geometry">
        <rect>
-        <x>780</x>
+        <x>729</x>
         <y>160</y>
-        <width>51</width>
+        <width>50</width>
         <height>45</height>
        </rect>
       </property>
@@ -2436,7 +2436,7 @@ background-color: #4c6cbf;
      <widget class="QDateEdit" name="ordDateFltrEnd">
       <property name="geometry">
        <rect>
-        <x>656</x>
+        <x>605</x>
         <y>160</y>
         <width>121</width>
         <height>45</height>
@@ -2668,12 +2668,12 @@ QTableView::corner {
        </column>
        <column>
         <property name="text">
-         <string>Cx Phone</string>
+         <string>Date Time</string>
         </property>
        </column>
        <column>
         <property name="text">
-         <string>Date Time</string>
+         <string>Cx Phone</string>
         </property>
        </column>
        <column>
@@ -2701,7 +2701,7 @@ QTableView::corner {
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>548</x>
+        <x>497</x>
         <y>153</y>
         <width>81</width>
         <height>16</height>
@@ -2719,7 +2719,7 @@ color: white;</string>
      <widget class="QLabel" name="label_6">
       <property name="geometry">
        <rect>
-        <x>675</x>
+        <x>622</x>
         <y>152</y>
         <width>61</width>
         <height>16</height>
@@ -2732,6 +2732,48 @@ color: white;</string>
       </property>
       <property name="text">
        <string>End Date</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="resetSearchBtn">
+      <property name="geometry">
+       <rect>
+        <x>782</x>
+        <y>160</y>
+        <width>50</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Logout</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+background-color: #9a5b13; /* Background color */
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white; /* Text color */
+outline: 0;
+padding: 20px; /* Padding for the button */
+border: none; /* Remove default button border */
+border-radius: 10px; /* Add some border-radius for a rounded appearance */
+transition: all 0.3s;
+}
+QPushButton:hover {
+cursor: pointer; /* Change cursor to pointer on hover */
+background-color: #804B10;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../images/filter-circle-xmark.svg</normaloff>../images/filter-circle-xmark.svg</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>21</width>
+        <height>35</height>
+       </size>
       </property>
      </widget>
      <zorder>columnView_7</zorder>
@@ -2752,6 +2794,7 @@ color: white;</string>
      <zorder>groupBox_3</zorder>
      <zorder>label_5</zorder>
      <zorder>label_6</zorder>
+     <zorder>resetSearchBtn</zorder>
     </widget>
     <widget class="QWidget" name="tab_3">
      <property name="cursor">
