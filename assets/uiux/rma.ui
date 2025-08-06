@@ -2748,18 +2748,19 @@ color: white;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-background-color: #9a5b13; /* Background color */
+background-color: #c41c1c; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
 outline: 0;
 padding: 20px; /* Padding for the button */
+padding-top: 23px;
 border: none; /* Remove default button border */
 border-radius: 10px; /* Add some border-radius for a rounded appearance */
 transition: all 0.3s;
 }
 QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
-background-color: #804B10;
+background-color: #a51818;
 }</string>
       </property>
       <property name="text">
@@ -2771,7 +2772,7 @@ background-color: #804B10;
       </property>
       <property name="iconSize">
        <size>
-        <width>21</width>
+        <width>22</width>
         <height>35</height>
        </size>
       </property>

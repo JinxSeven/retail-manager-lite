@@ -14,13 +14,14 @@ class ManageOrdersHandler:
         
         # Setting default end date to today
         today_date = datetime.date.today()
-        today_q_date = QDate(today_date.year,today_date.month,today_date.day)
-        self.ui.ordDateFltrEnd.setDate(today_q_date)
+        self.today_q_date = QDate(today_date.year,today_date.month,today_date.day)
+        self.ui.ordDateFltrEnd.setDate(self.today_q_date)
 
         self.ui.ordDateFltrStart.dateChanged.connect(self.invalid_date_range_check)
         self.ui.ordDateFltrEnd.dateChanged.connect(self.invalid_date_range_check)
         
         self.ui.beginSearchBtn.clicked.connect(self.begin_search)
+        self.ui.resetSearchBtn.clicked.connect(self.load_order_table)
 
         self.ui.manageOrdTbl.setColumnWidth(0, 145)
         self.ui.manageOrdTbl.setColumnWidth(1, 145)
@@ -30,12 +31,12 @@ class ManageOrdersHandler:
         self.ui.manageOrdTbl.setColumnWidth(5, 63)
         self.ui.manageOrdTbl.setColumnWidth(6, 63)
         
-        self.fill_order_table()
+        self.load_order_table()
         
-    def fill_order_table(self):
+    def load_order_table(self, query="SELECT * FROM orders"):
         with sqlite3.connect(DB_PATH, timeout=10) as conn:
             cursor = conn.cursor()
-            cursor.execute("SELECT * FROM orders")
+            cursor.execute(query)
             results = cursor.fetchall()
             
             if results:
@@ -60,4 +61,15 @@ class ManageOrdersHandler:
                 self.ui.ordDateFltrStart.setDate(end_date)
             
     def begin_search(self):
+        search_query = self.ui.searchQryInput.text()
+        start_date = self.ui.ordDateFltrStart.date()
+        end_date = self.ui.ordDateFltrEnd.date()
+        
+        if not search_query or search_query.strip() == '':
+            if start_date == self.ui.ordDateFltrStart.minimumDate() and end_date == self.today_q_date:
+                self.load_order_table()
+                return
+                
+            
         self.ui.searchByOrd.isChecked()
+        
