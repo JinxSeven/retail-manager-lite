@@ -185,6 +185,7 @@ class OrderHandler:
                     """,(record.quantity,record.product_id))
 
                 conn.commit()
+                self.on_product_change()
                 self.clear_orders_tab()
                 Services.display_info(self.ui.prodOrdInfoLbl,"Order submitted successfully",'green')
 

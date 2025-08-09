@@ -8,6 +8,7 @@ class LoginHandler:
         self.initializer = Initializer(self.ui)
         
         self.initializer.disable_tabs()
+        self.ui.loginInp.returnPressed.connect(self.login)
         self.ui.loginBtn.clicked.connect(self.login)
 
     def login(self):
@@ -17,7 +18,7 @@ class LoginHandler:
             self.ui.tabWidget.setCurrentIndex(1)
             self.ui.tabWidget.setTabEnabled(0, False)
         else:
-            self.services.display_info(self.ui.loginInfoLbl, 'Incorrect Password')
+            self.services.display_info(self.ui.loginInfoLbl, 'Incorrect Password', "red")
 
     def logout(self):
         self.ui.loginInp.clear()
