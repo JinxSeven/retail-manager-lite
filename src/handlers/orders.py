@@ -32,7 +32,10 @@ class OrderHandler:
 
         # Loading combobox with product names
         Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
+        Services.load_combobox(self.ui.prodAvailable, "")
         self.ui.prodOrdNameSel.currentIndexChanged.connect(self.load_prod_quant)
+        self.ui.prodOrdNameSel.currentIndexChanged.connect(self.on_product_change)
+
         
     def generate_order_id(self):
         self.ui.orderIdLbl.setText(str(secrets.token_hex(4)))
@@ -54,9 +57,13 @@ class OrderHandler:
             order_id = self.ui.orderIdLbl.text()
             product_name = self.ui.prodOrdNameSel.currentText()
             quantity = int(self.ui.prodOrdQuantInp.text())
+            if quantity > int(self.ui.prodAvailable.text()): 
+                Services.display_info(self.ui.prodOrdInfoLbl, f"available quantity: {self.ui.prodAvailable.text()}")
+                return
             if quantity < 1: 
                 Services.display_info(self.ui.prodOrdInfoLbl, "Enter a positive value in Quantity", 'red')
                 return
+            
         except ValueError as ex:
             Services.display_info(self.ui.prodOrdInfoLbl, "Input type mismatch!", 'red')
             print(Color.RED + f"Input Exception: {ex}" + Color.RED)
@@ -171,6 +178,10 @@ class OrderHandler:
                         VALUES (?, ?, ?)""",
                         (record.order_id, record.product_id, record.quantity)
                     )
+                    cursor.execute("""
+                        UPDATE Products 
+                        set stock_quantity =stocks_quantity - ? where product_id = ?
+                    """,(record.quantity,record.product_id))
 
                 conn.commit()
                 self.clear_orders_tab()
@@ -205,4 +216,24 @@ class OrderHandler:
             return False
         
         return True
+
+    def on_product_change(self):
+        selected_product = self.ui.prodOrdNameSel.currentText()
+
+        try:
+            with sqlite3.connect(DB_PATH) as conn:
+                cursor = conn.execute(
+                    "SELECT stock_quantity FROM products WHERE product_name = ?", 
+                    (selected_product,)
+                )
+                row = cursor.fetchone()
+
+                if row:
+                    self.ui.prodAvailable.setText(str(row[0]))
+                else:
+                    self.ui.prodAvailable.setText(0)
+
+        except sqlite3.Error as ex:
+            print(Color.RED + f"Database error: {ex}" + Color.RED)
+            self.ui.lblStock.setText("Error fetching stock")
 

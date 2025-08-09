@@ -151,7 +151,7 @@ QTabBar::tab:right:only-one {
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -1056,6 +1056,47 @@ background-color: #4c6cbf;
        <string>+</string>
       </property>
      </widget>
+     <widget class="QLineEdit" name="prodAvailable">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>410</y>
+        <width>71</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;
+font: 12pt &quot;Poppins SemiBold&quot;;
+border-radius: 10px;
+background-color:rgb(27, 26, 56);
+padding: 7px 12px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Normal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="prodAvbLable">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>370</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white</string>
+      </property>
+      <property name="text">
+       <string>Avb</string>
+      </property>
+     </widget>
      <zorder>columnView_3</zorder>
      <zorder>columnView_4</zorder>
      <zorder>navOrderEntryOne</zorder>
@@ -1078,6 +1119,8 @@ background-color: #4c6cbf;
      <zorder>label_3</zorder>
      <zorder>prodOrdInfoLbl</zorder>
      <zorder>addToBillBtn</zorder>
+     <zorder>prodAvailable</zorder>
+     <zorder>prodAvbLable</zorder>
     </widget>
     <widget class="QWidget" name="tab_5">
      <attribute name="title">
@@ -3420,7 +3463,7 @@ background-color: #4c6cbf;
      <x>0</x>
      <y>0</y>
      <width>988</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
