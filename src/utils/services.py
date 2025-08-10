@@ -7,11 +7,6 @@ from .color import Color
 from PyQt5 import QtCore
 
 class Services:
-    LOAD_ALL_QUERY = """
-        SELECT * FROM orders 
-        ORDER BY order_date_time DESC
-        """
-    
     @staticmethod
     def confirmation_messagebox(title: str, message: str) -> bool:
         msg = QMessageBox()
