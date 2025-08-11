@@ -2249,19 +2249,19 @@ QCalendarWidget QToolButton#qt_calendar_prevmonth,
 QCalendarWidget QToolButton#qt_calendar_nextmonth {
     qproperty-icon: none;  /* Remove default arrows if needed */
     color: white;
-    background: transparent;
+    background: #9db2ff;
 }
 
 QCalendarWidget QToolButton#qt_calendar_nextmonth {
-    image: url(:/svg_icons/square-right.svg);
-    width: 15px;
-    height: 15px;
+    image: url(:/svg_icons/arrow-right.svg);
+    width: 11px;
+    height: 11px;
 }
 
 QCalendarWidget QToolButton#qt_calendar_prevmonth {
-    image: url(:/svg_icons/square-left.svg);
-    width: 15px;
-    height: 15px;
+    image: url(:/svg_icons/arrow-left.svg);
+    width: 11px;
+    height: 11px;
 }
 
 QCalendarWidget QMenu {
@@ -2541,19 +2541,19 @@ QCalendarWidget QToolButton#qt_calendar_prevmonth,
 QCalendarWidget QToolButton#qt_calendar_nextmonth {
     qproperty-icon: none;  /* Remove default arrows if needed */
     color: white;
-    background: transparent;
+    background: #9db2ff;
 }
 
 QCalendarWidget QToolButton#qt_calendar_nextmonth {
-    image: url(:/svg_icons/square-right.svg);
-    width: 15px;
-    height: 15px;
+    image: url(:/svg_icons/arrow-right.svg);
+    width: 11px;
+    height: 11px;
 }
 
 QCalendarWidget QToolButton#qt_calendar_prevmonth {
-    image: url(:/svg_icons/square-left.svg);
-    width: 15px;
-    height: 15px;
+    image: url(:/svg_icons/arrow-left.svg);
+    width: 11px;
+    height: 11px;
 }
 
 QCalendarWidget QMenu {
@@ -3525,7 +3525,7 @@ background-color: #4c6cbf;
   <tabstop>navLogout1</tabstop>
  </tabstops>
  <resources>
-  <include location="../uiux/date_picker.qrc"/>
+  <include location="date_picker.qrc"/>
  </resources>
  <connections/>
 </ui>

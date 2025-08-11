@@ -1,7 +1,7 @@
 <RCC>
   <qresource prefix="svg_icons">
-    <file>square-left.svg</file>
+    <file>arrow-left.svg</file>
+    <file>arrow-right.svg</file>
     <file>caret-down.svg</file>
-    <file>square-right.svg</file>
   </qresource>
 </RCC>
