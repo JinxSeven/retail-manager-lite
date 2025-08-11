@@ -2728,7 +2728,7 @@ QTableView::corner {
        </column>
        <column>
         <property name="text">
-         <string>Print</string>
+         <string>Save</string>
         </property>
        </column>
        <column>

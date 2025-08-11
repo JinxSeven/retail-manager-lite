@@ -9,7 +9,7 @@ from handlers.products import ProductHandler
 from handlers.initializer import Initializer
 from handlers.manage_orders import ManageOrdersHandler
 
-ui, _ = loadUiType('assets/uiux/rma.ui')
+ui, _ = loadUiType('assets/ui/rma.ui')
 
 class MainApp(QMainWindow, ui):
     def __init__(self):
