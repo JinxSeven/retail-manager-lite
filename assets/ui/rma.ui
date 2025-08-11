@@ -1942,7 +1942,7 @@ color: white</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton#prodModResetBtn {
-background-color: #9a5b13; /* Background color */
+background-color: #009688; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
 outline: 0;
@@ -1953,7 +1953,7 @@ transition: all 0.3s;
 }
 QPushButton#prodModResetBtn:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
-background-color: #804B10;
+background-color: #00897b;
 }</string>
       </property>
       <property name="text">
@@ -3525,7 +3525,7 @@ background-color: #4c6cbf;
   <tabstop>navLogout1</tabstop>
  </tabstops>
  <resources>
-  <include location="date_picker.qrc"/>
+  <include location="../uiux/date_picker.qrc"/>
  </resources>
  <connections/>
 </ui>
