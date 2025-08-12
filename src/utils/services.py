@@ -62,7 +62,7 @@ class Services:
                 print(Color.RED + f"An unexpected error occurred: {ex}" + Color.RED)
 
     @staticmethod
-    def display_info(label, info, color = 'blue'):
+    def display_info(label, info, color = '#0b6bcb'):
         label.setText(info)
         existing_style = label.styleSheet()
         label.setStyleSheet(existing_style + f"color: {color};")
