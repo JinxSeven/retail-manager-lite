@@ -40,7 +40,7 @@ class DeleteButton(QPushButton):
 
     def click_handler(self, parent, prod_name, prod_id, delete_func):
         row = get_widget_row(parent, self)
-        proceed = Services.confirmation_messagebox("Order Modification", f"Do you want to remove {prod_name} from order?")
+        proceed = Services.confirmation_messagebox("Modify Order", f"Do you want to remove {prod_name} from order?")
         if not proceed:
             return
         # Calling back method from orders.py

@@ -214,7 +214,7 @@ class OrderHandler:
             return False
         
         if len(phone) != 10 or not phone.isdigit():
-            Services.display_info(self.ui.prodOrdInfoLbl, "Phone number can't be empty", 'red')
+            Services.display_info(self.ui.prodOrdInfoLbl, "Please enter a valid phone number", 'red')
             return False
         
         return True
