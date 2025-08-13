@@ -94,7 +94,7 @@ class ProductHandler:
             Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
         except sqlite3.Error as ex:
             print(Color.RED + f"An error occurred while deleting product: {ex}" + Color.RED)
-            Services.display_info(self.ui.prodModInfoLbl, 'Could not delete product', 'red')
+            Services.display_info(self.ui.prodModInfoLbl, 'Product deletion failed!', 'red')
     
     def update_product(self):
         try:
@@ -128,7 +128,7 @@ class ProductHandler:
         except sqlite3.Error as ex:
             print(Color.RED + f"An error occurred while updating product: {ex}")
             self.ui.prodModInfoLbl.clear()
-            Services.display_info(self.ui.prodModInfoLbl, 'Could not update product!', 'red')
+            Services.display_info(self.ui.prodModInfoLbl, 'Product update failed!', 'red')
         except Exception as ex:
             print(Color.RED + f"An error occurred while updating product: {ex}" + Color.RED)
     

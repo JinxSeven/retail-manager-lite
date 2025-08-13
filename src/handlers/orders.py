@@ -190,10 +190,10 @@ class OrderHandler:
                 Services.display_info(self.ui.prodOrdInfoLbl,"Order submitted successfully",'green')
 
         except sqlite3.Error as ex:
-            Services.display_info(self.ui.prodOrdInfoLbl,"Order submission failed",Color.RED)
+            Services.display_info(self.ui.prodOrdInfoLbl,"Order submission failed", "red")
             print(Color.RED + f"An SQLite error occurred: {ex}" + Color.RESET)
         except Exception as ex:
-            Services.display_info(self.ui.prodOrdInfoLbl,"Order submission failed",Color.RED)
+            Services.display_info(self.ui.prodOrdInfoLbl,"Order submission failed", "red")
             print(Color.RED + f"An unexpected error occurred: {ex}" + Color.RESET)
 
         self.ui.submitOrderBtn.setEnabled(True)  # Enable the submit button after processing submit request
@@ -240,7 +240,7 @@ class OrderHandler:
             self.ui.lblStock.setText("Error fetching stock")
 
         except Exception as ex:
-            Services.display_info(self.ui.prodOrdInfoLbl,"Order submission failed",Color.RED)
+            Services.display_info(self.ui.prodOrdInfoLbl,"Order submission failed", "red")
             print(Color.RED + f"An unexpected error occurred: {ex}" + Color.RESET)
 
 
