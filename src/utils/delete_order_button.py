@@ -10,11 +10,11 @@ from src.utils.services import Services
 class DeleteOrderButton(QPushButton):
     # Constructor
     # Takes object name and callback func as args
-    def __init__(self, ord_id: str, load_table_func, parent=None):
+    def __init__(self, ord_id: str, reload_table_func, display_label):
         icon = QIcon("assets/images/trash-can.svg")
         # Button
         # Base class (QPushButton) constructor
-        super().__init__(icon, "", parent)
+        super().__init__(icon, "", parent=None)
         self.setObjectName(f"{ord_id}")
         self.setStyleSheet("""
             QPushButton {   
@@ -32,21 +32,22 @@ class DeleteOrderButton(QPushButton):
             }
         """)
         
-        self.clicked.connect(partial(self.__on_clicked, ord_id, load_table_func))
+        self.clicked.connect(partial(self.__on_clicked, ord_id, reload_table_func, display_label))
 
-    def __on_clicked(self, ord_id, load_table_func):
+    def __on_clicked(self, ord_id, reload_table_func, display_label):
         response = Services.confirmation_messagebox("Delete Order", "Are you sure you want to delete this order?")
         if response:
             try:
                 with sqlite3.connect(DB_PATH) as conn:
-                    cursor = conn.cursor()
-                    cursor.execute("DELETE FROM orders WHERE order_id = ?", (ord_id,))
+                    conn.execute("DELETE FROM orders WHERE order_id = ?", (ord_id,))
                     conn.commit()
-                    load_table_func()
+                    
+                Services.display_info(display_label, f"Order deleted successfully!", "red")
+                reload_table_func()
                     
             except sqlite3.Error as ex:
                 print(Color.RED + f"An SQLite error occurred: {ex}" + Color.RESET)
-                # Services.display_info(self.ui.prodOrdInfoLbl, "Order deletion failed", Color.RED)
+                Services.display_info(display_label, f"Order deletion failed!", "red")
             except Exception as ex:
                 print(Color.RED + f"An unexpected error occurred: {ex}" + Color.RESET)
-                # Services.display_info(self.ui.prodOrdInfoLbl, "Order deletion failed", Color.RED)
+                Services.display_info(display_label, f"Order deletion failed!", "red")

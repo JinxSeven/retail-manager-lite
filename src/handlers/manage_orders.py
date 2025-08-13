@@ -90,7 +90,8 @@ class ManageOrdersHandler:
                                 self.ui.manageOrdTbl.setCellWidget(row_index, colm_index, SaveOrderButton(str(row_data[0])))
                             if colm_index is BTN_INDEX["DELETE"]:
                                 self.ui.manageOrdTbl.setCellWidget(row_index, colm_index, DeleteOrderButton(str(row_data[0]),
-                                                                                                            self.filter_and_search))
+                                                                                                            self.filter_and_search,
+                                                                                                            self.ui.manOrdInfoLbl))
                 else:
                     Services.display_info(self.ui.manOrdInfoLbl, "No records found!")
                     
