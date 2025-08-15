@@ -129,7 +129,7 @@ class ManageOrdersHandler:
                 query = """
                     SELECT * FROM orders 
                     WHERE DATE(order_date_time) BETWEEN ? AND ?
-                    AND orders.order_id LIKE ?
+                    AND orders.order_id LIKE ? COLLATE NOCASE
                     ORDER BY order_date_time DESC
                     """
                 params = (start_date.toString(Qt.ISODate), end_date.toString(Qt.ISODate), f"%{search_query}%")
@@ -137,7 +137,7 @@ class ManageOrdersHandler:
                 query = """
                     SELECT * FROM orders 
                     WHERE DATE(order_date_time) BETWEEN ? AND ?
-                    AND orders.cx_phone_num LIKE ?
+                    AND orders.cx_phone_num LIKE ? COLLATE NOCASE
                     ORDER BY order_date_time DESC
                     """
                 params = (start_date.toString(Qt.ISODate), end_date.toString(Qt.ISODate), f"%{search_query}%")
