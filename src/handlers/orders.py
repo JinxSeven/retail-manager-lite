@@ -39,7 +39,7 @@ class OrderHandler:
 
         
     def generate_order_id(self):
-        self.ui.orderIdLbl.setText(str(secrets.token_hex(4)))
+        self.ui.orderIdLbl.setText(str(secrets.token_hex(4)).upper())
 
     def load_prod_quant(self):
         if self.current_order is []:

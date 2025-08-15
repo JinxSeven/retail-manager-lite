@@ -40,7 +40,7 @@ class ProductHandler:
             cp = float(self.ui.prodAddCostPriceInp.text())
             sp = float(self.ui.prodAddSellingPriceInp.text())
             stock = int(self.ui.prodAddQuantityInp.text())
-            id = str(secrets.token_hex(4))
+            id = str(secrets.token_hex(4)).upper()
         except ValueError:
             Services.display_info(self.ui.prodModInfoLbl, 'Input type mismatch!', 'red')
             return
