@@ -35,6 +35,7 @@ class ProductHandler:
             print(Color.RED + f"An error occurred while adding product: {ex}" + Color.RED)
     
     def add_new_product(self):
+        to_clear = True
         try:
             name = self.ui.prodAddNameInp.text()
             cp = float(self.ui.prodAddCostPriceInp.text())
@@ -46,13 +47,16 @@ class ProductHandler:
             return
         
         try:
-            if(cp < 0):
+            if(cp <= 0):
+                to_clear=False
                 Services.display_info(self.ui.prodModInfoLbl, 'Cost price should be greater than Zero', 'red')
                 return
-            elif(sp < 0):
+            elif(sp <= 0):
+                to_clear=False
                 Services.display_info(self.ui.prodModInfoLbl, 'Selling price should be greater than Zero', 'red')
                 return
-            elif(stock < 0):
+            elif(stock < 1):
+                to_clear=False
                 Services.display_info(self.ui.prodModInfoLbl, 'Stocks should be greater than Zero', 'red')
                 return
 
@@ -73,10 +77,11 @@ class ProductHandler:
             print(Color.RED + f"An error occurred while adding product: {ex}" + Color.RED)
             return
         finally:
-            self.ui.prodAddNameInp.clear()
-            self.ui.prodAddCostPriceInp.clear()
-            self.ui.prodAddSellingPriceInp.clear()
-            self.ui.prodAddQuantityInp.clear()
+            if(to_clear):
+                self.ui.prodAddNameInp.clear()
+                self.ui.prodAddCostPriceInp.clear()
+                self.ui.prodAddSellingPriceInp.clear()
+                self.ui.prodAddQuantityInp.clear()
 
     def delete_product(self):
         id = self.ui.prodModIdInp.text()
@@ -119,13 +124,13 @@ class ProductHandler:
             return
         
         try:
-            if(cp < 0):
+            if(cp <= 0):
                 Services.display_info(self.ui.prodModInfoLbl, 'Updating : Cost price should be greater than Zero', 'red')
                 return
-            elif(sp < 0):
+            elif(sp <= 0):
                 Services.display_info(self.ui.prodModInfoLbl, 'Updating : selling price should be greater than Zero', 'red')
                 return
-            elif(stock < 0):
+            elif(stock < 1):
                 Services.display_info(self.ui.prodModInfoLbl, 'Updating : Stocks should be greater than Zero', 'red')
                 return
 
