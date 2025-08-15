@@ -28,7 +28,7 @@ class OrderHandler:
         self.ui.orderDateLbl.setText(datetime.today().strftime('%d.%m.%Y'))
         self.ui.addToBillBtn.clicked.connect(self.add_product_to_bill)
         self.ui.submitOrderBtn.clicked.connect(self.submit_order)
-
+        self.ui.clearOrdTable.clicked.connect(self.clear_order_table)
 
         # Loading combobox with product names
         Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
@@ -243,4 +243,7 @@ class OrderHandler:
             Services.display_info(self.ui.prodOrdInfoLbl,"Order submission failed", "red")
             print(Color.RED + f"An unexpected error occurred: {ex}" + Color.RESET)
 
-
+    def clear_order_table(self):
+        mes = Services.confirmation_messagebox("clear Order Table", "Are you sure you want to clear all items in the table ?")
+        if(mes):
+            self.clear_orders_tab()

@@ -437,7 +437,7 @@ background-color: #4c6cbf;
        </rect>
       </property>
       <property name="toolTip">
-       <string>Edit Orders</string>
+       <string>Product Mod</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
@@ -478,7 +478,7 @@ background-color: #4c6cbf;
        </rect>
       </property>
       <property name="toolTip">
-       <string>Orders</string>
+       <string>Feature Disabled</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
@@ -724,7 +724,7 @@ color: white</string>
        </rect>
       </property>
       <property name="toolTip">
-       <string>Logout</string>
+       <string>Manage Orders</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
@@ -1251,7 +1251,7 @@ background-color: #4c6cbf;
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="toolTip">
-       <string>Logout</string>
+       <string>Manage Orders</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
@@ -1342,7 +1342,7 @@ background-color: #4c6cbf;
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="toolTip">
-       <string>Orders</string>
+       <string>Feature Disabled</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
@@ -1386,7 +1386,7 @@ background-color: #4c6cbf;
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="toolTip">
-       <string>Edit Orders</string>
+       <string>Product Mod</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
@@ -2122,9 +2122,6 @@ border-radius: 10px;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="orders_3">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
       <property name="geometry">
        <rect>
         <x>524</x>
@@ -2134,7 +2131,7 @@ border-radius: 10px;</string>
        </rect>
       </property>
       <property name="toolTip">
-       <string>Orders</string>
+       <string>Feature Disabled</string>
       </property>
       <property name="toolTipDuration">
        <number>-1</number>
@@ -2178,7 +2175,7 @@ background-color: #4c6cbf;
        </rect>
       </property>
       <property name="toolTip">
-       <string>Edit Orders</string>
+       <string>Product Mod</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
@@ -2364,7 +2361,7 @@ QCalendarWidget QToolButton::menu-indicator {
        </rect>
       </property>
       <property name="toolTip">
-       <string>Logout</string>
+       <string>Manage Orders</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
@@ -3013,7 +3010,7 @@ border-radius: 10px;</string>
        </rect>
       </property>
       <property name="toolTip">
-       <string>Orders</string>
+       <string>Feature Disabled</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
@@ -3054,7 +3051,7 @@ background-color: #4c6cbf;
        </rect>
       </property>
       <property name="toolTip">
-       <string>Edit Orders</string>
+       <string>Product Mod</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
@@ -3444,7 +3441,7 @@ color: red;</string>
        </rect>
       </property>
       <property name="toolTip">
-       <string>Logout</string>
+       <string>Manage Orders</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
@@ -3506,7 +3503,7 @@ background-color: #4c6cbf;
      <x>0</x>
      <y>0</y>
      <width>988</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
