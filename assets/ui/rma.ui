@@ -904,6 +904,49 @@ QTableView::corner {
         <string/>
        </property>
       </widget>
+      <widget class="QPushButton" name="clearOrdTable">
+       <property name="geometry">
+        <rect>
+         <x>457</x>
+         <y>16</y>
+         <width>61</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Logout</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: #c41c1c; /* Background color */
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white; /* Text color */
+outline: 0;
+padding: 20px; /* Padding for the button */
+padding-top: 23px;
+border: none; /* Remove default button border */
+border-radius: 5px; /* Add some border-radius for a rounded appearance */
+transition: all 0.3s;
+}
+QPushButton:hover {
+cursor: pointer; /* Change cursor to pointer on hover */
+background-color: #a51818;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../images/align-slash.svg</normaloff>../images/align-slash.svg</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>22</width>
+         <height>35</height>
+        </size>
+       </property>
+      </widget>
      </widget>
      <widget class="QLabel" name="order_date">
       <property name="geometry">
@@ -2079,6 +2122,9 @@ border-radius: 10px;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="orders_3">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>524</x>
