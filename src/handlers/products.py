@@ -46,6 +46,16 @@ class ProductHandler:
             return
         
         try:
+            if(cp < 0):
+                Services.display_info(self.ui.prodModInfoLbl, 'Cost price should be greater than Zero', 'red')
+                return
+            elif(sp < 0):
+                Services.display_info(self.ui.prodModInfoLbl, 'Selling price should be greater than Zero', 'red')
+                return
+            elif(stock < 0):
+                Services.display_info(self.ui.prodModInfoLbl, 'Stocks should be greater than Zero', 'red')
+                return
+
             conn = sqlite3.connect(DB_PATH)
             conn.execute(
                 "INSERT INTO products (product_id, product_name, cost_price, selling_price, stock_quantity) VALUES (?, ?, ?, ?, ?)",
@@ -109,6 +119,16 @@ class ProductHandler:
             return
         
         try:
+            if(cp < 0):
+                Services.display_info(self.ui.prodModInfoLbl, 'Updating : Cost price should be greater than Zero', 'red')
+                return
+            elif(sp < 0):
+                Services.display_info(self.ui.prodModInfoLbl, 'Updating : selling price should be greater than Zero', 'red')
+                return
+            elif(stock < 0):
+                Services.display_info(self.ui.prodModInfoLbl, 'Updating : Stocks should be greater than Zero', 'red')
+                return
+
             with sqlite3.connect(DB_PATH) as conn:
                 conn.execute("""
                     UPDATE products SET 
