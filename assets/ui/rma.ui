@@ -888,7 +888,7 @@ QTableView::corner {
       <widget class="QLabel" name="orderDateLbl">
        <property name="geometry">
         <rect>
-         <x>330</x>
+         <x>338</x>
          <y>12</y>
          <width>111</width>
          <height>40</height>
@@ -907,14 +907,14 @@ QTableView::corner {
       <widget class="QPushButton" name="clearOrdTable">
        <property name="geometry">
         <rect>
-         <x>457</x>
+         <x>477</x>
          <y>16</y>
-         <width>61</width>
+         <width>41</width>
          <height>32</height>
         </rect>
        </property>
        <property name="toolTip">
-        <string>Logout</string>
+        <string>Clear Order Table</string>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
@@ -923,7 +923,6 @@ font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
 outline: 0;
 padding: 20px; /* Padding for the button */
-padding-top: 23px;
 border: none; /* Remove default button border */
 border-radius: 5px; /* Add some border-radius for a rounded appearance */
 transition: all 0.3s;
@@ -938,7 +937,7 @@ background-color: #a51818;
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../images/align-slash.svg</normaloff>../images/align-slash.svg</iconset>
+         <normaloff>../images/clear-table.svg</normaloff>../images/clear-table.svg</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -951,7 +950,7 @@ background-color: #a51818;
      <widget class="QLabel" name="order_date">
       <property name="geometry">
        <rect>
-        <x>579</x>
+        <x>587</x>
         <y>192</y>
         <width>51</width>
         <height>21</height>
@@ -3503,7 +3502,7 @@ background-color: #4c6cbf;
      <x>0</x>
      <y>0</y>
      <width>988</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
