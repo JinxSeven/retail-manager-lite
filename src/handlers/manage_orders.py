@@ -85,7 +85,7 @@ class ManageOrdersHandler:
                         
                         for colm_index in range(BTN_INDEX["START"], BTN_INDEX["END"]):
                             if colm_index is BTN_INDEX["VIEW"]:
-                                self.ui.manageOrdTbl.setCellWidget(row_index, colm_index, ViewOrderButton(str(row_data[0])))
+                                self.ui.manageOrdTbl.setCellWidget(row_index, colm_index, ViewOrderButton(row_data))
                             if colm_index is BTN_INDEX["SAVE"]:
                                 self.ui.manageOrdTbl.setCellWidget(row_index, colm_index, SaveOrderButton(str(row_data[0])))
                             if colm_index is BTN_INDEX["DELETE"]:
