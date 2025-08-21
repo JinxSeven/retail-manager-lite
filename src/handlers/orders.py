@@ -198,7 +198,7 @@ class OrderHandler:
 
         self.ui.submitOrderBtn.setEnabled(True)  # Enable the submit button after processing submit request
 
-    def clear_orders_tab(self, new_ord_id = True):
+    def clear_orders_tab(self, new_ord_id=True):
         self.current_order = [] # clears the local order list
         self.ui.prodOrdPhoneInp.clear() # clears the phone number field
         self.ui.prodOrdQuantInp.clear() # clears the Nos field
@@ -244,6 +244,6 @@ class OrderHandler:
             print(Color.RED + f"An unexpected error occurred: {ex}" + Color.RESET)
 
     def clear_order_table(self):
-        mes = Services.confirmation_messagebox("clear Order Table", "Are you sure you want to clear all items in the table ?")
-        if(mes):
-            self.clear_orders_tab()
+        res = Services.confirmation_messagebox("Clear Order Table", "Are you sure you want to clear the bill table?")
+        if res:
+            self.clear_orders_tab(False)
