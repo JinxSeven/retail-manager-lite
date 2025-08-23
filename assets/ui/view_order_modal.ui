@@ -121,7 +121,7 @@ font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: red</string>
    </property>
    <property name="text">
-    <string>2025-08-09 14:41:40</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="viewOrdOrdNum">
@@ -139,7 +139,7 @@ font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: red</string>
    </property>
    <property name="text">
-    <string>A6F-H6GD-56JK</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="viewOrdPhoneNo">
@@ -157,7 +157,7 @@ font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: red</string>
    </property>
    <property name="text">
-    <string>8610380677</string>
+    <string/>
    </property>
   </widget>
   <widget class="QGroupBox" name="groupBox_3">
@@ -312,7 +312,7 @@ font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: red</string>
    </property>
    <property name="text">
-    <string>85264.25</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="login_instruction_4">
@@ -366,7 +366,7 @@ font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: red</string>
    </property>
    <property name="text">
-    <string>8</string>
+    <string/>
    </property>
   </widget>
  </widget>

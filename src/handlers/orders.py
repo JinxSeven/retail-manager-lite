@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import QTableWidgetItem
 from src.config import DB_PATH
 from src.models.order_model import Order
 from src.utils.color import Color
-from src.utils.delete_button import DeleteButton
+from src.utils.delete_item_button import DeleteItemButton
 from src.utils.services import Services
 
 class OrderHandler:
@@ -66,7 +66,7 @@ class OrderHandler:
                 return
             
         except ValueError as ex:
-            Services.display_info(self.ui.prodOrdInfoLbl, "Input type mismatch!", 'red')
+            Services.display_info(self.ui.prodOrdInfoLbl, "Invalid input, please check!", 'red')
             print(Color.RED + f"Input Exception: {ex}" + Color.RED)
             return
 
@@ -102,9 +102,9 @@ class OrderHandler:
                 self.ui.prodOrdTbl.setItem(row_position, 3, QTableWidgetItem(str(product_item.quantity)))
                 self.ui.prodOrdTbl.setItem(row_position, 4,
                                            QTableWidgetItem(str(product_item.product_price * product_item.quantity)))
-                self.ui.prodOrdTbl.setCellWidget(row_position, 5, DeleteButton(str(product_item.product_name),
-                                                                               str(product_item.product_id),
-                                                                               self.delete_prod, self.ui.prodOrdTbl))
+                self.ui.prodOrdTbl.setCellWidget(row_position, 5, DeleteItemButton(str(product_item.product_name),
+                                                                                   str(product_item.product_id),
+                                                                                   self.delete_prod, self.ui.prodOrdTbl))
             else:
                 self.current_order[matching_index].quantity = quantity
                 
