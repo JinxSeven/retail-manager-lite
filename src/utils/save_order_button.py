@@ -1,5 +1,6 @@
 from functools import partial
 
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QPushButton
 from PyQt5.QtGui import QIcon
 
@@ -11,6 +12,7 @@ class SaveOrderButton(QPushButton):
         
         super().__init__(icon, "", parent)
         self.setObjectName(f"{ord_id}")
+        self.setCursor(Qt.PointingHandCursor)
         self.setStyleSheet("""
             QPushButton {   
                 background-color: #009688;

@@ -1,5 +1,7 @@
 import sqlite3
 from functools import partial
+
+from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QPushButton
 
@@ -16,6 +18,7 @@ class DeleteOrderButton(QPushButton):
         # Base class (QPushButton) constructor
         super().__init__(icon, "", parent=None)
         self.setObjectName(f"{ord_id}")
+        self.setCursor(Qt.PointingHandCursor)
         self.setStyleSheet("""
             QPushButton {   
                 background-color: #c41c1c;

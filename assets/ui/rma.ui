@@ -45,6 +45,9 @@
       <height>621</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string/>
+    </property>
     <property name="styleSheet">
      <string notr="true">/* Base styles */
 QTabWidget::pane {
@@ -151,7 +154,7 @@ QTabBar::tab:right:only-one {
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -386,6 +389,9 @@ border-radius: 10px;</string>
         <height>61</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
       <property name="toolTip">
        <string>Order Entry</string>
       </property>
@@ -436,6 +442,9 @@ background-color: #4c6cbf;
         <height>61</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="toolTip">
        <string>Product Mod</string>
       </property>
@@ -469,6 +478,9 @@ background-color: #4c6cbf;
       </property>
      </widget>
      <widget class="QPushButton" name="navViewOrders1">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>524</x>
@@ -477,12 +489,15 @@ background-color: #4c6cbf;
         <height>61</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>ForbiddenCursor</cursorShape>
+      </property>
       <property name="toolTip">
-       <string>Feature Disabled</string>
+       <string>Sales Stats (disabled)</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-background-color: #6788FF; /* Background color */
+background-color: #304478; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
 outline: 0;
@@ -492,7 +507,7 @@ border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
 QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
-background-color: #4c6cbf;
+background-color: #304478;
 }</string>
       </property>
       <property name="text">
@@ -517,6 +532,9 @@ background-color: #4c6cbf;
         <width>111</width>
         <height>61</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="toolTip">
        <string>Logout</string>
@@ -677,6 +695,9 @@ color: white</string>
         <height>40</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
 background-color: #6788FF; /* Background color */
@@ -714,7 +735,7 @@ color: white</string>
        <string>Order ID:</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="navManOrdOne">
+     <widget class="QPushButton" name="navProdMod1">
       <property name="geometry">
        <rect>
         <x>384</x>
@@ -722,6 +743,9 @@ color: white</string>
         <width>111</width>
         <height>61</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="toolTip">
        <string>Manage Orders</string>
@@ -913,6 +937,9 @@ QTableView::corner {
          <height>32</height>
         </rect>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="toolTip">
         <string>Clear Order Table</string>
        </property>
@@ -1079,6 +1106,9 @@ color: #27e86f;</string>
         <height>40</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">QPushButton#addToBillBtn {
 background-color: #6788FF; /* Background color */
@@ -1149,7 +1179,7 @@ color: white;</string>
      <zorder>prodOrdQuantInp</zorder>
      <zorder>oe_head</zorder>
      <zorder>submitOrderBtn</zorder>
-     <zorder>navManOrdOne</zorder>
+     <zorder>navProdMod1</zorder>
      <zorder>groupBox</zorder>
      <zorder>order_date</zorder>
      <zorder>prodOrdNameSel</zorder>
@@ -1338,14 +1368,14 @@ background-color: #4c6cbf;
        </rect>
       </property>
       <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
+       <cursorShape>ForbiddenCursor</cursorShape>
       </property>
       <property name="toolTip">
-       <string>Feature Disabled</string>
+       <string>Sales Stats (disabled)</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-background-color: #6788FF; /* Background color */
+background-color: #304478; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
 outline: 0;
@@ -1355,7 +1385,7 @@ border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
 QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
-background-color: #4c6cbf;
+background-color: #304478;
 }</string>
       </property>
       <property name="text">
@@ -1382,7 +1412,7 @@ background-color: #4c6cbf;
        </rect>
       </property>
       <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
+       <cursorShape>ArrowCursor</cursorShape>
       </property>
       <property name="toolTip">
        <string>Product Mod</string>
@@ -2007,7 +2037,7 @@ background-color: #00897b;
      <attribute name="title">
       <string>Manage Orders</string>
      </attribute>
-     <widget class="QPushButton" name="logout_3">
+     <widget class="QPushButton" name="navLogout4">
       <property name="geometry">
        <rect>
         <x>664</x>
@@ -2015,6 +2045,9 @@ background-color: #00897b;
         <width>111</width>
         <height>61</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="toolTip">
        <string>Logout</string>
@@ -2056,6 +2089,9 @@ background-color: #4c6cbf;
         <width>111</width>
         <height>61</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="toolTip">
        <string>Order Entry</string>
@@ -2129,15 +2165,18 @@ border-radius: 10px;</string>
         <height>61</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>ForbiddenCursor</cursorShape>
+      </property>
       <property name="toolTip">
-       <string>Feature Disabled</string>
+       <string>Sales Stats (disabled)</string>
       </property>
       <property name="toolTipDuration">
        <number>-1</number>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-background-color: #6788FF; /* Background color */
+background-color: #304478; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
 outline: 0;
@@ -2147,7 +2186,7 @@ border-radius: 10px; /* Add some border-radius for a rounded appearance */
 }
 QPushButton:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
-background-color: #4c6cbf;
+background-color: #304478;
 }</string>
       </property>
       <property name="text">
@@ -2172,6 +2211,9 @@ background-color: #4c6cbf;
         <width>111</width>
         <height>61</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="toolTip">
        <string>Product Mod</string>
@@ -2350,7 +2392,7 @@ QCalendarWidget QToolButton::menu-indicator {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="add_prod_4">
+     <widget class="QPushButton" name="navProdMod2">
       <property name="geometry">
        <rect>
         <x>384</x>
@@ -2436,6 +2478,9 @@ background-color: #4c6cbf;
         <height>21</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">color: white;
 font: 8pt &quot;Poppins&quot;;
@@ -2460,6 +2505,9 @@ padding: 4px 12px;</string>
         <height>20</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">color: white;
 font: 8pt &quot;Poppins&quot;;
@@ -2481,8 +2529,11 @@ padding: 4px 12px;</string>
         <height>45</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="toolTip">
-       <string>Logout</string>
+       <string>Search</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
@@ -2825,8 +2876,11 @@ color: white;</string>
         <height>45</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="toolTip">
-       <string>Logout</string>
+       <string>Clear Filters</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
@@ -2863,11 +2917,11 @@ background-color: #a51818;
      <zorder>columnView_8</zorder>
      <zorder>orders_3</zorder>
      <zorder>navProdModThree</zorder>
-     <zorder>logout_3</zorder>
+     <zorder>navLogout4</zorder>
      <zorder>navOrderEntryThree</zorder>
      <zorder>o_head</zorder>
      <zorder>ordDateFltrStart</zorder>
-     <zorder>add_prod_4</zorder>
+     <zorder>navProdMod2</zorder>
      <zorder>searchQryInput</zorder>
      <zorder>searchByOrd</zorder>
      <zorder>searchByPhone</zorder>
@@ -2880,13 +2934,19 @@ background-color: #a51818;
      <zorder>resetSearchBtn</zorder>
     </widget>
     <widget class="QWidget" name="tab_3">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="cursor">
       <cursorShape>ArrowCursor</cursorShape>
+     </property>
+     <property name="toolTip">
+      <string>Disabled</string>
      </property>
      <attribute name="title">
       <string>Sales Stats</string>
      </attribute>
-     <widget class="QPushButton" name="logout_2">
+     <widget class="QPushButton" name="navLogout2">
       <property name="geometry">
        <rect>
         <x>664</x>
@@ -2894,6 +2954,9 @@ background-color: #a51818;
         <width>111</width>
         <height>61</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="toolTip">
        <string>Logout</string>
@@ -2935,6 +2998,9 @@ background-color: #4c6cbf;
         <width>111</width>
         <height>61</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="toolTip">
        <string>Order Entry</string>
@@ -3009,7 +3075,7 @@ border-radius: 10px;</string>
        </rect>
       </property>
       <property name="toolTip">
-       <string>Feature Disabled</string>
+       <string>Sales Stats</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
@@ -3049,6 +3115,9 @@ background-color: #4c6cbf;
         <height>61</height>
        </rect>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="toolTip">
        <string>Product Mod</string>
       </property>
@@ -3081,88 +3150,6 @@ background-color: #4c6cbf;
        </size>
       </property>
      </widget>
-     <widget class="QLabel" name="eo_instruction_2">
-      <property name="geometry">
-       <rect>
-        <x>53</x>
-        <y>310</y>
-        <width>81</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white</string>
-      </property>
-      <property name="text">
-       <string>Product ID</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="eo_instruction_3">
-      <property name="geometry">
-       <rect>
-        <x>447</x>
-        <y>210</y>
-        <width>101</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white</string>
-      </property>
-      <property name="text">
-       <string>Phone No</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="eo_input_3">
-      <property name="geometry">
-       <rect>
-        <x>440</x>
-        <y>250</y>
-        <width>252</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: white;
-font: 12pt &quot;Poppins&quot;;
-border-radius: 10px;
-background-color:rgb(27, 26, 56);
-padding:10px;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="echoMode">
-       <enum>QLineEdit::Normal</enum>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="eo_input_2">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>350</y>
-        <width>161</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: white;
-font: 12pt &quot;Poppins&quot;;
-border-radius: 10px;
-background-color:rgb(27, 26, 56);
-padding:10px;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="echoMode">
-       <enum>QLineEdit::Normal</enum>
-      </property>
-     </widget>
      <widget class="QLabel" name="eo_head">
       <property name="geometry">
        <rect>
@@ -3178,220 +3165,7 @@ font: 63 30pt &quot;Poppins SemiBold&quot;;
 color: white</string>
       </property>
       <property name="text">
-       <string>Manage Stocks</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="eo_instruction_1">
-      <property name="geometry">
-       <rect>
-        <x>53</x>
-        <y>210</y>
-        <width>141</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white</string>
-      </property>
-      <property name="text">
-       <string>Customer's Name</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="eo_button_1">
-      <property name="geometry">
-       <rect>
-        <x>440</x>
-        <y>350</y>
-        <width>111</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#eo_button_1 {
-background-color: #6788FF; /* Background color */
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white; /* Text color */
-outline: 0;
-padding: 10px 20px; /* Padding for the button */
-border: none; /* Remove default button border */
-border-radius: 10px; /* Add some border-radius for a rounded appearance */
-}
-QPushButton#eo_button_1:hover {
-cursor: pointer; /* Change cursor to pointer on hover */
-background-color: #4c6cbf;
-}</string>
-      </property>
-      <property name="text">
-       <string>Update</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="eo_button_2">
-      <property name="geometry">
-       <rect>
-        <x>580</x>
-        <y>350</y>
-        <width>111</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton#eo_button_2 {
-background-color: #6788FF; /* Background color */
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white; /* Text color */
-outline: 0;
-padding: 10px 20px; /* Padding for the button */
-border: none; /* Remove default button border */
-border-radius: 10px; /* Add some border-radius for a rounded appearance */
-}
-QPushButton#eo_button_2:hover {
-cursor: pointer; /* Change cursor to pointer on hover */
-background-color: #4c6cbf;
-}</string>
-      </property>
-      <property name="text">
-       <string>Delete</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="eo_input_1">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>250</y>
-        <width>354</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: white;
-font: 12pt &quot;Poppins&quot;;
-border-radius: 10px;
-background-color:rgb(27, 26, 56);
-padding:10px;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="echoMode">
-       <enum>QLineEdit::Normal</enum>
-      </property>
-     </widget>
-     <widget class="QLabel" name="eoid_label">
-      <property name="geometry">
-       <rect>
-        <x>544</x>
-        <y>180</y>
-        <width>71</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 12pt &quot;Poppins SemiBold&quot;;
-color: white</string>
-      </property>
-      <property name="text">
-       <string>Order ID</string>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="select_oid">
-      <property name="geometry">
-       <rect>
-        <x>614</x>
-        <y>175</y>
-        <width>80</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QComboBox#select_oid {
-  border-radius: 10px;
-  background-color: rgb(27, 26, 56);
-  font: 63 12pt &quot;Poppins SemiBold&quot;;
-  padding-top: 3px;
-  padding-left: 12px;
-  color: red;
-}
-
-QComboBox#select_oid::drop-down {
-  border-radius: 10px;
-}
-
-QComboBox QAbstractItemView {
-  background-color: rgb(27, 26, 56);
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 12px;
-  padding-right:12px;
-  color: red;
-}
-
-/* Hide vertical scrollbar */
-QComboBox QScrollBar:vertical {
-  width: 0px; /* Hides the scrollbar track */
-  background: none; /* Optional: removes background color for better invisibility */
-}
-
-/* Hide horizontal scrollbar (optional) */
-QComboBox QScrollBar:horizontal {
-  height: 0px; /* Hides the scrollbar track */
-  background: none; /* Optional: removes background color for better invisibility */
-}</string>
-      </property>
-      <property name="editable">
-       <bool>false</bool>
-      </property>
-      <property name="currentText">
-       <string/>
-      </property>
-      <property name="maxVisibleItems">
-       <number>5</number>
-      </property>
-      <property name="frame">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="eo_instruction_4">
-      <property name="geometry">
-       <rect>
-        <x>246</x>
-        <y>310</y>
-        <width>81</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color:rgba(255, 255, 255, 0);
-font: 63 11pt &quot;Poppins SemiBold&quot;;
-color: white</string>
-      </property>
-      <property name="text">
-       <string>Quantity</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="eo_input_4">
-      <property name="geometry">
-       <rect>
-        <x>243</x>
-        <y>350</y>
-        <width>161</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: white;
-font: 12pt &quot;Poppins&quot;;
-border-radius: 10px;
-background-color:rgb(27, 26, 56);
-padding:10px;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="echoMode">
-       <enum>QLineEdit::Normal</enum>
+       <string>Sales Stats</string>
       </property>
      </widget>
      <widget class="QLabel" name="eo_display">
@@ -3430,7 +3204,7 @@ color: red;</string>
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="add_prod_2">
+     <widget class="QPushButton" name="navProdMod4">
       <property name="geometry">
        <rect>
         <x>384</x>
@@ -3438,6 +3212,9 @@ color: red;</string>
         <width>111</width>
         <height>61</height>
        </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="toolTip">
        <string>Manage Orders</string>
@@ -3476,23 +3253,11 @@ background-color: #4c6cbf;
      <zorder>orders_2</zorder>
      <zorder>navProdModFour</zorder>
      <zorder>navOrderEntryFour</zorder>
-     <zorder>logout_2</zorder>
-     <zorder>eo_instruction_2</zorder>
-     <zorder>eo_instruction_3</zorder>
-     <zorder>eo_input_3</zorder>
-     <zorder>eo_input_2</zorder>
+     <zorder>navLogout2</zorder>
      <zorder>eo_head</zorder>
-     <zorder>eo_instruction_1</zorder>
-     <zorder>eo_button_1</zorder>
-     <zorder>eo_button_2</zorder>
-     <zorder>eo_input_1</zorder>
-     <zorder>eoid_label</zorder>
-     <zorder>select_oid</zorder>
-     <zorder>eo_instruction_4</zorder>
-     <zorder>eo_input_4</zorder>
      <zorder>eo_display</zorder>
      <zorder>eo_display_2</zorder>
-     <zorder>add_prod_2</zorder>
+     <zorder>navProdMod4</zorder>
     </widget>
    </widget>
   </widget>
@@ -3525,36 +3290,29 @@ background-color: #4c6cbf;
   <tabstop>navViewOrders3</tabstop>
   <tabstop>navLogout3</tabstop>
   <tabstop>columnView</tabstop>
-  <tabstop>logout_2</tabstop>
+  <tabstop>navLogout2</tabstop>
   <tabstop>loginBtn</tabstop>
   <tabstop>navOrderEntryFour</tabstop>
   <tabstop>columnView_5</tabstop>
   <tabstop>columnView_6</tabstop>
   <tabstop>orders_2</tabstop>
   <tabstop>navProdModFour</tabstop>
-  <tabstop>eo_input_3</tabstop>
-  <tabstop>eo_input_2</tabstop>
-  <tabstop>eo_button_1</tabstop>
-  <tabstop>eo_button_2</tabstop>
-  <tabstop>eo_input_1</tabstop>
-  <tabstop>select_oid</tabstop>
-  <tabstop>eo_input_4</tabstop>
-  <tabstop>add_prod_2</tabstop>
+  <tabstop>navProdMod4</tabstop>
   <tabstop>columnView_10</tabstop>
   <tabstop>columnView_9</tabstop>
   <tabstop>prodOrdTbl</tabstop>
   <tabstop>columnView_3</tabstop>
   <tabstop>prodOrdQuantInp</tabstop>
-  <tabstop>navManOrdOne</tabstop>
+  <tabstop>navProdMod1</tabstop>
   <tabstop>loginInp</tabstop>
-  <tabstop>logout_3</tabstop>
+  <tabstop>navLogout3</tabstop>
   <tabstop>navOrderEntryThree</tabstop>
   <tabstop>columnView_7</tabstop>
   <tabstop>columnView_8</tabstop>
   <tabstop>orders_3</tabstop>
   <tabstop>navProdModThree</tabstop>
   <tabstop>ordDateFltrStart</tabstop>
-  <tabstop>add_prod_4</tabstop>
+  <tabstop>navProdMod2</tabstop>
   <tabstop>prodOrdPhoneInp</tabstop>
   <tabstop>columnView_4</tabstop>
   <tabstop>prodOrdNameSel</tabstop>

@@ -1,5 +1,6 @@
 from functools import partial
 
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QPushButton, QLabel
 from PyQt5.QtGui import QIcon
 
@@ -11,6 +12,7 @@ class ViewOrderButton(QPushButton):
         
         super().__init__(icon, "", parent)
         self.setObjectName(f"{ord_data[0]}")
+        self.setCursor(Qt.PointingHandCursor)
         self.setStyleSheet("""
             QPushButton {   
                 background-color: #0b6bcb;
@@ -32,8 +34,8 @@ class ViewOrderButton(QPushButton):
     def __on_clicked(self, ord_data, dsp_label: QLabel):
         view_order_modal = ViewOrderModal(ord_data[0])
         
-        view_order_modal.set_order_info_labels(ord_data)
         try:
+            view_order_modal.set_order_info_labels(ord_data)
             view_order_modal.load_order_table(ord_data, dsp_label)
         except Exception:
             return

@@ -24,19 +24,19 @@ class Navigation:
     def get_logout_buttons(self):
         return [
             self.ui.navLogout1,
+            self.ui.navLogout2,
             self.ui.navLogout3,
-            self.ui.logout_3,
-            self.ui.logout_2
+            self.ui.navLogout4
         ]
     
     # manage Orders button list
     @staticmethod
     def get_manage_orders_buttons(self):
         return [
-            self.ui.navManOrdOne,
+            self.ui.navProdMod1,
+            self.ui.navProdMod2,
             self.ui.navProdMod3,
-            self.ui.add_prod_4,
-            self.ui.add_prod_2
+            self.ui.navProdMod4
         ]
     
     
