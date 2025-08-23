@@ -1,4 +1,6 @@
 from functools import partial
+
+from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QPushButton, QTableWidget, QWidget
 from src.utils.services import Services
@@ -11,7 +13,7 @@ def get_widget_row(table: QTableWidget, widget: QWidget) -> int:
     return -1  # not found
 
 
-class DeleteButton(QPushButton):
+class DeleteItemButton(QPushButton):
     # Constructor
     # Takes object name and callback func as args
     def __init__(self, prod_name: str, prod_id: str, delete_func, parent):
@@ -20,6 +22,7 @@ class DeleteButton(QPushButton):
         # Base class (QPushButton) constructor
         super().__init__(icon, "", parent)
         self.setObjectName(f"{prod_id}")
+        self.setCursor(Qt.PointingHandCursor)
         self.setStyleSheet("""
             QPushButton {   
                 background-color: #c41c1c;
