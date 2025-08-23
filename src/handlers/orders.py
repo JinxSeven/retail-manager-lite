@@ -31,12 +31,8 @@ class OrderHandler:
         self.ui.clearOrdTable.clicked.connect(self.clear_order_table)
 
         # Loading combobox with product names
-        Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
-        Services.load_combobox(self.ui.prodAvailable, "")
-        self.ui.prodOrdNameSel.currentIndexChanged.connect(self.load_prod_quant)
-        self.on_product_change()
         self.ui.prodOrdNameSel.currentIndexChanged.connect(self.on_product_change)
-
+        Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
         
     def generate_order_id(self):
         self.ui.orderIdLbl.setText(str(secrets.token_hex(4)).upper())
@@ -197,14 +193,15 @@ class OrderHandler:
             print(Color.RED + f"An unexpected error occurred: {ex}" + Color.RESET)
 
         self.ui.submitOrderBtn.setEnabled(True)  # Enable the submit button after processing submit request
+        Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
 
-    def clear_orders_tab(self, new_ord_id=True):
+    def clear_orders_tab(self, get_ord_id=True):
         self.current_order = [] # clears the local order list
         self.ui.prodOrdPhoneInp.clear() # clears the phone number field
         self.ui.prodOrdQuantInp.clear() # clears the Nos field
         self.ui.grandTotalDsp.clear() # clears the grandTotal 
         self.ui.prodOrdTbl.setRowCount(0) # clears the table completely
-        if new_ord_id: self.generate_order_id()
+        if get_ord_id: self.generate_order_id()
 
     def order_input_validation(self):
         phone = self.ui.prodOrdPhoneInp.text()
@@ -223,6 +220,7 @@ class OrderHandler:
         selected_product = self.ui.prodOrdNameSel.currentText()
 
         try:
+            self.load_prod_quant()
             with sqlite3.connect(DB_PATH) as conn:
                 cursor = conn.execute(
                     "SELECT stock_quantity FROM products WHERE product_name = ?", 
@@ -232,18 +230,18 @@ class OrderHandler:
 
                 if row:
                     self.ui.prodAvailable.setText(str(row[0]))
+                    self.ui.prodModQuantityInp.setText(str(row[0]))
                 else:
-                    self.ui.prodAvailable.setText(0)
+                    self.ui.prodAvailable.setText(str(0))
 
         except sqlite3.Error as ex:
             print(Color.RED + f"Database error: {ex}" + Color.RED)
             self.ui.lblStock.setText("Error fetching stock")
-
         except Exception as ex:
-            Services.display_info(self.ui.prodOrdInfoLbl,"Order submission failed", "red")
+            Services.display_info(self.ui.prodOrdInfoLbl,"Failed loading stock data!", "red")
             print(Color.RED + f"An unexpected error occurred: {ex}" + Color.RESET)
 
     def clear_order_table(self):
-        res = Services.confirmation_messagebox("Clear Order Table", "Are you sure you want to clear the bill table?")
+        res = Services.confirmation_messagebox("Clear Order Table", "Proceed clearing items from order table?")
         if res:
             self.clear_orders_tab(False)

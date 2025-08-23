@@ -154,7 +154,7 @@ QTabBar::tab:right:only-one {
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -912,9 +912,9 @@ QTableView::corner {
       <widget class="QLabel" name="orderDateLbl">
        <property name="geometry">
         <rect>
-         <x>338</x>
+         <x>330</x>
          <y>12</y>
-         <width>111</width>
+         <width>121</width>
          <height>40</height>
         </rect>
        </property>
@@ -977,7 +977,7 @@ background-color: #a51818;
      <widget class="QLabel" name="order_date">
       <property name="geometry">
        <rect>
-        <x>587</x>
+        <x>579</x>
         <y>192</y>
         <width>51</width>
         <height>21</height>
