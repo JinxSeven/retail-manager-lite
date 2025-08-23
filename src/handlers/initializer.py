@@ -23,7 +23,7 @@ class Initializer:
         self.disable_tabs()
         
     def disable_tabs(self):
-        for i in range(1, 4):
+        for i in range(1, 5):
             self.ui.tabWidget.setTabEnabled(i, False)
     
     def enable_tabs(self):
