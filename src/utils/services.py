@@ -1,6 +1,7 @@
 import sqlite3
 import time
 
+from PyQt5.QtCore import QSignalBlocker
 from PyQt5.QtWidgets import QMessageBox, QComboBox
 from src.config import DB_PATH
 from .color import Color
@@ -57,13 +58,13 @@ class Services:
                 for result in results:
                     combobox.addItem(str(result[0]))
         except sqlite3.Error as ex:
-                    print(Color.RED + f"An error occurred while loading combobox: {ex}" + Color.RED)
+                print(Color.RED + f"An error occurred while loading combobox: {ex}" + Color.RED)
         except Exception as ex:
                 print(Color.RED + f"An unexpected error occurred: {ex}" + Color.RED)
 
     @staticmethod
-    def display_info(label, info, color = 'blue'):
-        label.setText(info)
+    def display_info(label, info: str, color = '#0b6bcb'):
+        label.setText(str(info))
         existing_style = label.styleSheet()
         label.setStyleSheet(existing_style + f"color: {color};")
         QtCore.QTimer.singleShot(3000, label.clear)

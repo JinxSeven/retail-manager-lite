@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>988</width>
+    <height>690</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../images/icon.png</normaloff>../images/icon.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #2E2E2E;</string>
+  </property>
+  <widget class="QColumnView" name="columnView_10">
+   <property name="geometry">
+    <rect>
+     <x>66</x>
+     <y>65</y>
+     <width>851</width>
+     <height>561</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(0, 0, 0);
+border-radius: 10px;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="login_head">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>83</y>
+     <width>181</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 30pt &quot;Poppins SemiBold&quot;;
+color: white</string>
+   </property>
+   <property name="text">
+    <string>INVOICE</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="login_instruction">
+   <property name="geometry">
+    <rect>
+     <x>635</x>
+     <y>182</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white</string>
+   </property>
+   <property name="text">
+    <string>Phone No:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="login_instruction_2">
+   <property name="geometry">
+    <rect>
+     <x>659</x>
+     <y>152</y>
+     <width>71</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white</string>
+   </property>
+   <property name="text">
+    <string>Bill No:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="login_instruction_3">
+   <property name="geometry">
+    <rect>
+     <x>631</x>
+     <y>122</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white</string>
+   </property>
+   <property name="text">
+    <string>Date Time:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="viewOrdDateTime">
+   <property name="geometry">
+    <rect>
+     <x>731</x>
+     <y>124</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: red</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="viewOrdOrdNum">
+   <property name="geometry">
+    <rect>
+     <x>731</x>
+     <y>152</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: red</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="viewOrdPhoneNo">
+   <property name="geometry">
+    <rect>
+     <x>731</x>
+     <y>182</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: red</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>230</y>
+     <width>811</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">    border-radius: 10px;
+    gridline-color: #E0E0E0; /* Light grid lines */
+    color: white; /* Dark text color */
+    font: 10pt &quot;Poppins&quot;;
+    background-color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QTableWidget" name="viewOrdOrdTbl">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>801</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* QTableWidget Dark Mode - Compact */
+QTableWidget {
+    border-radius: 8px;
+    gridline-color: #44475a; /* Subtle grid lines */
+    color: #F8F8F2; /* Light text color */
+    font: 9pt &quot;Poppins&quot;; /* Smaller font */
+    background-color: #1E1E1E; /* Dark background */
+    border: 1px solid #1E1E1E; /* Border blends with background */
+}
+
+/* QTableWidget Items */
+QTableWidget::item {
+    border: none;
+    padding: 2px 5px; /* Reduce padding for compact view */
+}
+
+/* Header Style - Dark Mode */
+QHeaderView::section {
+    background-color: #2E2E2E; /* Dark header */
+    padding: 3px 6px; /* Smaller padding */
+    border: none;
+    border-radius: 8px;
+    border-bottom: 1px solid #44475a;
+    color: #CCCCCC; /* Soft white text */
+    font: 9pt &quot;Poppins&quot;;
+}
+
+/* Hide Scrollbars for Minimalist Look */
+QScrollBar:vertical, QScrollBar:horizontal {
+    width: 0px;
+    height: 0px;
+    background: none;
+}
+
+/* QTableWidget Viewport */
+QTableView::viewport {
+    border-radius: 8px;
+    background-color: #1E1E1E;
+}
+
+/* Corner Styling for Rounded Look */
+QTableView::corner {
+    background-color: #1E1E1E;
+    border-radius: 8px 0 0 0;
+}
+</string>
+    </property>
+    <property name="sortingEnabled">
+     <bool>true</bool>
+    </property>
+    <column>
+     <property name="text">
+      <string>Product Name</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Unit Price</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Quantity</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Total</string>
+     </property>
+    </column>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="sagayam">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>78</y>
+     <width>221</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 64pt &quot;Tam-Tamil014&quot;;
+color: white</string>
+   </property>
+   <property name="text">
+    <string>êè£ò‹</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="stores">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>140</y>
+     <width>281</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 64pt &quot;Tam-Tamil014&quot;;
+color: white</string>
+   </property>
+   <property name="text">
+    <string>v«ì£˜v</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="viewOrdOrdTotal">
+   <property name="geometry">
+    <rect>
+     <x>735</x>
+     <y>574</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: red</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="login_instruction_4">
+   <property name="geometry">
+    <rect>
+     <x>625</x>
+     <y>573</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white</string>
+   </property>
+   <property name="text">
+    <string>Grand Total:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="login_instruction_5">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>573</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: white</string>
+   </property>
+   <property name="text">
+    <string>Items:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="viewOrdOrdItems">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>574</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgba(255, 255, 255, 0);
+font: 63 11pt &quot;Poppins SemiBold&quot;;
+color: red</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

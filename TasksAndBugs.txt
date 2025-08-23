@@ -1,3 +1,5 @@
+IMPORTANT: Tracking issues, tasks and bugs has been moved to GitHub Issues.
+
 Tasks:
 Focus on fixing and completing "Order Entry Tab" - In Progress
     SubTasks:

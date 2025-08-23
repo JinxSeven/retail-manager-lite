@@ -7,16 +7,18 @@ from src.utils.services import Services
 class ProductHandler:
     def __init__(self, ui):
         self.ui = ui
-        
-        Services.load_combobox(self.ui.prodModNameSel, "SELECT product_name FROM products")
-        self.load_product_details()
+
+        self.ui.prodModNameSel.currentIndexChanged.connect(self.load_product_details)
+        self.ui.tabWidget.currentChanged.connect(
+            lambda index: Services.load_combobox(
+                self.ui.prodModNameSel, "SELECT product_name FROM products") if index == 1 else None
+        )
         
         self.ui.prodAddBtn.clicked.connect(self.add_new_product)
         self.ui.prodModDeleteBtn.clicked.connect(self.delete_product)
         self.ui.prodModResetBtn.clicked.connect(self.reset_changes)
         self.ui.prodModUpdateBtn.clicked.connect(self.update_product)
         
-        self.ui.prodModNameSel.currentIndexChanged.connect(self.load_product_details)
 
     def load_product_details(self):
         try:
@@ -35,14 +37,29 @@ class ProductHandler:
             print(Color.RED + f"An error occurred while adding product: {ex}" + Color.RED)
     
     def add_new_product(self):
+        to_clear = True
         try:
             name = self.ui.prodAddNameInp.text()
             cp = float(self.ui.prodAddCostPriceInp.text())
             sp = float(self.ui.prodAddSellingPriceInp.text())
             stock = int(self.ui.prodAddQuantityInp.text())
-            id = str(secrets.token_hex(4))
+            id = str(secrets.token_hex(4)).upper()
         except ValueError:
             Services.display_info(self.ui.prodModInfoLbl, 'Input type mismatch!', 'red')
+            return
+        
+        
+        if cp <= 0:
+            to_clear=False
+            Services.display_info(self.ui.prodModInfoLbl, 'Cost price should be greater than Zero', 'red')
+            return
+        elif sp <= cp:
+            to_clear=False
+            Services.display_info(self.ui.prodModInfoLbl, 'Selling price should be greater than CP', 'red')
+            return
+        elif stock < 1:
+            to_clear=False
+            Services.display_info(self.ui.prodModInfoLbl, 'Stocks should be greater than Zero', 'red')
             return
         
         try:
@@ -57,16 +74,18 @@ class ProductHandler:
             Services.display_info(self.ui.prodModInfoLbl, 'Product added successfully!', 'green')
             Services.load_combobox(self.ui.prodModNameSel, "SELECT product_name FROM products")
             Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
+            
         except sqlite3.Error as ex:
             # Handling adding duplicate products
             Services.display_info(self.ui.prodModInfoLbl, 'Product might already exist!', 'red')
             print(Color.RED + f"An error occurred while adding product: {ex}" + Color.RED)
             return
         finally:
-            self.ui.prodAddNameInp.clear()
-            self.ui.prodAddCostPriceInp.clear()
-            self.ui.prodAddSellingPriceInp.clear()
-            self.ui.prodAddQuantityInp.clear()
+            if to_clear:
+                self.ui.prodAddNameInp.clear()
+                self.ui.prodAddCostPriceInp.clear()
+                self.ui.prodAddSellingPriceInp.clear()
+                self.ui.prodAddQuantityInp.clear()
 
     def delete_product(self):
         id = self.ui.prodModIdInp.text()
@@ -89,12 +108,12 @@ class ProductHandler:
                 conn.commit()
                 
             Services.display_info(self.ui.prodModInfoLbl, 'Product deleted successfully!', 'red')
-
             Services.load_combobox(self.ui.prodModNameSel, "SELECT product_name FROM products")
             Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
+            
         except sqlite3.Error as ex:
             print(Color.RED + f"An error occurred while deleting product: {ex}" + Color.RED)
-            Services.display_info(self.ui.prodModInfoLbl, 'Could not delete product', 'red')
+            Services.display_info(self.ui.prodModInfoLbl, 'Product deletion failed!', 'red')
     
     def update_product(self):
         try:
@@ -109,6 +128,16 @@ class ProductHandler:
             return
         
         try:
+            if cp <= 0:
+                Services.display_info(self.ui.prodModInfoLbl, 'Updating : Cost price should be greater than Zero', 'red')
+                return
+            elif sp <= 0:
+                Services.display_info(self.ui.prodModInfoLbl, 'Updating : selling price should be greater than Zero', 'red')
+                return
+            elif stock < 1:
+                Services.display_info(self.ui.prodModInfoLbl, 'Updating : Stocks should be greater than Zero', 'red')
+                return
+
             with sqlite3.connect(DB_PATH) as conn:
                 conn.execute("""
                     UPDATE products SET 
@@ -125,10 +154,12 @@ class ProductHandler:
                 self.ui.prodModInfoLbl.clear()
                 Services.display_info(self.ui.prodModInfoLbl, 'Product updated successfully!', 'green')
                 # self.services.load_combobox(self.ui.prodModNameSel, "SELECT product_name FROM products")
+                Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
+
         except sqlite3.Error as ex:
             print(Color.RED + f"An error occurred while updating product: {ex}")
             self.ui.prodModInfoLbl.clear()
-            Services.display_info(self.ui.prodModInfoLbl, 'Could not update product!', 'red')
+            Services.display_info(self.ui.prodModInfoLbl, 'Product update failed!', 'red')
         except Exception as ex:
             print(Color.RED + f"An error occurred while updating product: {ex}" + Color.RED)
     
