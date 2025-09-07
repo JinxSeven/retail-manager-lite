@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>988</width>
-    <height>690</height>
+    <height>688</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -166,7 +166,7 @@ color: red</string>
      <x>80</x>
      <y>230</y>
      <width>811</width>
-     <height>331</height>
+     <height>381</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -197,12 +197,23 @@ QTableWidget {
     font: 9pt &quot;Poppins&quot;; /* Smaller font */
     background-color: #1E1E1E; /* Dark background */
     border: 1px solid #1E1E1E; /* Border blends with background */
+    outline: 0; /* Remove focus outline */
 }
 
 /* QTableWidget Items */
 QTableWidget::item {
     border: none;
     padding: 2px 5px; /* Reduce padding for compact view */
+}
+
+QTableWidget::item:selected {
+    background-color: #44475a; /* Selection color */
+    color: #F8F8F2;
+}
+
+QTableWidget::item:focus {
+    border: none;
+    outline: none;
 }
 
 /* Header Style - Dark Mode */
@@ -216,11 +227,8 @@ QHeaderView::section {
     font: 9pt &quot;Poppins&quot;;
 }
 
-/* Hide Scrollbars for Minimalist Look */
-QScrollBar:vertical, QScrollBar:horizontal {
-    width: 0px;
-    height: 0px;
-    background: none;
+QHeaderView::section:checked {
+    background-color: #3E3E3E; /* Slightly lighter when sorted */
 }
 
 /* QTableWidget Viewport */
@@ -233,8 +241,95 @@ QTableView::viewport {
 QTableView::corner {
     background-color: #1E1E1E;
     border-radius: 8px 0 0 0;
+    border: none;
 }
-</string>
+
+/* Scrollbar Styling to Match */
+QScrollBar:vertical {
+    border: 1px solid #2E2E2E;
+    background: #1E1E1E;
+    width: 12px;
+    margin: 15px 0 15px 0;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #44475a;
+    min-height: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #6272a4;
+}
+
+QScrollBar::add-line:vertical, 
+QScrollBar::sub-line:vertical {
+    border: none;
+    background: none;
+    height: 0px;
+}
+
+QScrollBar::add-page:vertical, 
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QScrollBar:horizontal {
+    border: 1px solid #2E2E2E;
+    background: #1E1E1E;
+    height: 12px;
+    margin: 0 15px 0 15px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #44475a;
+    min-width: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #6272a4;
+}
+
+/* Alternate row colors for better readability */
+QTableWidget::item:alternate {
+    background-color: #252525;
+}
+
+/* Focus and selection styles */
+QTableWidget:focus {
+    border: 1px solid #44475a;
+}
+
+/* Ensure the grid lines are subtle */
+QTableWidget::grid {
+    color: #44475a;
+}
+
+/* Remove any default selection outlines */
+QTableWidget::item:selected:focus {
+    border: none;
+    outline: none;
+}
+
+/* Style the sort indicator */
+QHeaderView::down-arrow {
+    image: url(none);
+    background-color: #CCCCCC;
+    border-radius: 2px;
+    width: 4px;
+    height: 4px;
+}
+
+QHeaderView::up-arrow {
+    image: url(none);
+    background-color: #CCCCCC;
+    border-radius: 2px;
+    width: 4px;
+    height: 4px;
+}</string>
     </property>
     <property name="sortingEnabled">
      <bool>true</bool>
@@ -315,7 +410,7 @@ color: red</string>
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="login_instruction_4">
+  <widget class="QLabel" name="ordTotalLbl">
    <property name="geometry">
     <rect>
      <x>625</x>
@@ -333,7 +428,7 @@ color: white</string>
     <string>Grand Total:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="login_instruction_5">
+  <widget class="QLabel" name="ordItemsLbl">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -369,6 +464,21 @@ color: red</string>
     <string/>
    </property>
   </widget>
+  <zorder>columnView_10</zorder>
+  <zorder>login_head</zorder>
+  <zorder>login_instruction</zorder>
+  <zorder>login_instruction_2</zorder>
+  <zorder>login_instruction_3</zorder>
+  <zorder>viewOrdDateTime</zorder>
+  <zorder>viewOrdOrdNum</zorder>
+  <zorder>viewOrdPhoneNo</zorder>
+  <zorder>groupBox_3</zorder>
+  <zorder>sagayam</zorder>
+  <zorder>stores</zorder>
+  <zorder>ordItemsLbl</zorder>
+  <zorder>viewOrdOrdItems</zorder>
+  <zorder>viewOrdOrdTotal</zorder>
+  <zorder>ordTotalLbl</zorder>
  </widget>
  <resources/>
  <connections/>

@@ -16,9 +16,9 @@ class ViewOrderModal(QDialog):
         uic.loadUi("assets/ui/view_order_modal.ui", self)
         
         self.setModal(True)
-        self.setWindowTitle(f"Bill No: {order_id}")
+        self.setWindowTitle(f"ORD NO: {order_id}")
         
-        self.viewOrdOrdTbl.setColumnWidth(0, 472)
+        self.viewOrdOrdTbl.setColumnWidth(0, 440)
         
     def set_order_info_labels(self, ord_data):
         self.viewOrdOrdNum.setText(ord_data[0])
