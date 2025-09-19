@@ -1,4 +1,5 @@
 import sys
+import os
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.uic import loadUiType
 from config import DB_PATH
@@ -9,7 +10,12 @@ from handlers.products import ProductHandler
 from handlers.initializer import Initializer
 from handlers.manage_orders import ManageOrdersHandler
 
-ui, _ = loadUiType('assets/ui/rma.ui')
+if hasattr(sys, '_MEIPASS'):
+    ui_path = os.path.join(sys._MEIPASS, 'assets', 'ui', 'rma.ui')
+else:
+    ui_path = os.path.join('assets', 'ui', 'rma.ui')
+
+ui, _ = loadUiType(ui_path)
 
 class MainApp(QMainWindow, ui):
     def __init__(self):
