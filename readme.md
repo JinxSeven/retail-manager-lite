@@ -1,58 +1,33 @@
+# Retail Manager Lite
 
-# 🛒 Super Market Billing Application
-
-This project is a GUI billing application developed to create and manage customer orders and products in supermarkets. The application leverages Python for backend logic, SqLite for database management, and qT for the user interface.
+A comprehensive GUI-based billing system designed for retail outlets to efficiently handle customer orders, product info, and stock levels. The application is built with **Python** for backend logic, **SQLite** for reliable database management, and **Qt** for a responsive, user-friendly interface.
 
 ## Features
+- **Customer Order Generation**: Create and manage customer orders with ease.  
+- **Order & Product Management**: Add, update, and delete orders and products.  
+- **Stock Management**: Track and update inventory levels to maintain accurate stock records.  
+- **User-Friendly Interface**: Clean and intuitive GUI built with Qt.  
+- **Persistent Storage**: Orders and stock data are securely stored in an SQLite database.
 
-- **📝 Customer Order Generation**: Create and manage customer orders with ease.
-  
-- **🔄 Order & Product Management**: View, update, and delete existing orders and products.
-  
-- **🖥️ User-Friendly Interface**: Intuitive and easy-to-use graphical interface built with qT.
-  
-- **💾 Persistent Storage**: All orders are stored in an SqLite database, ensuring data persistence.
-
-## Technologies Used
-
-- **🐍 Python**: The primary programming language used for developing the application.
-  
-- **🗃️ SqLite**: A lightweight, disk-based database to store order data.
-  
-- **🎨 qT**: A free and open-source widget toolkit for creating graphical user interfaces.
-
-## Screenshots
-
-*Login screen of the application.*
-
-![SAGAYAM](https://github.com/JinxSeven/Cx_Orders/assets/164835921/071e0c82-310e-488e-9509-e7ecfb372ba3)
-
-*Main screen of the application.*
-
-![SAGAYAM_OE](https://github.com/JinxSeven/Cx_Orders/assets/164835921/c71f110e-f9ef-4cb4-9ac1-a0a22c424bad)
-
-*Order management interface.*
-
-![SAGAYAM_EO](https://github.com/JinxSeven/Cx_Orders/assets/164835921/b099cec1-f0ba-44f1-b787-a7373f91cb2f)
-
-*View orders interface.*
-
-![SAGAYAM_OL](https://github.com/JinxSeven/Cx_Orders/assets/164835921/e2a47392-afea-45ee-86ce-dfab419b8575)
+## Tech Stack
+- **Python** – Backend application logic  
+- **Qt** – Graphical user interface  
+- **SQLite** – Lightweight relational database
 
 ## Getting Started
 
-1. **📥 Clone The Repository:**
+1. **Clone The Repository:**
    ```bash
-   git clone https://github.com/JinxSeven/Cx_Orders.git
+   git clone https://github.com/JinxSeven/retail-manager-lite.git
    ```
 
-2. **📦 Install Dependencies:**
+2. **Install Dependencies:**
    Install the required Python packages:
    ```bash
    pip install -r requirements.txt
    ```
    
-3. **📝 Install Required Fonts:**
+3. **Install Required Fonts:**
    Install all fonts in assets folder for better experience
    ```bash
    cd assets/native_fonts
