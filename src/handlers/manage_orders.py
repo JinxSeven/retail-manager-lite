@@ -51,9 +51,9 @@ class ManageOrdersHandler:
             lambda index: self.reset_filters() if index == 3 else None
         )
 
-        self.ui.manageOrdTbl.setColumnWidth(0, 128)
-        self.ui.manageOrdTbl.setColumnWidth(1, 177)
-        self.ui.manageOrdTbl.setColumnWidth(2, 128)
+        self.ui.manageOrdTbl.setColumnWidth(0, 127)
+        self.ui.manageOrdTbl.setColumnWidth(1, 175)
+        self.ui.manageOrdTbl.setColumnWidth(2, 127)
         self.ui.manageOrdTbl.setColumnWidth(3, 115)
         self.ui.manageOrdTbl.setColumnWidth(4, 64)
         self.ui.manageOrdTbl.setColumnWidth(5, 64)
@@ -88,7 +88,8 @@ class ManageOrdersHandler:
                                 self.ui.manageOrdTbl.setCellWidget(row_index, colm_index, ViewOrderButton(row_data,
                                                                                                           self.ui.manOrdInfoLbl))
                             if colm_index is BTN_INDEX["SAVE"]:
-                                self.ui.manageOrdTbl.setCellWidget(row_index, colm_index, SaveOrderButton(str(row_data[0])))
+                                self.ui.manageOrdTbl.setCellWidget(row_index, colm_index, SaveOrderButton(row_data,
+                                                                                                          self.ui.manOrdInfoLbl))
                             if colm_index is BTN_INDEX["DELETE"]:
                                 self.ui.manageOrdTbl.setCellWidget(row_index, colm_index, DeleteOrderButton(str(row_data[0]),
                                                                                                             self.filter_and_search,

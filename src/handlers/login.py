@@ -1,6 +1,6 @@
 from src.handlers.initializer import Initializer
 from src.utils.services import Services
-from utils.navigation_buttons import Navigation
+from src.utils.navigation_buttons import Navigation
 
 class LoginHandler:
     def __init__(self, ui):
@@ -15,8 +15,6 @@ class LoginHandler:
 
         for lout_btn in self.logout_btn_list:
             lout_btn.clicked.connect(self.logout)
-            
-            
 
     def login(self):
         usr_pwd = self.ui.loginInp.text()

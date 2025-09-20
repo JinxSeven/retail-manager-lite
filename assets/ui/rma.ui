@@ -23,7 +23,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Sagayam Stores</string>
+   <string>Retail Manager Lite</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -154,7 +154,7 @@ QTabBar::tab:right:only-one {
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -2014,7 +2014,7 @@ color: white</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton#prodModResetBtn {
-background-color: #009688; /* Background color */
+background-color: #6c757d; /* Background color */
 font: 63 11pt &quot;Poppins SemiBold&quot;;
 color: white; /* Text color */
 outline: 0;
@@ -2025,7 +2025,7 @@ transition: all 0.3s;
 }
 QPushButton#prodModResetBtn:hover {
 cursor: pointer; /* Change cursor to pointer on hover */
-background-color: #00897b;
+background-color: #5c636a;
 }</string>
       </property>
       <property name="text">
@@ -2752,12 +2752,23 @@ QTableWidget {
     font: 9pt &quot;Poppins&quot;; /* Smaller font */
     background-color: #1E1E1E; /* Dark background */
     border: 1px solid #1E1E1E; /* Border blends with background */
+    outline: 0; /* Remove focus outline */
 }
 
 /* QTableWidget Items */
 QTableWidget::item {
     border: none;
     padding: 2px 5px; /* Reduce padding for compact view */
+}
+
+QTableWidget::item:selected {
+    background-color: #44475a; /* Selection color */
+    color: #F8F8F2;
+}
+
+QTableWidget::item:focus {
+    border: none;
+    outline: none;
 }
 
 /* Header Style - Dark Mode */
@@ -2771,11 +2782,8 @@ QHeaderView::section {
     font: 9pt &quot;Poppins&quot;;
 }
 
-/* Hide Scrollbars for Minimalist Look */
-QScrollBar:vertical, QScrollBar:horizontal {
-    width: 0px;
-    height: 0px;
-    background: none;
+QHeaderView::section:checked {
+    background-color: #3E3E3E; /* Slightly lighter when sorted */
 }
 
 /* QTableWidget Viewport */
@@ -2788,8 +2796,95 @@ QTableView::viewport {
 QTableView::corner {
     background-color: #1E1E1E;
     border-radius: 8px 0 0 0;
+    border: none;
 }
-</string>
+
+/* Scrollbar Styling to Match */
+QScrollBar:vertical {
+    border: 1px solid #2E2E2E;
+    background: #1E1E1E;
+    width: 12px;
+    margin: 15px 0 15px 0;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #44475a;
+    min-height: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #6272a4;
+}
+
+QScrollBar::add-line:vertical, 
+QScrollBar::sub-line:vertical {
+    border: none;
+    background: none;
+    height: 0px;
+}
+
+QScrollBar::add-page:vertical, 
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QScrollBar:horizontal {
+    border: 1px solid #2E2E2E;
+    background: #1E1E1E;
+    height: 12px;
+    margin: 0 15px 0 15px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #44475a;
+    min-width: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #6272a4;
+}
+
+/* Alternate row colors for better readability */
+QTableWidget::item:alternate {
+    background-color: #252525;
+}
+
+/* Focus and selection styles */
+QTableWidget:focus {
+    border: 1px solid #44475a;
+}
+
+/* Ensure the grid lines are subtle */
+QTableWidget::grid {
+    color: #44475a;
+}
+
+/* Remove any default selection outlines */
+QTableWidget::item:selected:focus {
+    border: none;
+    outline: none;
+}
+
+/* Style the sort indicator */
+QHeaderView::down-arrow {
+    image: url(none);
+    background-color: #CCCCCC;
+    border-radius: 2px;
+    width: 4px;
+    height: 4px;
+}
+
+QHeaderView::up-arrow {
+    image: url(none);
+    background-color: #CCCCCC;
+    border-radius: 2px;
+    width: 4px;
+    height: 4px;
+}</string>
        </property>
        <property name="sortingEnabled">
         <bool>true</bool>
