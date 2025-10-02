@@ -15,9 +15,9 @@ from src.utils.services import Services
 from src.utils.view_order_button import ViewOrderButton
 
 GET_ALL_ORDERS = """
-        SELECT * FROM orders 
-        ORDER BY order_date_time DESC
-        """
+    SELECT * FROM orders 
+    ORDER BY order_date_time DESC
+"""
 
 BTN_INDEX = {
     "START": 4,
@@ -123,8 +123,12 @@ class ManageOrdersHandler:
         start_date = self.ui.ordDateFltrStart.date()
         end_date = self.ui.ordDateFltrEnd.date()
     
-        query = GET_ALL_ORDERS
-        params = None
+        query = """
+            SELECT * FROM orders 
+            WHERE DATE(order_date_time) BETWEEN ? AND ?
+            ORDER BY order_date_time DESC
+        """
+        params = (start_date.toString(Qt.ISODate), end_date.toString(Qt.ISODate))
         
         if search_query or search_query.strip() != '':
             if self.ui.searchByOrd.isChecked():
