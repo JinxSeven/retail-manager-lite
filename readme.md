@@ -1,25 +1,25 @@
 
-# 🛒 Super Market Billing Application
+# Super Market Billing Application
 
 This project is a GUI billing application developed to create and manage customer orders and products in supermarkets. The application leverages Python for backend logic, SqLite for database management, and qT for the user interface.
 
 ## Features
 
-- **📝 Customer Order Generation**: Create and manage customer orders with ease.
+- **Customer Order Generation**: Create and manage customer orders with ease.
   
-- **🔄 Order & Product Management**: View, update, and delete existing orders and products.
+- **Order & Product Management**: View, update, and delete existing orders and products.
   
-- **🖥️ User-Friendly Interface**: Intuitive and easy-to-use graphical interface built with qT.
+- **User-Friendly Interface**: Intuitive and easy-to-use graphical interface built with qT.
   
-- **💾 Persistent Storage**: All orders are stored in an SqLite database, ensuring data persistence.
+- **Persistent Storage**: All orders are stored in an SqLite database, ensuring data persistence.
 
 ## Technologies Used
 
-- **🐍 Python**: The primary programming language used for developing the application.
+- **Python**: The primary programming language used for developing the application.
   
-- **🗃️ SqLite**: A lightweight, disk-based database to store order data.
+- **SqLite**: A lightweight, disk-based database to store order data.
   
-- **🎨 qT**: A free and open-source widget toolkit for creating graphical user interfaces.
+- **qT**: A free and open-source widget toolkit for creating graphical user interfaces.
 
 ## Screenshots
 
@@ -41,18 +41,18 @@ This project is a GUI billing application developed to create and manage custome
 
 ## Getting Started
 
-1. **📥 Clone The Repository:**
+1. **Clone The Repository:**
    ```bash
    git clone https://github.com/JinxSeven/Cx_Orders.git
    ```
 
-2. **📦 Install Dependencies:**
+2. **Install Dependencies:**
    Install the required Python packages:
    ```bash
    pip install -r requirements.txt
    ```
    
-3. **📝 Install Required Fonts:**
+3. **Install Required Fonts:**
    Install all fonts in assets folder for better experience
    ```bash
    cd assets/native_fonts
