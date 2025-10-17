@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>988</width>
-    <height>725</height>
+    <width>980</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -15,6 +15,18 @@
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>980</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>980</width>
+    <height>700</height>
+   </size>
   </property>
   <property name="font">
    <font>
@@ -154,7 +166,7 @@ QTabBar::tab:right:only-one {
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -3361,7 +3373,7 @@ background-color: #4c6cbf;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>988</width>
+     <width>980</width>
      <height>21</height>
     </rect>
    </property>
