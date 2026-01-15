@@ -16,8 +16,6 @@ A comprehensive GUI-based billing system designed for retail outlets to efficien
 <img width="503" height="572" alt="image" src="https://github.com/user-attachments/assets/6ce09b9b-a209-4b67-8ec5-ac7ea24f6d2c" />
 <img width="503" height="572" alt="image" src="https://github.com/user-attachments/assets/789f967b-aeb3-4b12-9b10-c370bfd50a72" />
 
-
-
 ## Features
 - **Customer Order Generation**: Create and manage customer orders with ease.  
 - **Order & Product Management**: Add, update, and delete orders and products.  
@@ -25,33 +23,18 @@ A comprehensive GUI-based billing system designed for retail outlets to efficien
 - **User-Friendly Interface**: Clean and intuitive GUI built with Qt.  
 - **Persistent Storage**: Orders and stock data are securely stored in an SQLite database.
 
-## Tech Stack
-- **Python** – Backend application logic  
-- **Qt** – Graphical user interface  
-- **SQLite** – Lightweight relational database
-
 ## Getting Started
-
-> [!NOTE]
-> **Clone The Repo**:
-> 
-> Copy the command given below and run it in your terminal.
-> ```bash
-> git clone https://github.com/JinxSeven/retail-manager-lite.git
-> ```
->
-> **Install Dependencies**:
-> 
-> The project needs a lot of dependencies, mostly Qt packages. Go to the root of the project and run the command given below.
-> ```bash
-> pip install -r requirements.txt
-> ```
-> This should automatically set your local machine ready to run the project.
-> 
-> **Run/Debug Configuration**:
-> 
-> Point the run/debug configuration to the `program.py` file as the startup file which can be found inside the `src` folder.
-> 
+**Install Dependencies**:
+ 
+Tise project needs a lot of dependencies, mostly Qt packages. Go to the root of the project and run the command given below.
+```bash
+pip install -r requirements.txt
+```
+This should automatically set your local machine ready to run the project.
+ 
+**Run/Debug Configuration**:
+ 
+Point the run/debug configuration to the `program.py` file as the startup file which can be found inside the `src` folder. 
    
 > [!IMPORTANT]
 > **Install Required Fonts**:
