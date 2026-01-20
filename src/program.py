@@ -2,7 +2,6 @@ import sys
 import os
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.uic import loadUiType
-from config import DB_PATH
 from database import initialize_db
 from handlers.login import LoginHandler
 from handlers.orders import OrderHandler
