@@ -123,6 +123,7 @@ celerybeat.pid
 
 # Environments
 .vs
+.qtcreator
 .env
 .venv
 env/
