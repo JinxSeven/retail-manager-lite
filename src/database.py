@@ -1,11 +1,37 @@
+import os
+import sys
 import sqlite3
-from config import DB_PATH
+import shutil
 from utils.color import Color
 
-conn = sqlite3.connect(DB_PATH)
+DB_NAME = "rma.db"
+
+def resource_path(relative_path):
+    if getattr(sys, "frozen", False):
+        return os.path.join(sys._MEIPASS, relative_path)
+    return os.path.abspath(relative_path)
+
+def get_appdata_dir():
+    base = os.getenv("APPDATA")
+    app_dir = os.path.join(base, "RetailManagerLite")
+    os.makedirs(app_dir, exist_ok=True)
+    return app_dir
+
+def get_db_path():
+    db_dst = os.path.join(get_appdata_dir(), DB_NAME)
+
+    if not os.path.exists(db_dst):
+        db_src = resource_path(os.path.join("database", DB_NAME))
+        shutil.copyfile(db_src, db_dst)
+
+    return db_dst
+
+def get_connection():
+    return sqlite3.connect(get_db_path())
 
 def initialize_db():
     try:
+        conn = get_connection()
         
         conn.execute("""
             CREATE TABLE IF NOT EXISTS products (
