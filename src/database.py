@@ -1,30 +1,6 @@
-import os
-import sys
 import sqlite3
-import shutil
 from utils.color import Color
-
-DB_NAME = "rma.db"
-
-def resource_path(relative_path):
-    if getattr(sys, "frozen", False):
-        return os.path.join(sys._MEIPASS, relative_path)
-    return os.path.abspath(relative_path)
-
-def get_appdata_dir():
-    base = os.getenv("APPDATA")
-    app_dir = os.path.join(base, "RetailManagerLite")
-    os.makedirs(app_dir, exist_ok=True)
-    return app_dir
-
-def get_db_path():
-    db_dst = os.path.join(get_appdata_dir(), DB_NAME)
-
-    if not os.path.exists(db_dst):
-        db_src = resource_path(os.path.join("database", DB_NAME))
-        shutil.copyfile(db_src, db_dst)
-
-    return db_dst
+from config import get_db_path
 
 def get_connection():
     return sqlite3.connect(get_db_path())
@@ -66,7 +42,6 @@ def initialize_db():
         conn.commit()
         conn.close()
         print(Color.GREEN + "DataBase initialized successfully!" + Color.GREEN)
+    
     except Exception as ex:
         print(Color.RED + f"An error occurred while initializing database: {ex}" + Color.RED)
-
-
