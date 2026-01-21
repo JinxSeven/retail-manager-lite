@@ -24,9 +24,20 @@ A comprehensive GUI-based billing system designed for retail outlets to efficien
 - **Persistent Storage**: Orders and stock data are securely stored in an SQLite database.
 
 ## Getting Started
+**Setting Up Virtual Environment**:
+
+In the root of the project you'll have to create a `venv` for all your libs, to do this run
+```bash
+python -m venv venv
+```
+
+Once it is created, activate venv using the activate script found inside `Scripts` folder (choose the script that's compatible with your OS Ex: .ps1 | .bat)
+
+If the activate script has run successfully, your `cmd` or `terminal` should have this `(venv)`     
+
 **Install Dependencies**:
  
-Tise project needs a lot of dependencies, mostly Qt packages. Go to the root of the project and run the command given below.
+This project needs a lot of dependencies, mostly Qt packages. Go to the root of the project and run the command given below.
 ```bash
 pip install -r requirements.txt
 ```
