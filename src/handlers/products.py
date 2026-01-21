@@ -149,12 +149,12 @@ class ProductHandler:
                 prod_index = self.ui.prodModNameSel.currentIndex()
                 self.ui.prodModNameSel.removeItem(prod_index)
                 self.ui.prodModNameSel.insertItem(prod_index, name)
-                self.ui.prodModNameSel.setCurrentIndex(prod_index)
                 
                 self.ui.prodModInfoLbl.clear()
                 Services.display_info(self.ui.prodModInfoLbl, 'Product updated successfully!', 'green')
                 # self.services.load_combobox(self.ui.prodModNameSel, "SELECT product_name FROM products")
                 Services.load_combobox(self.ui.prodOrdNameSel, "SELECT product_name FROM products")
+                self.ui.prodModNameSel.setCurrentIndex(prod_index)
 
         except sqlite3.Error as ex:
             print(Color.RED + f"An error occurred while updating product: {ex}")
